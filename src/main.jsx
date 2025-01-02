@@ -17,11 +17,11 @@ const domain = import.meta.env.VITE_AUTH0_DOMAIN?.trim();
 const clientId = import.meta.env.VITE_AUTH0_CLIENT_ID?.trim();
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/essentials/",
     element: <Homepage/>,
   },
   {
-    path: "essentials/:essentialId",
+    path: "/essentials/:essentialId",
     element: <Essentials/>,
   },
   {
