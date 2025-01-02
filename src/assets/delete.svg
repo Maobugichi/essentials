@@ -1,0 +1,8 @@
+<svg class="icon-selection" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <title>Remove</title>
+        <path d="M10.5339 13.0592H3.4662C3.33362 13.0592 3.20235 13.0331 3.07987 12.9823C2.9574 12.9316 2.84612 12.8572 2.7524 12.7634C2.65869 12.6697 2.58436 12.5583 2.53368 12.4358C2.483 12.3133 2.45695 12.182 2.45703 12.0495V2.96289H11.543V12.0495C11.543 12.3171 11.4367 12.5738 11.2475 12.7631C11.0582 12.9523 10.8015 13.0586 10.5339 13.0586V13.0592Z" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M5.48584 10.0281V5.99023" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M8.51416 10.0281V5.99023" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M0.4375 2.96289H13.5625" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M8.5144 0.943359H5.48573C5.35315 0.943359 5.22188 0.969482 5.0994 1.02023C4.97693 1.07099 4.86565 1.14537 4.77193 1.23914C4.67822 1.33292 4.60389 1.44423 4.55321 1.56674C4.50253 1.68924 4.47649 1.82053 4.47656 1.95311V2.96228H9.52415V1.95311C9.52415 1.68546 9.41782 1.42878 9.22857 1.23952C9.03931 1.05027 8.78263 0.943943 8.51498 0.943943L8.5144 0.943359Z" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
