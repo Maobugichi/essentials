@@ -401,7 +401,7 @@ const Homepage = () => {
             <SlideComponent
              top="top-[-200px]"
              essentials={skims}
-           
+             simgHeight="h-[200px]"
             />
 
             <SlideComponent
