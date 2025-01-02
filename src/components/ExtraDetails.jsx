@@ -53,7 +53,7 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
 
     return(
     <section className="h-auto bg-red-300 min-h-[130vh] w-[95%] mx-auto">
-            <div className=" h-full flex lg:flex-row flex-col w-full gap-4 justify-center">
+            <div className="h-full bg-green-300 flex lg:flex-row flex-col w-full gap-4 justify-center">
                 <div className="w-[80px]  h-[30%]  lg:flex lg:flex-col lg:gap-2 hidden">
                     <div className="rounded-md h-1/2 border border-black grid place-content-center">
                       <img className="w-16 h-20 rounded-sm" src={src} alt={name} />
