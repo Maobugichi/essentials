@@ -347,7 +347,7 @@ const Homepage = () => {
     const exhibits = [exhibit,exhibit2,exhibit3,exhibit4]
     
     return(
-        <div className="overflow-x-hidden">
+        <div className="h-auto">
            <Header
              isStuck={isStuck}
              setIsStuck={setIsStuck}
