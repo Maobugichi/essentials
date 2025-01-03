@@ -7,8 +7,8 @@ const Variety = ({src,width,imgWidth,height,name,price,onSale,color,size,imgHeig
         navigate("/extraDetails/1",{state:{src:src,name:name,color:color,size:size,price:price,recommendations:recommendations,essentials:essentials}})
     }
     return(
-            <div className={`flex   flex-col lg:gap-7   ${width} ${height} ${swidth} ${sheight} relative z-10 ${margin}`}>
-               {onSale ? <span className="bg-red-400 text-sm p-2 w-auto lg:min-w-[25%]  absolute text-white">On Sale</span> : null}
+            <div className={`flex flex-col lg:gap-7   ${width} ${height} ${swidth} ${sheight} relative z-10 ${margin}`}>
+               {onSale ? <span className="bg-red-400 text-sm p-2 w-auto lg:min-w-[25%]  absolute z-30 text-white">On Sale</span> : null}
                 <div className="relative top-2   h-[70%] grid place-items-center lg:w-full w-[95%] mx-auto">
                     <div   className={`${imgHeight} ${simgHeight}   lg:${imgWidth} w-[90%]`}>
                      <img onClick={handleNavigate} className=" lg:w-[95%]  h-full"   src={src} alt={name} />

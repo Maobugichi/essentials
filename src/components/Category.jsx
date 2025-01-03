@@ -22,7 +22,7 @@ const Category = ({gender,men,essential,essential2}) => {
     return(
         <motion.div 
          onClick={handleNavigate}
-         className="group text-white bg-red-400 h-full lg:w-1/2  grid place-items-center "
+         className="group text-white h-full lg:w-1/2  grid place-items-center rounded-md w-[90%] mx-auto lg:mx-0"
          initial={{ backgroundSize: '100% 100%' }}
          whileHover={{ backgroundSize: '110% 110%' }}
          transition={{ duration: 1, ease: 'easeInOut',type:"tween" }}

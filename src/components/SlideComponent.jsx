@@ -143,7 +143,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop}) => {
                 </svg>
             </div>
            
-            <div class=" bg-gray-200 grid  h-1 rounded-full w-1/2 mx-auto">
+            <div class=" bg-gray-200 grid gap-2  h-1 rounded-full w-1/2 mx-auto">
                 <motion.div 
                     className="bg-blue-500 h-1 rounded"
                     style={{scaleX, originX: 0 }}
