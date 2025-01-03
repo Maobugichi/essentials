@@ -389,7 +389,7 @@ const Homepage = () => {
              top="lg:top-[-230px]"
              essentials={Jerseys}
              simgHeight="h-[200px]"
-             stop="top-[-150px]"
+             stop="top-[-180px]"
             />
 
             <SideCard
