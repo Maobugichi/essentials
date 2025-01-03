@@ -479,7 +479,7 @@ const Homepage = () => {
               essentials={slide}
               top="lg:top-[-230px]"
               simgHeight="h-[200px]"
-              stop="top-[0px]"
+              stop="top-[-15px]"
               width="lg:w-[380px]"
               height="lg:h-[400px]"
               imgHeight="lg:h-[330px]"
