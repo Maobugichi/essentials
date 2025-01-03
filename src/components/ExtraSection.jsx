@@ -73,7 +73,7 @@ const ExtraSection = () => {
             top="top-[0px]"
             recommendations={essentials.slice(6,12)}
             essentials={essentials}
-            simgHeight="h-[150px]"
+            simgHeight="h-[118px]"
           />
           <NewsLetterComponent
              top="top-[0px]"
