@@ -138,6 +138,8 @@ const Essentials = () => {
                       cartIconHeight="h-8"
                       cartIcon="w-4"
                       bottom="bottom-0"
+                       margin="mt-4"
+                      simgHeight="h-[190px]"
                     />
                   )
                 })
@@ -170,6 +172,8 @@ const Essentials = () => {
                       cartIconHeight="h-8"
                       cartIcon="w-4"
                       bottom="bottom-0"
+                       margin="mt-4"
+                      simgHeight="h-[190px]"
                     />
                   )
                 })
