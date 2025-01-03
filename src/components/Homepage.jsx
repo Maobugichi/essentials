@@ -386,9 +386,10 @@ const Homepage = () => {
             </section>
             
             <SlideComponent
-             top="top-[-230px]"
+             top="lg:top-[-230px]"
              essentials={Jerseys}
              simgHeight="h-[200px]"
+             stop="top-[-150px]"
             />
 
             <SideCard
