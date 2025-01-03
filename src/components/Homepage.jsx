@@ -449,10 +449,10 @@ const Homepage = () => {
               essentials={slide}
               top="lg:top-[-230px]"
               simgHeight="h-[200px]"
-              stop="top-[-100px]"
+              stop="top-[0px]"
             />
 
-            <section className="lg:h-[40vh] h-[100vh]     border-t border-[#ccc] border-b relative lg:top-[-180px]">
+            <section className="lg:h-[40vh] h-[100vh]   border-t border-[#ccc] border-b relative lg:top-[-180px]">
                 <div className="flex lg:flex-row flex-col h-full w-[95%] mx-auto items-center">
                     {content.map(item => {
                         return(

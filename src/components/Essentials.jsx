@@ -42,7 +42,7 @@ const Essentials = () => {
     },[data])
     
     return(
-        <div className="h-auto min-h-[250vh]  lg:min-h-[355vh]  flex flex-col gap-10 bg-yellow-50">
+        <div className="h-auto min-h-[250vh]  lg:min-h-[355vh]  flex flex-col gap-10 ">
           <Filter
            isOpen={isOpen}
            setOpen={setOpen}
@@ -71,8 +71,8 @@ const Essentials = () => {
            setShowCart={setShowCart}
            showCart={showCart}
            />
-          <section className="relative top-[-20px]  w-[95%] mx-auto h-auto min-[150vh]  grid gap-5">
-            <div onClick={open}  className="flex  h-12 items-center relative z-[30]">
+          <section className="relative top-[-20px]  w-[95%] mx-auto h-auto min-[150vh]  grid gap-5 bg-red-50">
+            <div onClick={open}  className="flex gap-1  h-12 items-center relative z-[30]">
               <svg className="w-6 pointer-events-all" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
                 <path fillRule="evenodd" d="M4.833 6.5a1.667 1.667 0 1 1 3.334 0 1.667 1.667 0 0 1-3.334 0ZM4.05 7H2.5a.5.5 0 0 1 0-1h1.55a2.5 2.5 0 0 1 4.9 0h8.55a.5.5 0 0 1 0 1H8.95a2.5 2.5 0 0 1-4.9 0Zm11.117 6.5a1.667 1.667 0 1 0-3.334 0 1.667 1.667 0 0 0 3.334 0ZM13.5 11a2.5 2.5 0 0 1 2.45 2h1.55a.5.5 0 0 1 0 1h-1.55a2.5 2.5 0 0 1-4.9 0H2.5a.5.5 0 0 1 0-1h8.55a2.5 2.5 0 0 1 2.45-2Z" fill="currentColor"></path>
               </svg>
@@ -105,7 +105,7 @@ const Essentials = () => {
                       cartIcon="w-4"
                       bottom="bottom-0"
                       margin="mt-4"
-                      simgHeight="h-[190px]"
+                      simgHeight="h-[200px]"
                     />
                   )
                 })
@@ -129,17 +129,17 @@ const Essentials = () => {
                       size={item.size}
                       width="lg:w-[400px]"
                       height="lg:h-[450px]"
-                      imgHeight="350px"
+                      imgHeight="lg:h-[350px]"
                       imgWidth="w-[95%]"
                       essentials={data}
                       swidth="w-1/2"
-                      sheight="h-[350px]"
+                      sheight="h-[250px]"
                       cartIconWidth="w-8"
                       cartIconHeight="h-8"
                       cartIcon="w-4"
                       bottom="bottom-0"
                        margin="mt-4"
-                      simgHeight="h-[190px]"
+                      simgHeight="h-[200px]"
                     />
                   )
                 })
@@ -163,17 +163,17 @@ const Essentials = () => {
                       size={item.size}
                       width="lg:w-[400px]"
                       height="lg:h-[450px]"
-                      imgHeight="350px"
+                      imgHeight="lg:h-[350px]"
                       imgWidth="w-[95%]"
                       essentials={data}
                       swidth="w-1/2"
-                      sheight="h-[350px]"
+                      sheight="h-[250px]"
                       cartIconWidth="w-8"
                       cartIconHeight="h-8"
                       cartIcon="w-4"
                       bottom="bottom-0"
                        margin="mt-4"
-                      simgHeight="h-[190px]"
+                      simgHeight="h-[200px]"
                     />
                   )
                 })
@@ -191,7 +191,7 @@ const Essentials = () => {
             top="lg:top-[50px]"
             
            />
-          <section className="relative top-[90px]">
+          <section className="relative lg:top-[90px]">
             <Footer/>
           </section>
         </div>
