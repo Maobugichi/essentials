@@ -1,10 +1,10 @@
 import addToCartIcon from "../assets/addTocart.svg"
 import {useNavigate} from "react-router-dom"
 
-const Variety = ({src,width,imgWidth,height,name,price,onSale,color,size,imgHeight,recommendations,swidth,sheight ,essentials, cartIconWidth="w-6", cartIconHeight="h-6", cartIcon="w-3" , bottom="bottom-[40px]",span="w-[40%]",margin, simgHeight}) => {
+const Variety = ({src,width,imgWidth,height,name,price,onSale,color,size,count,imgHeight,recommendations,swidth,sheight ,essentials, cartIconWidth="w-6", cartIconHeight="h-6", cartIcon="w-3" , bottom="bottom-[40px]",span="w-[40%]",margin, simgHeight}) => {
     const navigate = useNavigate()
     const handleNavigate = (e) => {
-        navigate("/extraDetails/1",{state:{src:src,name:name,color:color,size:size,price:price,recommendations:recommendations,essentials:essentials}})
+        navigate("/essentials/extraDetails/1",{state:{src:src,name:name,color:color,size:size,price:price,recommendations:recommendations,essentials:essentials,count:count}})
     }
     return(
             <div className={`flex flex-col lg:gap-7   ${width} ${height} ${swidth} ${sheight} relative z-10 ${margin}`}>

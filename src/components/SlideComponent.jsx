@@ -51,7 +51,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
 
     useEffect(() => {
         if (data.length !== 0) {
-        navigate("/essentials/1",{state:{data:data}})
+        navigate("/essentials/essentialSection/1",{state:{data:data}})
         }
     },[data])
         
@@ -95,6 +95,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
                                         src={item.src}
                                         color={item.color}
                                         size={item.size}
+                                        count={item.count}
                                         width={width}
                                         height={height}
                                         imgHeight={imgHeight}
@@ -108,25 +109,26 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
 
                             {!recommendations && essentials.slice(0, 6).map((item, index) => (
                                 <Variety
-                                key={index}
-                                recommendations={recommendations}
-                                name={item.name}
-                                price={item.price}
-                                bestSelling={item.bestselling}
-                                onSale={item.onSale}
-                                date={item.date}
-                                src={item.src}
-                                color={item.color}
-                                size={item.size}
-                                width={width}
-                                height={height}
-                                imgHeight={imgHeight}
-                                imgWidth={imgWidth}
-                                swidth={swidth}
-                                sheight={sheight}
-                                essentials={essentials}
-                                bottom="bottom-0"
-                                simgHeight={simgHeight}
+                                    key={index}
+                                    recommendations={recommendations}
+                                    name={item.name}
+                                    price={item.price}
+                                    bestSelling={item.bestselling}
+                                    onSale={item.onSale}
+                                    date={item.date}
+                                    src={item.src}
+                                    color={item.color}
+                                    count={item.count}
+                                    size={item.size}
+                                    width={width}
+                                    height={height}
+                                    imgHeight={imgHeight}
+                                    imgWidth={imgWidth}
+                                    swidth={swidth}
+                                    sheight={sheight}
+                                    essentials={essentials}
+                                    bottom="bottom-0"
+                                    simgHeight={simgHeight}
                                 />
                             ))}
                         </motion.div>

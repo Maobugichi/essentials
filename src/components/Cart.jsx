@@ -5,7 +5,7 @@ import QuickShopSection from "./QuickShopSection";
 import localForage from 'localforage';
 import CartItem from "./CartItem";
 
-const Cart = ({quantity,setQuantity,src,name,color,price,showCart,setShowCart}) => {
+const Cart = ({setQuantity,src,name,color,price,showCart,setShowCart}) => {
     const [show,setShow] = useState(false)
     const [isRotated, setIsRotated] = useState(false);
     const [cartItems, setCartItems] = useState([])
@@ -53,7 +53,6 @@ const Cart = ({quantity,setQuantity,src,name,color,price,showCart,setShowCart}) 
         }, [cartItems]);
 
     const handleRemoveItem = async (e) => {
-        console.log(e.target.parentNode.parentNode.parentNode.childNodes[0].id)
         const updatedList = cartItems.filter((item) => {
             return item.src !== e.target.parentNode.parentNode.parentNode.childNodes[0].id
         });
@@ -74,7 +73,7 @@ const Cart = ({quantity,setQuantity,src,name,color,price,showCart,setShowCart}) 
                 animate={{x:350}}
                 whileInView={{x:animateX.x}}
                 exit={{x:-500}}
-                className="lg:h-[95vh] h-[65%] bg-white lg:w-[36%] w-[95%] absolute  rounded-xl lg:top-[10px] top-[10%] z-[2500px] ">
+                className="lg:h-[95vh] h-[80%] bg-white lg:w-[36%] w-[95%] absolute  rounded-xl lg:top-[10px] top-[10%] z-[2500px] ">
                     <div className=" h-full flex flex-col relative z-[2000px]  gap-3">
                         <div className="flex justify-between w-[90%] mt-5 mx-auto ">
                             <p className="text-xl">Shopping Cart</p>
@@ -89,9 +88,10 @@ const Cart = ({quantity,setQuantity,src,name,color,price,showCart,setShowCart}) 
                                           src={item.src}
                                           name={item.name}
                                           price={item.price}
-                                          quantity={quantity}
+                                          quantity={item.quantity}
                                           setQuantity={setQuantity}
                                           handleRemoveItem={handleRemoveItem}
+                                          
                                         />
                                     )
                                 })

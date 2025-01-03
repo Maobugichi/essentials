@@ -9,16 +9,24 @@ import { useLocation } from "react-router-dom"
 import Cart from "./Cart"
 import PopUp from "./WishListPopUp"
 const ExtraSection = () => {
+    const location = useLocation()
+    const {src,name,color,size,price,recommendations,essentials, count} = location.state
     const [showCart,setShowCart] =useState(false)
-    const [quantity,setQuantity] = useState(1)
+    const [quantity,setQuantity] = useState(count)
     const [pop , setShowPop] = useState(false)
     const [openNav,setOpenNav] = useState(false);
-    const location = useLocation()
-    const {src,name,color,size,price,recommendations,essentials} = location.state
+   
+   
     useEffect(() => {
         window.scrollTo(0, 0);
+        
       }, [location]);
 
+      useEffect(() => {
+        console.log("count" + count)
+      },[])
+      
+     
     return(
         <div>
          <PopUp
@@ -49,6 +57,7 @@ const ExtraSection = () => {
            cartColor="bg-black"
            cartText="text-white"
            iconColor="#000"
+           color="bg-[#f7f7f7]"
            openNav={openNav}
            setOpenNav={setOpenNav}
            setShowCart={setShowCart}
@@ -67,6 +76,8 @@ const ExtraSection = () => {
            price={price}
            pop={pop}
            setShowPop={setShowPop}
+           essentials={essentials}
+           
           />
           
           <SlideComponent

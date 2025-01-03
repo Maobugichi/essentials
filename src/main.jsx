@@ -21,11 +21,11 @@ const router = createBrowserRouter([
     element: <Homepage/>,
   },
   {
-    path: "/essentials/:essentialId",
+    path: "/essentials/essentialSection/:essentialId",
     element: <Essentials/>,
   },
   {
-    path: "extraDetails/:extraDetailId",
+    path: "/essentials/extraDetails/:extraDetailId",
     element: <ExtraSection/>,
   },
   {

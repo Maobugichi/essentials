@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { AnimatePresence } from "motion/react";
 import Quantity from "./Quantity";
 import localForage from 'localforage';
-const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,price,recommendations,pop,setShowPop}) => {
+const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,price,essentials,pop,setShowPop}) => {
     const [show,setShow] = useState(false)
     const [show2, setShow2] = useState(false);
     const [isRotated, setIsRotated] = useState(false);
@@ -43,14 +43,13 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
     }, [cartItems]);
       
     const handleAddToCart = async () => {
-        const newWishItem = {src,name,color,price  };
+        const newWishItem = { src,name,color,price , quantity};
         setCartItems((prevWishItems) => [...prevWishItems, newWishItem]);
         await localForage.setItem('cartlist', cartItems);
-       
         setShowCart(true)
       };
-    
-
+      
+     
     return(
     <section className="h-auto  min-h-[130vh] w-[95%] mx-auto">
             <div className="h-full  flex lg:flex-row flex-col w-full gap-4 justify-center">

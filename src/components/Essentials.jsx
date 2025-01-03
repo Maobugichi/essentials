@@ -62,7 +62,7 @@ const Essentials = () => {
            isStuck={isStuck}
            setIsStuck={setIsStuck}
            text= "black"
-           color="bg-[#CCCCCC]"
+           color="bg-[#f7f7f7]"
            iconColor="#000"
            cartColor="bg-black"
            cartText="text-white"
