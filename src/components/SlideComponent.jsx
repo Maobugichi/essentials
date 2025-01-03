@@ -123,7 +123,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop}) => {
                                 imgHeight="lg:h-[330px]"
                                 imgWidth="w-[95%]"
                                 swidth="w-[210px]"
-                                sheight="h-[270px]"
+                                sheight="h-[250px]"
                                 essentials={essentials}
                                 bottom="bottom-0"
                                 simgHeight={simgHeight}

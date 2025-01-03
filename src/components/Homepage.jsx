@@ -452,8 +452,8 @@ const Homepage = () => {
               stop="top-[0px]"
             />
 
-            <section className="lg:h-[40vh] h-[100vh]   border-t border-[#ccc] border-b relative lg:top-[-180px]">
-                <div className="flex lg:flex-row flex-col h-full w-[95%] mx-auto items-center">
+            <section className="lg:h-[40vh] h-[100vh] border-t flex items-center border-[#ccc] border-b relative lg:top-[-180px]">
+                <div className="flex lg:flex-row flex-col lg:h-full h-[90%] w-[95%] mx-auto items-center">
                     {content.map(item => {
                         return(
                             <Feature
