@@ -390,6 +390,12 @@ const Homepage = () => {
              essentials={Jerseys}
              simgHeight="h-[200px]"
              stop="top-[-180px]"
+             width="lg:w-[380px]"
+             height="lg:h-[400px]"
+             imgHeight="lg:h-[330px]"
+             imgWidth="w-[95%]"
+             swidth="w-[210px]"
+             sheight="h-[250px]"
             />
 
             <SideCard
@@ -403,12 +409,24 @@ const Homepage = () => {
              top="top-[-200px]"
              essentials={skims}
              simgHeight="h-[200px]"
+             width="lg:w-[380px]"
+             height="lg:h-[400px]"
+             imgHeight="lg:h-[330px]"
+             imgWidth="w-[95%]"
+             swidth="w-[210px]"
+             sheight="h-[250px]"
             />
 
             <SlideComponent
              essentials={shirts}
              top="top-[-230px]"
              simgHeight="h-[200px]"
+             width="lg:w-[380px]"
+             height="lg:h-[400px]"
+             imgHeight="lg:h-[330px]"
+             imgWidth="w-[95%]"
+             swidth="w-[210px]"
+             sheight="h-[250px]"
             />
 
             <SideCard
@@ -420,6 +438,12 @@ const Homepage = () => {
              essentials={jackets}
              top="top-[-200px]"
              simgHeight="h-[200px]"
+             width="lg:w-[380px]"
+             height="lg:h-[400px]"
+             imgHeight="lg:h-[330px]"
+             imgWidth="w-[95%]"
+             swidth="w-[210px]"
+             sheight="h-[250px]"
             />
 
             <section className=" h-[75vh] relative top-[-200px]">
@@ -430,6 +454,12 @@ const Homepage = () => {
              essentials={jorts}
              top="top-[-200px]"
              simgHeight="h-[200px]"
+             width="lg:w-[380px]"
+             height="lg:h-[400px]"
+             imgHeight="lg:h-[330px]"
+             imgWidth="w-[95%]"
+             swidth="w-[210px]"
+             sheight="h-[250px]"
             />
              <section className="relative top-[-180px] lg:h-[80vh] h-[200vh]">
               <div className="flex lg:flex-row flex-col w-[95%] mx-auto items-center gap-5">
@@ -450,6 +480,12 @@ const Homepage = () => {
               top="lg:top-[-230px]"
               simgHeight="h-[200px]"
               stop="top-[0px]"
+              width="lg:w-[380px]"
+              height="lg:h-[400px]"
+              imgHeight="lg:h-[330px]"
+              imgWidth="w-[95%]"
+              swidth="w-[210px]"
+              sheight="h-[250px]"
             />
 
             <section className="lg:h-[40vh] h-[100vh] border-t flex items-center border-[#ccc] border-b relative lg:top-[-180px]">

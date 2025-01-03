@@ -3,7 +3,7 @@ import Variety from "./Variety"
 import { useState,useEffect, useRef } from "react"
 import { useNavigate } from "react-router-dom";
 
-const SlideComponent = ({essentials,top,recommendations,simgHeight,stop}) => {
+const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="lg:w-[380px]",height,imgHeight,imgWidth,swidth,sheight}) => {
     const [scrollLeft, setScrollLeft] = useState(0);
     const [data,setData] = useState([])
     const sliderRef = useRef(null)
@@ -81,7 +81,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop}) => {
                     >  <motion.div 
                         initial={{ x: 0 }}
                         animate={{ x: scrollLeft }}
-                        className=" flex gap-4 w-auto justify-center no-scrollbar">
+                        className=" flex gap-4 w-auto  justify-center no-scrollbar">
                         {recommendations && 
                             recommendations.map((item, index) => (
                                         <Variety
@@ -95,12 +95,12 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop}) => {
                                         src={item.src}
                                         color={item.color}
                                         size={item.size}
-                                        width="lg:w-[380px]"
-                                        height="lg:h-[400px]"
-                                        imgHeight="h-[330px]"
-                                        imgWidth="w-[95%]"
-                                        swidth="w-[200px]"
-                                        sheight="h-[250px]"
+                                        width={width}
+                                        height={height}
+                                        imgHeight={imgHeight}
+                                        imgWidth={imgWidth}
+                                        swidth={swidth}
+                                        sheight={sheight}
                                         essentials={essentials}
                                         simgHeight={simgHeight}
                                         />
@@ -118,12 +118,12 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop}) => {
                                 src={item.src}
                                 color={item.color}
                                 size={item.size}
-                                width="lg:w-[380px]"
-                                height="lg:h-[400px]"
-                                imgHeight="lg:h-[330px]"
-                                imgWidth="w-[95%]"
-                                swidth="w-[210px]"
-                                sheight="h-[250px]"
+                                width={width}
+                                height={height}
+                                imgHeight={imgHeight}
+                                imgWidth={imgWidth}
+                                swidth={swidth}
+                                sheight={sheight}
                                 essentials={essentials}
                                 bottom="bottom-0"
                                 simgHeight={simgHeight}
