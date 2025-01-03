@@ -63,7 +63,7 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
                       <img className="w-16 h-20 rounded-sm" src={src} alt={name} />
                     </div>
                 </div>
-                <div className="lg:w-[40%] bg-red-500 w-full flex items-center  h-[400px] ">   
+                <div className="lg:w-[40%] bg-red-500 w-full flex items-center justify-center h-[400px] ">   
                  <img className="w-[90%] lg:h-[600px]"  src={src} alt={name} />
                 </div>
                

@@ -100,8 +100,8 @@ const Essentials = () => {
                       essentials={data}
                       swidth="w-1/2"
                       sheight="h-[250px]"
-                      cartIconWidth="w-3"
-                      cartIconHeight="h-3"
+                      cartIconWidth="w-8"
+                      cartIconHeight="h-8"
                       cartIcon="w-4"
                       bottom="bottom-0"
                       margin="mt-4"

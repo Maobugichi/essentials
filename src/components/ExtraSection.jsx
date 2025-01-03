@@ -14,7 +14,6 @@ const ExtraSection = () => {
     const [pop , setShowPop] = useState(false)
     const [openNav,setOpenNav] = useState(false);
     const location = useLocation()
-   
     const {src,name,color,size,price,recommendations,essentials} = location.state
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -74,7 +73,7 @@ const ExtraSection = () => {
             top="top-[0px]"
             recommendations={essentials.slice(6,12)}
             essentials={essentials}
-            simgHeight="h-[180px]"
+            simgHeight="h-[150px]"
           />
           <NewsLetterComponent
              top="top-[0px]"

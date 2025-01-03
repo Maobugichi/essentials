@@ -2,7 +2,7 @@ import NewsLetter from "./NewsLetter"
 
 const NewsLetterComponent = ({top , stop}) => {
     return(
-        <section className={`h-[35vh] bg-red-300 w-full ${top} ${stop} relative`}>
+        <section className={`h-[35vh] w-full ${top} ${stop} relative`}>
             <div className="h-full grid place-items-center w-[95%] mx-auto">
                 <NewsLetter/>
             </div> 

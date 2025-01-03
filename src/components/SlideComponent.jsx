@@ -62,7 +62,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop}) => {
                     <path fill="#000" d="M24.96 32.601L12.371 19.997l.088-.088l12.507-12.52a.66.66 0 0 0-.01-.921a.65.65 0 0 0-.458-.182a.65.65 0 0 0-.465.186l-13.004 13.02a.63.63 0 0 0-.176.49a.66.66 0 0 0 .18.523l13.014 13.031c.244.23.659.233.921-.02a.66.66 0 0 0-.008-.915"></path>
                 </svg>
             </div>
-            <div  className={` w-[90%]  mx-auto  flex flex-col gap-4  h-[95%] no-scrollbar`} style={{ overflowX: "scroll"}}>
+            <div  className={` w-[90%]  mx-auto  flex flex-col gap-4  h-[95%] no-scrollbar no-scrollbar::webkit-scrollbar`} style={{ overflowX: "scroll"}}>
                 <ul className="flex  w-[18%] justify-between h-auto min-h-[35px]">
                     <li className="hover:border-[#000] hover:border-b-2 p-1 transition-all duration-200">Jerseys</li>
                     <li className="hover:border-[#000] hover:border-b-2 p-1 transition-all duration-200">Slides</li>
@@ -72,7 +72,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop}) => {
                     ref={sliderRef}
                     id="slide"
                     transition={{ duration: 0.3, type:"tween", ease: "linear" }}
-                    className="no-scrollbar flex"
+                    className="no-scrollbar no-scrollbar::webkit-scrollbar flex"
                     style={{
                         overflowX: "scroll",
                         overflowY: "hidden"
@@ -81,7 +81,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop}) => {
                     >  <motion.div 
                         initial={{ x: 0 }}
                         animate={{ x: scrollLeft }}
-                        className=" flex gap-4 w-auto justify-center">
+                        className=" flex gap-4 w-auto justify-center no-scrollbar">
                         {recommendations && 
                             recommendations.map((item, index) => (
                                         <Variety
