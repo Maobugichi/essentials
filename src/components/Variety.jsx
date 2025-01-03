@@ -7,7 +7,7 @@ const Variety = ({src,width,imgWidth,height,name,price,onSale,color,size,imgHeig
         navigate("/extraDetails/1",{state:{src:src,name:name,color:color,size:size,price:price,recommendations:recommendations,essentials:essentials}})
     }
     return(
-            <div className={`flex bg-red-500  flex-col lg:gap-7   ${width} ${height} ${swidth} ${sheight} relative z-10 ${margin}`}>
+            <div className={`flex   flex-col lg:gap-7   ${width} ${height} ${swidth} ${sheight} relative z-10 ${margin}`}>
                {onSale ? <span className="bg-red-400 text-sm p-2 w-auto lg:min-w-[25%]  absolute text-white">On Sale</span> : null}
                 <div className="relative top-2   h-[70%] grid place-items-center lg:w-full w-[95%] mx-auto">
                     <div   className={`${imgHeight} ${simgHeight}   lg:${imgWidth} w-[90%]`}>
@@ -18,7 +18,7 @@ const Variety = ({src,width,imgWidth,height,name,price,onSale,color,size,imgHeig
                     </div>
                 </div>
                 <div className="w-[85%] mx-auto h-[200px] flex  flex-col justify-center ">
-                    <p className="text-[12px] lg:text-sm">{name}</p>
+                    <p className="text-[12px] w-[80%] lg:text-sm truncate">{name}</p>
                     <p className="text-[12px] text-red-500 lg:text-sm">{price} <span className="text-black line-through">₦240,000</span></p>
                 </div>
             </div>
