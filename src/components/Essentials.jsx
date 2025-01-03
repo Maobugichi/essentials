@@ -42,7 +42,7 @@ const Essentials = () => {
     },[data])
     
     return(
-        <div className="h-auto min-h-[250vh]  lg:min-h-[355vh]  flex flex-col gap-10">
+        <div className="h-auto min-h-[250vh]  lg:min-h-[355vh]  flex flex-col gap-10 bg-yellow-50">
           <Filter
            isOpen={isOpen}
            setOpen={setOpen}
