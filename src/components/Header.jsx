@@ -71,9 +71,23 @@ const Header = ({text,isStuck,setIsStuck , color, iconColor , cartColor , cartTe
             <AnimatePresence>
                 <div className=" border-b bg-black  h-11 text-white grid place-items-center ">
                     <div className=" flex justify-between items-center w-[90%] lg:w-1/2 mx-auto ">
-                        <i onClick={handlePreviousSlide} className="fa-solid fa-angle-left fa-xl" style={{color: "#f2f2f3"}}></i>
+                       
+                        <svg onClick={handlePreviousSlide} xmlns="http://www.w3.org/2000/svg" width={23} height={30} viewBox="0 0 20 20">
+                            <g fill="#f2f2f3">
+                                <path d="m12.384 15.68l-5-6l-.768.64l5 6z"></path>
+                                <path d="m11.616 16.32l-5-6c-.427-.512.341-1.152.768-.64l5 6c.427.512-.341 1.152-.768.64"></path>
+                                <path d="m11.616 3.68l-5 6l.768.64l5-6z"></path>
+                                <path d="m12.384 4.32l-5 6c-.427.512-1.195-.128-.768-.64l5-6c.427-.512 1.195.128.768.64"></path>
+                            </g>
+                        </svg>
                         {slides[currentIndex]}
-                        <i onClick={handleNextSlide} className="fa-solid fa-angle-right fa-xl" style={{color: "#f2f2f3"}}></i>
+                        <svg onClick={handleNextSlide} xmlns="http://www.w3.org/2000/svg" width={23} height={30} viewBox="0 0 20 20">
+                            <g fill="#f2f2f3">
+                                <path d="M7.116 4.32a.5.5 0 1 1 .768-.64l5 6a.5.5 0 0 1-.768.64z"></path>
+                                <path d="M7.884 16.32a.5.5 0 0 1-.768-.64l5-6a.5.5 0 1 1 .768.64z"></path>
+                            </g>
+                        </svg>
+
                     </div>
                 </div>
             </AnimatePresence>

@@ -7,7 +7,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
     const [scrollLeft, setScrollLeft] = useState(0);
     const [data,setData] = useState([])
     const sliderRef = useRef(null)
-    const maxScrollLeft = -1300
+    const maxScrollLeft = -780
     const smMax = -1100
     const handleButtonClick = () => {
         const screenWidth = window.innerWidth;
@@ -63,11 +63,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
                 </svg>
             </div>
             <div  className={` w-[90%]  mx-auto  flex flex-col gap-4  h-[95%] no-scrollbar no-scrollbar::webkit-scrollbar`} style={{ overflowX: "scroll"}}>
-                <ul className="flex  w-[18%] justify-between h-auto min-h-[35px]">
-                    <li className="hover:border-[#000] hover:border-b-2 p-1 transition-all duration-200">Jerseys</li>
-                    <li className="hover:border-[#000] hover:border-b-2 p-1 transition-all duration-200">Slides</li>
-                    <li className="hover:border-[#000] hover:border-b-2 p-1 transition-all duration-200">Shorts</li>
-                </ul>
+                
                 <motion.div 
                     ref={sliderRef}
                     id="slide"

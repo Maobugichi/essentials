@@ -78,12 +78,12 @@ const ExtraSection = () => {
             recommendations={essentials.slice(6,12)}
             essentials={essentials}
             simgHeight="h-[200px]"
-             width="lg:w-[380px]"
-             height="lg:h-[400px]"
-             imgHeight="lg:h-[330px]"
-             imgWidth="w-[95%]"
-             swidth="w-[250px]"
-             sheight="h-[250px]"
+            width="lg:w-[280px]"
+            height="lg:h-[400px]"
+            imgHeight="lg:h-[330px]"
+            imgWidth="w-[95%]"
+            swidth="w-[250px]"
+            sheight="h-[250px]"
           />
 
           <NewsLetterComponent

@@ -62,8 +62,9 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
                       <img className="w-16 h-20 rounded-sm" src={src} alt={name} />
                     </div>
                 </div>
-                <div className="lg:w-[40%]  w-full flex items-center justify-center h-auto min-h-[400px] ">   
-                 <img className="w-[90%] lg:h-[600px]"  src={src} alt={name} />
+                
+                <div className="lg:w-[40%] w-full flex items-center lg:items-start justify-center h-1/2 lg:mt-5">   
+                  <img className="w-[90%] lg:h-[550px]"  src={src} alt={name} />
                 </div>
                
                 <div className="lg:w-[35%] w-[95%] mx-auto grid gap-4">

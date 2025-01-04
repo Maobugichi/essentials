@@ -1,6 +1,6 @@
 import localForage from 'localforage';
 import { useEffect , useState } from 'react';
-const Quantity = ({quantity,setQuantity,increases}) => {
+const Quantity = ({quantity,setQuantity,increases,decreases}) => {
     const [cartQuantity, setCartQuantity] = useState([])
 
     function increase() {
@@ -34,7 +34,7 @@ const Quantity = ({quantity,setQuantity,increases}) => {
     }
     return(
         <div className="border flex w-20 justify-around text-[10px] h-8 items-center bg-white">
-            <button onClick={decrease}>
+            <button onClick={decreases ? decreases : decrease}>
             <span className="font-black" aria-hidden="true">−</span>
             </button>
         

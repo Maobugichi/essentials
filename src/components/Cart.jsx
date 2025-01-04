@@ -90,6 +90,7 @@ const Cart = ({setQuantity,src,name,color,price,showCart,setShowCart}) => {
                                           price={item.price}
                                           quantity={item.quantity}
                                           setQuantity={setQuantity}
+                                          
                                           handleRemoveItem={handleRemoveItem}
                                         />
                                     )

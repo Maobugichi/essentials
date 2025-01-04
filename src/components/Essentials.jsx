@@ -92,6 +92,7 @@ const Essentials = () => {
                       date={item.date}
                       src={item.src}
                       color={item.color}
+                      count={item.count}
                       size={item.size}
                       width="lg:w-[400px]"
                       height="lg:h-[450px]"

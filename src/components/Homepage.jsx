@@ -356,7 +356,7 @@ const Homepage = () => {
              color="bg-transparent"
              iconColor={isStuck ? "#000" : "#fff"}
              cartColor={isStuck ? "bg-black" : "bg-white"}
-             cartText={isStuck ? "bg-black" : "bg-white"}
+             cartText={isStuck ? "text-white" : "text-black"}
              openNav={openNav}
              setOpenNav={setOpenNav}
              setShowCart={setShowCart}
@@ -391,9 +391,9 @@ const Homepage = () => {
              essentials={Jerseys}
              simgHeight="h-[200px]"
              stop="top-[-180px]"
-             width="lg:w-[380px]"
+             width="lg:w-[280px]"
              height="lg:h-[400px]"
-             imgHeight="lg:h-[330px]"
+             imgHeight="lg:h-[360px]"
              imgWidth="w-[95%]"
              swidth="w-[210px]"
              sheight="h-[250px]"
@@ -410,10 +410,10 @@ const Homepage = () => {
              top="top-[-200px]"
              essentials={skims}
              simgHeight="h-[200px]"
-             width="lg:w-[380px]"
+             width="lg:w-[280px]"
              height="lg:h-[400px]"
-             imgHeight="lg:h-[330px]"
-             imgWidth="w-[95%]"
+             imgHeight="lg:h-[350px]"
+             imgWidth="w-full"
              swidth="w-[210px]"
              sheight="h-[250px]"
             />
@@ -422,10 +422,10 @@ const Homepage = () => {
              essentials={shirts}
              top="top-[-230px]"
              simgHeight="h-[200px]"
-             width="lg:w-[380px]"
+             width="lg:w-[280px]"
              height="lg:h-[400px]"
              imgHeight="lg:h-[330px]"
-             imgWidth="w-[95%]"
+             imgWidth="w-full"
              swidth="w-[210px]"
              sheight="h-[250px]"
             />
@@ -439,7 +439,7 @@ const Homepage = () => {
              essentials={jackets}
              top="top-[-200px]"
              simgHeight="h-[200px]"
-             width="lg:w-[380px]"
+             width="lg:w-[280px]"
              height="lg:h-[400px]"
              imgHeight="lg:h-[330px]"
              imgWidth="w-[95%]"
@@ -455,7 +455,7 @@ const Homepage = () => {
              essentials={jorts}
              top="top-[-200px]"
              simgHeight="h-[200px]"
-             width="lg:w-[380px]"
+             width="lg:w-[280px]"
              height="lg:h-[400px]"
              imgHeight="lg:h-[330px]"
              imgWidth="w-[95%]"
@@ -481,7 +481,7 @@ const Homepage = () => {
               top="lg:top-[-230px]"
               simgHeight="h-[200px]"
               stop="top-[-15px]"
-              width="lg:w-[380px]"
+              width="lg:w-[280px]"
               height="lg:h-[400px]"
               imgHeight="lg:h-[330px]"
               imgWidth="w-[95%]"

@@ -13,13 +13,37 @@ const CartItem = ({src,name,price,color,quantity,setQuantity,handleRemoveItem}) 
 
     function increases(e) {
         const loadWishlist = async () => {
-            const storedWishlist = await localForage.getItem('cartlist');
-            if (storedWishlist) {
-               console.log(storedWishlist)
-            } 
+          const storedWishlist = await localForage.getItem('cartlist');
+          if (storedWishlist) {
+            const updatedWishlist = storedWishlist.map((item) => {
+              if (item.name === e.target.parentNode.parentNode.parentNode.id) {
+                return { ...item, quantity: item.quantity + 1 };
+              }
+              return item; 
+            });
+            await localForage.setItem('cartlist', updatedWishlist);
+          }
         };
-            loadWishlist();
-    }
+        loadWishlist();
+      }
+
+      function decreases(e) {
+        const loadWishlist = async () => {
+          const storedWishlist = await localForage.getItem('cartlist');
+          if (storedWishlist) {
+            const updatedWishlist = storedWishlist.map((item) => {
+              if (item.name === e.target.parentNode.parentNode.parentNode.id) {
+                return { ...item, quantity: item.quantity !== 1 ?  item.quantity - 1 : 1 };
+              }
+              return item; 
+            });
+            await localForage.setItem('cartlist', updatedWishlist);
+          }
+        };
+        loadWishlist();
+      }
+      
+      
       
     return(
         <div className="flex  w-[85%] mx-auto items-center">
@@ -34,6 +58,7 @@ const CartItem = ({src,name,price,color,quantity,setQuantity,handleRemoveItem}) 
                             quantity={quantity}
                             setQuantity={setQuantity}
                             increases={increases}
+                            decreases={decreases}
                         />
                          <img className="w-3 h-3"  onClick={handleRemoveItem} src={deleteIcon} alt="" />
                     </div>
