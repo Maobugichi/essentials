@@ -1,27 +1,24 @@
 import localForage from 'localforage';
 import { useEffect , useState } from 'react';
-const Quantity = ({quantity,setQuantity}) => {
+const Quantity = ({quantity,setQuantity,increases}) => {
     const [cartQuantity, setCartQuantity] = useState([])
+
     function increase() {
         setQuantity(quantity + 1)
     }
+
 
     localForage.config({
         driver: localForage.INDEXEDDB,
         name: 'myApp', 
         version: 1.0, 
-      });
-
-     useEffect(() => {
-      
-     },[quantity])
+    });
 
       useEffect(() => {
         const loadWishlist = async () => {
             const storedWishlist = await localForage.getItem('cartlist');
             if (storedWishlist) {
               setCartQuantity(storedWishlist);
-              console.log(storedWishlist)
             } 
           };
           loadWishlist();
@@ -35,9 +32,6 @@ const Quantity = ({quantity,setQuantity}) => {
         }
        
     }
-
-    console.log(cartQuantity)
-
     return(
         <div className="border flex w-20 justify-around text-[10px] h-8 items-center bg-white">
             <button onClick={decrease}>
@@ -45,7 +39,7 @@ const Quantity = ({quantity,setQuantity}) => {
             </button>
         
             <p>{quantity}</p>
-            <button onClick={increase}>
+            <button onClick={increases ? increases : increase}>
             <span className="font-bold" aria-hidden="true">+</span>
             </button>
                             

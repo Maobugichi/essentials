@@ -19,14 +19,7 @@ const ExtraSection = () => {
    
     useEffect(() => {
         window.scrollTo(0, 0);
-        
       }, [location]);
-
-      useEffect(() => {
-        console.log("count" + count)
-      },[])
-      
-     
     return(
         <div>
          <PopUp
@@ -39,10 +32,10 @@ const ExtraSection = () => {
           price={price}
           />
 
-           <SideNav
-            openNav={openNav}
-            setOpenNav={setOpenNav}
-           />
+          <SideNav
+          openNav={openNav}
+          setOpenNav={setOpenNav}
+          />
          <Cart
            showCart={showCart}
            src={src}

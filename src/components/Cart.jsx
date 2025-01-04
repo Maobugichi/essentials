@@ -48,19 +48,18 @@ const Cart = ({setQuantity,src,name,color,price,showCart,setShowCart}) => {
             if (storedWishlist) {
                 setCartItems(storedWishlist);
             } 
-            };
+        };
             loadWishlist();
-        }, [cartItems]);
+    }, [cartItems]);
 
+    
     const handleRemoveItem = async (e) => {
         const updatedList = cartItems.filter((item) => {
             return item.src !== e.target.parentNode.parentNode.parentNode.childNodes[0].id
         });
-        
         setCartItems(updatedList);
         await localForage.setItem('cartlist', updatedList);
-    
-        };
+    };
     return(
         <AnimatePresence>
            {showCart ? <motion.div
@@ -82,6 +81,7 @@ const Cart = ({setQuantity,src,name,color,price,showCart,setShowCart}) => {
                         <div className="h-[450px] overflow-y-scroll w-full  flex flex-col gap-7 ">
                              {
                                 cartItems.map((item,i) => {
+                                    
                                     return(
                                         <CartItem
                                           id={i}
@@ -91,7 +91,6 @@ const Cart = ({setQuantity,src,name,color,price,showCart,setShowCart}) => {
                                           quantity={item.quantity}
                                           setQuantity={setQuantity}
                                           handleRemoveItem={handleRemoveItem}
-                                          
                                         />
                                     )
                                 })

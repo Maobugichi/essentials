@@ -10,11 +10,11 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
     const [isRotated, setIsRotated] = useState(false);
     const [isRotated2, setIsRotated2] = useState(false);
     const [cartItems, setCartItems] = useState([])
-     localForage.config({
+    localForage.config({
           driver: localForage.INDEXEDDB,
           name: 'myApp', 
           version: 1.0, 
-        });
+    });
 
     const handleShow1 = () => {
         setShow(!show);
@@ -43,7 +43,7 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
     }, [cartItems]);
       
     const handleAddToCart = async () => {
-        const newWishItem = { src,name,color,price , quantity};
+        const newWishItem = { src,name,color,price ,quantity};
         setCartItems((prevWishItems) => [...prevWishItems, newWishItem]);
         await localForage.setItem('cartlist', cartItems);
         setShowCart(true)
