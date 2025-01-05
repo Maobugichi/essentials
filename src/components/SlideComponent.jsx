@@ -56,7 +56,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
     },[data])
         
     return(
-        <section className={`w-full lg:mt-9 h-auto min-h-[55vh] mb-10 lg:min-h-[90vh] flex flex-col lg:gap-7 gap-4 justify-center relative ${top}  ${stop}`}>
+        <section className={`w-full lg:mt-9 h-auto min-h-[35vh] bg-yellow-300 mb-10 lg:min-h-[80vh] flex flex-col lg:gap-4 gap-2 justify-center relative ${top}  ${stop}`}>
             <div onClick={handleButtonClickRight} className="bg-white w-[40px] h-[40px] rounded-full shadow-xl absolute left-2 lg:left-8 z-10  top-[45%] grid  place-items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 40 40">
                     <path fill="#000" d="M24.96 32.601L12.371 19.997l.088-.088l12.507-12.52a.66.66 0 0 0-.01-.921a.65.65 0 0 0-.458-.182a.65.65 0 0 0-.465.186l-13.004 13.02a.63.63 0 0 0-.176.49a.66.66 0 0 0 .18.523l13.014 13.031c.244.23.659.233.921-.02a.66.66 0 0 0-.008-.915"></path>
@@ -132,7 +132,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
                 </motion.div>
               
             </div>
-            <div onClick={handleButtonClick} className="bg-white w-[40px] h-[40px] rounded-full shadow-md absolute right-2 lg:right-8 z-10  top-[45%] grid  place-items-center">
+            <div onClick={handleButtonClick} className=" bg-white w-[40px] h-[40px] rounded-full shadow-md absolute right-2 lg:right-8 z-10  top-[45%] grid  place-items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 20 20">
                     <g fill="#000">
                         <path d="M7.116 4.32a.5.5 0 1 1 .768-.64l5 6a.5.5 0 0 1-.768.64z"></path>
@@ -140,20 +140,23 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
                     </g>
                 </svg>
             </div>
-           
-            <div class=" bg-gray-200 grid gap-2  h-1 rounded-full w-1/2 mx-auto">
-                <motion.div 
-                    className="bg-blue-500 h-1 rounded"
-                    style={{scaleX, originX: 0 }}
-                    class="bg-[#333] h-1 rounded ">
+            <div className="flex flex-col ">
+                <div class=" bg-gray-200 grid gap-1  h-1 rounded-full w-1/2 mx-auto">
+                    <motion.div 
+                        className="bg-blue-500 h-1 rounded"
+                        style={{scaleX, originX: 0 }}
+                        class="bg-[#333] h-1 rounded ">
 
-                </motion.div>
-                <button onClick={handleNavigate}>
-                        View All
+                    </motion.div>
+                
+                </div>
+                <button  onClick={handleNavigate}>
+                            View All
                 </button>
             </div>
+            
          
-    </section>
+        </section>
     )
 }
 

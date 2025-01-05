@@ -153,7 +153,7 @@ import skirt17 from "../assets/wsk10.png"
 import skirt18 from "../assets/wsk11.png"
 import skirt19 from "../assets/wsk12.png"
 import localForage from 'localforage';
-const Nav = ({ text,isStuck,setIsStuck , amount , color, iconColor , cartColor,cartText , openNav, setOpenNav , showCart, setShowCart}) => {
+const Nav = ({ text,isStuck,setIsStuck , amount , color, iconColor , cartColor,cartText , openNav, setOpenNav , showCart, setShowCart , caveatColor}) => {
   const [data,setData] = useState([]) 
   const collections = {
   "All":[
@@ -313,24 +313,24 @@ const Nav = ({ text,isStuck,setIsStuck , amount , color, iconColor , cartColor,c
     {name: "Essentials T-Shirt", src: wbag18, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
     ],
     "Bottoms":[
-    {name: "Essentials T-Shirt", src: skirt, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-    {name: "Essentials T-Shirt", src: skirt4, bestSelling: false, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-    {name: "Essentials T-Shirt", src: skirt6, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-    {name: "Essentials T-Shirt", src: skirt2, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-    {name: "Essentials T-Shirt", src: skirt8, bestSelling: false, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-    {name: "Essentials T-Shirt", src: skirt3, bestSelling: false, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-    {name: "Essentials T-Shirt", src: skirt9, bestSelling: false, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-    {name: "Essentials T-Shirt", src: skirt7, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-    {name: "Essentials T-Shirt", src: skirt10, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-    {name: "Essentials T-Shirt", src: skirt11, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-    {name: "Essentials T-Shirt", src: skirt12, bestSelling: false, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-    {name: "Essentials T-Shirt", src: skirt13, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-    {name: "Essentials T-Shirt", src: skirt14, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-    {name: "Essentials T-Shirt", src: skirt15, bestSelling: false, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-    {name: "Essentials T-Shirt", src: skirt16, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-    {name: "Essentials T-Shirt", src: skirt17, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-    {name: "Essentials T-Shirt", src: skirt18, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-    {name: "Essentials T-Shirt", src: skirt19, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
+        {name: "Essentials T-Shirt", src: skirt, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
+        {name: "Essentials T-Shirt", src: skirt4, bestSelling: false, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
+        {name: "Essentials T-Shirt", src: skirt6, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
+        {name: "Essentials T-Shirt", src: skirt2, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
+        {name: "Essentials T-Shirt", src: skirt8, bestSelling: false, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
+        {name: "Essentials T-Shirt", src: skirt3, bestSelling: false, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
+        {name: "Essentials T-Shirt", src: skirt9, bestSelling: false, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
+        {name: "Essentials T-Shirt", src: skirt7, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
+        {name: "Essentials T-Shirt", src: skirt10, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
+        {name: "Essentials T-Shirt", src: skirt11, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
+        {name: "Essentials T-Shirt", src: skirt12, bestSelling: false, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
+        {name: "Essentials T-Shirt", src: skirt13, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
+        {name: "Essentials T-Shirt", src: skirt14, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
+        {name: "Essentials T-Shirt", src: skirt15, bestSelling: false, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
+        {name: "Essentials T-Shirt", src: skirt16, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
+        {name: "Essentials T-Shirt", src: skirt17, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
+        {name: "Essentials T-Shirt", src: skirt18, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
+        {name: "Essentials T-Shirt", src: skirt19, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
     ],
     "Angels Speaks": [essential3, beanie4, beanie, jacket4],
     "Chrome": [jacket4, essential2, bag2, cap2]
@@ -381,6 +381,7 @@ const Nav = ({ text,isStuck,setIsStuck , amount , color, iconColor , cartColor,c
     visible: { opacity: 1, x: 0 },
     hidden: { opacity: 0, x: -100 },
   };
+ 
   return (
     <nav
       id="sticky-element"
@@ -446,7 +447,7 @@ const Nav = ({ text,isStuck,setIsStuck , amount , color, iconColor , cartColor,c
               <div className="flex gap-2 pointer items-center hover:underline">
                 <p className={`text-[${text}]`}>Men</p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 1024 1024">
-                  <path fill={isStuck ? "#000" : "#fff"} d="M8.2 275.4c0-8.6 3.4-17.401 10-24.001c13.2-13.2 34.8-13.2 48 0l451.8 451.8l445.2-445.2c13.2-13.2 34.8-13.2 48 0s13.2 34.8 0 48L542 775.399c-13.2 13.2-34.8 13.2-48 0l-475.8-475.8c-6.8-6.8-10-15.4-10-24.199"></path>
+                  <path fill={caveatColor} d="M8.2 275.4c0-8.6 3.4-17.401 10-24.001c13.2-13.2 34.8-13.2 48 0l451.8 451.8l445.2-445.2c13.2-13.2 34.8-13.2 48 0s13.2 34.8 0 48L542 775.399c-13.2 13.2-34.8 13.2-48 0l-475.8-475.8c-6.8-6.8-10-15.4-10-24.199"></path>
                 </svg>
                
               </div>
@@ -504,7 +505,7 @@ const Nav = ({ text,isStuck,setIsStuck , amount , color, iconColor , cartColor,c
               <div className="flex  gap-2 items-center hover:underline">
                 <p className="">Women</p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 1024 1024">
-                  <path fill={isStuck ? "#000" : "#fff"} d="M8.2 275.4c0-8.6 3.4-17.401 10-24.001c13.2-13.2 34.8-13.2 48 0l451.8 451.8l445.2-445.2c13.2-13.2 34.8-13.2 48 0s13.2 34.8 0 48L542 775.399c-13.2 13.2-34.8 13.2-48 0l-475.8-475.8c-6.8-6.8-10-15.4-10-24.199"></path>
+                  <path fill={caveatColor} d="M8.2 275.4c0-8.6 3.4-17.401 10-24.001c13.2-13.2 34.8-13.2 48 0l451.8 451.8l445.2-445.2c13.2-13.2 34.8-13.2 48 0s13.2 34.8 0 48L542 775.399c-13.2 13.2-34.8 13.2-48 0l-475.8-475.8c-6.8-6.8-10-15.4-10-24.199"></path>
                 </svg>
               </div>
               <motion.ul
@@ -565,7 +566,7 @@ const Nav = ({ text,isStuck,setIsStuck , amount , color, iconColor , cartColor,c
               <div className="flex gap-2 items-center hover:underline">
                 <p className="">Collections</p>
                 <svg  xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 1024 1024">
-                  <path fill={isStuck ? "#000" : "#fff"} d="M8.2 275.4c0-8.6 3.4-17.401 10-24.001c13.2-13.2 34.8-13.2 48 0l451.8 451.8l445.2-445.2c13.2-13.2 34.8-13.2 48 0s13.2 34.8 0 48L542 775.399c-13.2 13.2-34.8 13.2-48 0l-475.8-475.8c-6.8-6.8-10-15.4-10-24.199"></path>
+                  <path fill={caveatColor} d="M8.2 275.4c0-8.6 3.4-17.401 10-24.001c13.2-13.2 34.8-13.2 48 0l451.8 451.8l445.2-445.2c13.2-13.2 34.8-13.2 48 0s13.2 34.8 0 48L542 775.399c-13.2 13.2-34.8 13.2-48 0l-475.8-475.8c-6.8-6.8-10-15.4-10-24.199"></path>
                 </svg>
               </div>
               <motion.ul

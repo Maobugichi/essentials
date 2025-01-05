@@ -34,167 +34,7 @@ const Filter = ({isOpen,setOpen, data, setPage1}) => {
         isRotated2:false,
         isRotated3:false,
         isRotated4:false
-    });
-    
-    const products = [
-        {
-        item:"Trunks",
-        amount:4
-        }
-        ,{
-            item:" Tshirts",
-            amount: 6
-        }
-        ,
-        {
-            item:"Vest",
-            amount: 1 
-        } ,
-        {
-            item: "Black Gold Red",
-            amount: 1
-        }
-        ,
-        {
-            item:"Black Red",
-            amount:1 
-        },
-            {
-        item: "Black White",
-        amount: 3
-        },
-        {
-            item: " Tank Top",
-            amount: 1
-        },
-        {
-            item:"Tank & Bralets",
-            amount:1
-        },
-        {
-            item:" T-Shirts",
-            amount: 42
-        },
-        {
-            item: "T-Shirt",
-            amount:5
-        },
-        {
-            item: "T- Shirts",
-            amount: 2
-        },
-
-        {
-            item: " Sweatshirts",
-            amount: 1
-        },
-
-        {
-            item: "Sweatpants",
-            amount: 9
-        },
-    
-        {
-            item: "Sports wears",
-            amount: 1
-        },
-        {
-            item: "Socks",
-            amount: 6
-        },
-        {
-            item: "Slides",
-            amount: 10
-        },
-        {
-            item: "Short",
-            amount: 1
-        },
-        {
-            item: "Shirts",
-            amount: 4
-        },
-        {
-            item: "Jacket Blue",
-            amount: 1
-        },
-        {
-            item:"Jean Blue",
-            amount: 1
-        },
-        {
-            item:"Multi Black",
-            amount: 1
-        },
-        {
-            item:"Shirts and Pants",
-            amount : 1
-        },
-        {
-            item:"Scarves",
-            amount: 1
-        },
-        {
-        item:"Polos",
-        amount:2
-        },
-        {
-            item:"Pants",
-            amount:1
-        },
-        {
-            item:"Long Sleeve Shirt",
-            amount:1
-        },
-        {
-            item:"Jerseys",
-            amount:4
-        },
-        {
-            item:"Jackets",
-            amount:10
-        },
-        {
-            item:"HOODIE",
-            amount:1
-        },
-        {
-            item:"Glasses",
-            amount:8
-        },
-            {
-                item:"Denim Shorts",
-                amount:2
-            },
-            {
-                item:" Denim",
-                amount:1
-            },
-            {
-                item:"Denim Jackets",
-                amount:1
-            },
-            {
-                item:"Bucket Hats",
-                amount:3
-            },
-            {
-                item:" Belt",
-                amount:1
-            },
-            {
-                item:"Beanies",
-                amount:3
-            },
-            {
-                item:"Bathing Robe",
-            amount:1
-            },
-            {
-            item:"Bags",
-            amount:2
-    }]
-            
+    }); 
     const size = [
         {
         item:"OS",
@@ -352,14 +192,14 @@ const Filter = ({isOpen,setOpen, data, setPage1}) => {
             {
               item:"XXS",
               amount:2
-     }]                 
+    }]                 
     useEffect(() => {
         if (isOpen) {
             document.body.classList.add('overflow-hidden');
         } else {
             document.body.classList.remove('overflow-hidden');
         }
-        }, [isOpen]);
+    }, [isOpen]);
         
        
     function filter(e) {
@@ -411,7 +251,7 @@ const Filter = ({isOpen,setOpen, data, setPage1}) => {
                 animate={{x:-350}}
                 whileInView={{x:0}}
                 exit={{x:-500}}
-                className="lg:h-[95vh] h-[70%]  bg-white lg:w-[36%] w-[95%] mx-auto relative lg:mx-0 lg:left-6 rounded-xl lg:top-[20px] top-[10%] z-50 ">
+                className="lg:h-[95vh] h-[80%] bg-white   lg:w-[36%] w-[95%] mx-auto relative lg:mx-0 lg:left-6 rounded-xl lg:top-[20px] top-[10%] z-50 ">
                     <div className="p-3 h-full flex flex-col gap-3">
                         <div className="flex justify-between w-[90%] mt-5 mx-auto">
                             <p>Filter and sort</p>
@@ -544,6 +384,8 @@ const Filter = ({isOpen,setOpen, data, setPage1}) => {
                                                  number={item.amount}
                                                  data={data}
                                                  setPage1={setPage1}
+                                                 setOpen={setOpen}
+                                                 isOpen={isOpen}
                                                 />
                                             )
                                         })}
@@ -551,50 +393,7 @@ const Filter = ({isOpen,setOpen, data, setPage1}) => {
                                 
                                 </div>
 
-                                <div className="w-[85%]  mx-auto grid gap-3">
-                                    <div  onClick={() => {
-                                        setShow(prev => {
-                                            return {
-                                                ...prev,
-                                                show3:!prev.show3
-                                            }
-                                        })
-                                        setIsRotated(prev => {
-                                            return {
-                                                ...prev,
-                                                isRotated3:!prev.isRotated3
-                                            }
-                                        })
-                                    }} className="flex w-full ml-2 mx-auto justify-between">
-                                        <span className="text-[13px] ">Product type</span>
-                                        <motion.svg
-                                            initial={{ rotate: 0 }}
-                                            animate={isRotated.isRotated3 ? { rotate: 135 } : { rotate: 0 }}
-                                            transition={{ duration: 1 }}
-                                            className="w-5" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24">
-                                                <path fill="currentColor" d="M12 5.5a.5.5 0 0 1 .5.5v5.5H18a.5.5 0 0 1 0 1h-5.5V18a.5.5 0 0 1-1 0v-5.5H6a.5.5 0 0 1 0-1h5.5V6a.5.5 0 0 1 .5-.5"></path>
-                                        </motion.svg>
-                                        
-                                    </div>
-                                    <motion.div
-                                        initial={{opacity:0}}
-                                        whileInView={{opacity:1}}
-                                        exit={{opacity:0}}
-                                        className={show.show3 ? "text-[12px] block" : "text-0 hidden"}
-                                    >
-                                        {
-                                        products.map(product => {
-                                            return(
-                                                <Radio
-                                                name="Product"
-                                                value={product.item}
-                                                number={product.amount}
-                                                />
-                                            )
-                                        })
-                                        }
-                                    </motion.div>
-                                </div>
+                               
 
                                 <div className="w-[85%]  mx-auto grid gap-3">
                                     <div onClick={() => {

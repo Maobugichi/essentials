@@ -219,109 +219,108 @@ const Homepage = () => {
               {name: "Essentials Flux Jersey", src: jerex15, bestSelling: true, price: 160000, date: "2024-11-01", size: ["S", "M", "L", "XL"], onSale: false,color: "white", amount:2, count:1}
     ]
     const skims = [ 
-        {name: "Essentials Polo Shirt", src: skim, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Navy Blue", "Red"], amount: 30, count:1},
-        {name: "Essentials Long Sleeve Shirt", src: skim2, bestSelling: true, price: 40000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 40, count:1},
-        {name: "Essentials Short Sleeve Shirt", src: skim3, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Grey", "Blue"], amount: 20, count:1},
-        {name: "Essentials Button Down Shirt", src: skim4, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
-        {name: "Essentials Button Down Shirt", src: skim5, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
-        {name: "Essentials Button Down Shirt", src: skim6, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
-        {name: "Essentials Flannel Shirt", src: ski, bestSelling: true, price: 42000, date: "2024-09-30", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["Red", "Black"], amount: 50, count:1},
-        {name: "Essentials Dress Shirt", src: ski2, bestSelling: false, price: 38000, date: "2024-08-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["White", "Light Blue"], amount: 30, count:1},
-        {name: "Essentials Thermal Shirt", src: ski3, bestSelling: true, price: 32000, date: "2024-09-15", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Grey"], amount: 40, count:1},
-        {name: "Essentials Raglan Shirt", src: ski4, bestSelling: false, price: 30000, date: "2024-08-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Grey", "Navy Blue"], amount: 25, count:1},
-        {name: "Essentials Crew Neck Shirt", src: ski5, bestSelling: true, price: 28000, date: "2024-09-05", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 45, count:1},
-        {name: "Essentials Crew Neck Shirt", src: ski6, bestSelling: true, price: 28000, date: "2024-09-05", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 45, count:1},
-        {name: "Essentials Thermal Shirt", src: ski11, bestSelling: true, price: 32000, date: "2024-09-15", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Grey"], amount: 40, count:1},
-        {name: "Essentials Raglan Shirt", src: ski8, bestSelling: false, price: 30000, date: "2024-08-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Grey", "Navy Blue"], amount: 25, count:1},
-        {name: "Essentials Crew Neck Shirt", src: ski14, bestSelling: true, price: 28000, date: "2024-09-05", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 45, count:1},
-        {name: "Essentials Crew Neck Shirt", src: ski10, bestSelling: true, price: 28000, date: "2024-09-05", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 45, count:1},
-        {name: "Essentials Raglan Shirt", src: ski12, bestSelling: false, price: 30000, date: "2024-08-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Grey", "Navy Blue"], amount: 25, count:1},
-        {name: "Essentials Crew Neck Shirt", src: ski13, bestSelling: true, price: 28000, date: "2024-09-05", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 45, count:1},
+        {name: "Essentials pound skim", src: skim, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "dark purple", amount: 30, count:1},
+        {name: "Essentials Lightening skim", src: skim2, bestSelling: true, price: 40000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "light blue", amount: 40, count:1},
+        {name: "Essentials rose skim", src: skim3, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "light pink", amount: 20, count:1},
+        {name: "Essentials saphhire skim", src: skim4, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "dark pink", amount: 45, count:1},
+        {name: "Essentials hue skim", src: skim5, bestSelling: true, price: 35000, date: "2024-10-25", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Light brown", amount: 45, count:1},
+        {name: "Essentials body skim", src: skim6, bestSelling: true, price: 35000, date: "2024-01-23", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "dark brown", amount: 45, count:1},
+        {name: "Essentials red crest", src: ski, bestSelling: true, price: 42000, date: "2024-09-30", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Red", amount: 50, count:1},
+        {name: "Essentials diesel", src: ski2, bestSelling: false, price: 38000, date: "2024-08-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Black", amount: 30, count:1},
+        {name: "Essentials snow skim", src: ski3, bestSelling: true, price: 32000, date: "2024-09-15", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Grey", amount: 40, count:1},
+        {name: "Essentials bloods", src: ski4, bestSelling: false, price: 30000, date: "2024-08-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Dark Red", amount: 25, count:1},
+        {name: "Essentials shadows skim", src: ski5, bestSelling: true, price: 28000, date: "2024-09-08", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Smoke Black", amount: 45, count:1},
+        {name: "Essentials Crop Lily", src: ski6, bestSelling: true, price: 28000, date: "2024-10-05", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "vios", amount: 45, count:1},
+        {name: "Essentials Green Skim", src: ski11, bestSelling: true, price: 32000, date: "2024-06-15", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color:"Green", amount: 40, count:1},
+        {name: "Essentials crop Lily", src: ski8, bestSelling: false, price: 30000, date: "2024-08-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Pink", amount: 25, count:1},
+        {name: "Essentials peia crop", src: ski14, bestSelling: true, price: 28000, date: "2024-09-05", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Blue", amount: 45, count:1},
+        {name: "Essentials light skim", src: ski10, bestSelling: true, price: 28000, date: "2024-09-15", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "White", amount: 45, count:1},
+        {name: "Essentials birth", src: ski12, bestSelling: false, price: 30000, date: "2024-08-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Light Pink", amount: 25, count:1},
+        {name: "Essentials rebirth", src: ski13, bestSelling: true, price: 28000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Pink", amount: 45, count:1},
         
     ]
    
    const shirts = [
-        {name: "Essentials T-Shirt", src: shirt, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
+        {name: "Essentials Fearless Tee", src: shirt16, bestSelling: false, price: 42000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Black", amount: 30, count:1},
+        {name: "Essentials Grid", src: shirt17,bestSelling: false, price: 42000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Black", amount: 30, count:1},
+        {name: "Essentials Reckless Tee", src: shirt12, bestSelling: false, price: 26000, date: "2024-08-05", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Cream and Black", amount: 20, count:1},
+        {name: "Essentials BN Tee", src: shirt13, bestSelling: true, price: 38000, date: "2024-09-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black", amount: 50, count:1},
+        {name: "Essentials Legacy Tee", src: shirt14, bestSelling: false, price: 42000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Light Green and Cream", amount: 30, count:1},
+        {name: "Essentials Motive Tee", src: shirt, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
         {name: "Essentials Polo Shirt", src: shirt2, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Navy Blue", "Red"], amount: 30, count:1},
-        {name: "Essentials Long Sleeve Shirt", src: shirt3, bestSelling: true, price: 40000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 40, count:1},
-        {name: "Essentials Short Sleeve Shirt", src: shirt4, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Grey", "Blue"], amount: 20, count:1},
-        {name: "Essentials Button Down Shirt", src: shirt5, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
-        {name: "Essentials Henley Shirt", src: shirt6, bestSelling: false, price: 28000, date: "2024-07-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Grey", "Navy Blue"], amount: 25, count:1},
-        {name: "Essentials Flannel Shirt", src: shirt7, bestSelling: true, price: 42000, date: "2024-09-30", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["Red", "Black"], amount: 50, count:1},
-        {name: "Essentials Dress Shirt", src: shirt8, bestSelling: false, price: 38000, date: "2024-08-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["White", "Light Blue"], amount: 30, count:1},
-        {name: "Essentials Thermal Shirt", src: shirt9, bestSelling: true, price: 32000, date: "2024-09-15", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Grey"], amount: 40, count:1},
-        {name: "Essentials Raglan Shirt", src: shirt10, bestSelling: false, price: 30000, date: "2024-08-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Grey", "Navy Blue"], amount: 25, count:1},
-        {name: "Essentials Crew Neck Shirt", src: shirt11, bestSelling: true, price: 28000, date: "2024-09-05", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 45, count:1},
-        {name: "Essentials V-Neck Shirt", src: shirt12, bestSelling: false, price: 26000, date: "2024-08-05", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Grey", "Blue"], amount: 20, count:1},
-        {name: "Essentials Sweatshirt", src: shirt13, bestSelling: true, price: 38000, date: "2024-09-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Grey"], amount: 50, count:1},
-        {name: "Essentials Hoodie", src: shirt14, bestSelling: false, price: 42000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Black", "Grey"], amount: 30, count:1},
-        {name: "Essentials Fleece Shirt", src: shirt15,bestSelling: false, price: 42000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Black", "Grey"], amount: 30, count:1},
-        {name: "Essentials Hoodie", src: shirt16, bestSelling: false, price: 42000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Black", "Grey"], amount: 30, count:1},
-        {name: "Essentials Fleece Shirt", src: shirt17,bestSelling: false, price: 42000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Black", "Grey"], amount: 30, count:1},
-        {name: "Essentials Hoodie", src: shirt18, bestSelling: false, price: 42000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Black", "Grey"], amount: 30, count:1},
+        {name: "Essentials Virtual Tee", src: shirt3, bestSelling: true, price: 40000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 40, count:1},
+        {name: "Essentials Saint Tee", src: shirt4, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color:  "Black and White", amount: 20, count:1},
+        {name: "Essentials Wrld Tee", src: shirt5, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "White and Blue", amount: 45, count:1},
+        {name: "Essentials Yahweh Tee", src: shirt6, bestSelling: false, price: 28000, date: "2024-07-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "white", amount: 25, count:1},
+        {name: "Essentials HellStar Tee", src: shirt7, bestSelling: true, price: 42000, date: "2024-09-30", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "White and Red", amount: 50, count:1},
+        {name: "Essentials Fearless Tee", src: shirt8, bestSelling: false, price: 38000, date: "2024-08-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "White and Red", amount: 30, count:1},
+        {name: "Essentials IGWT Tee", src: shirt9, bestSelling: true, price: 32000, date: "2024-09-15", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "White and Red", amount: 40, count:1},
+        {name: "Essentials Evil Eye", src: shirt10, bestSelling: false, price: 30000, date: "2024-08-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "White and Red", amount: 25, count:1},
+        {name: "Essentials SNE Tee", src: shirt11, bestSelling: true, price: 28000, date: "2024-09-05", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "White and Black", amount: 45, count:1},
+        {name: "Essentials Fleece Tee", src: shirt15,bestSelling: false, price: 42000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Orange and Black", amount: 30, count:1},
+        {name: "Essentials Maddness Tee", src: shirt18, bestSelling: false, price: 42000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Cream", amount: 30, count:1},
    ]
     const jackets = [ 
-        {name: "Essentials T-Shirt", src:jacket, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-        {name: "Essentials Polo Shirt", src: jacket2, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Navy Blue", "Red"], amount: 30, count:1},
-        {name: "Essentials Short Sleeve Shirt", src: jacket3, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Grey", "Blue"], amount: 20, count:1},
-        {name: "Essentials Button Down Shirt", src: jacket4, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
-        {name: "Essentials Button Down Shirt", src: jacket5, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
-        {name: "Essentials Button Down Shirt", src: jacket6, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
-        {name: "Essentials T-Shirt", src:jacket7, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-        {name: "Essentials Polo Shirt", src: jacket8, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Navy Blue", "Red"], amount: 30, count:1},
-        {name: "Essentials Short Sleeve Shirt", src: jacket9, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Grey", "Blue"], amount: 20, count:1},
-        {name: "Essentials Button Down Shirt", src: jacket10, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
-        {name: "Essentials Button Down Shirt", src: jacket11, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
-        {name: "Essentials Button Down Shirt", src: jacket12, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
-        {name: "Essentials T-Shirt", src:jacket13, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-        {name: "Essentials Polo Shirt", src: jacket14, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Navy Blue", "Red"], amount: 30, count:1},
-        {name: "Essentials Short Sleeve Shirt", src: jacket15, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Grey", "Blue"], amount: 20, count:1},
-        {name: "Essentials Short Sleeve Shirt", src: jacket15, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Grey", "Blue"], amount: 20, count:1},
-        {name: "Essentials Button Down Shirt", src: jacket16, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
-        {name: "Essentials Button Down Shirt", src: jacket17, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
-        {name: "Essentials Button Down Shirt", src: jacket18, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
+        {name: "Essentials Blackard", src:jacket, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Brown and Cream", amount: 50, count:1},
+        {name: "Essentials Skel", src: jacket2, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Black and Red", amount: 30, count:1},
+        {name: "Essentials V half", src: jacket3, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Brown and Cream", amount: 20, count:1},
+        {name: "Essentials PRC", src: jacket4, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Brown", amount: 45, count:1},
+        {name: "Essentials Pattern", src: jacket5, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Grey and White", amount: 45, count:1},
+        {name: "Essentials Escape", src: jacket6, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black", amount: 45, count:1},
+        {name: "Essentials Bowine", src:jacket7, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color:"Black", amount: 50, count:1},
+        {name: "Essentials AMRT", src: jacket8, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Green and Black", amount: 30, count:1},
+        {name: "Essentials WorldWide", src: jacket9, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Black", amount: 20, count:1},
+        {name: "Essentials Starsigns", src: jacket10, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black and Light Blue", amount: 45, count:1},
+        {name: "Essentials Spiderverse", src: jacket11, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black and Red", amount: 45, count:1},
+        {name: "Essentials Wutang", src: jacket12, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black and Pink", amount: 45, count:1},
+        {name: "Essentials Supremes", src:jacket13, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Blue", amount: 50, count:1},
+        {name: "Essentials PlainJs", src: jacket14, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Blue", amount: 30, count:1},
+        {name: "Essentials MeToYou", src: jacket15, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Light Blue with black paterns", amount: 20, count:1},
+        {name: "Camoflague Jacket", src: jacket16, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Camo", amount: 45, count:1},
+        {name: "Essentials Northface Jacket", src: jacket17, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Red and black with white patterns", amount: 45, count:1},
+       
     ]
 
    const jorts = [
-       {name: "Essentials Jeans", src: pant, bestSelling: true, price: 50000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["Blue", "Black"], amount: 50, count:1},
-       {name: "Essentials Trousers", src: pant2, bestSelling: false, price: 60000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Grey", "Navy Blue"], amount: 30, count:1},
-       {name: "Essentials Sweatpants", src: pant3, bestSelling: true, price: 40000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Grey"], amount: 40, count:1},
-       {name: "Essentials Joggers", src: pant4, bestSelling: false, price: 55000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Black", "Grey"], amount: 25, count:1},
-       {name: "Essentials Chinos", src: pant5, bestSelling: true, price: 65000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["Beige", "Navy Blue"], amount: 45, count:1},
-       {name: "Essentials Corduroy Pants", src: pant6, bestSelling: false, price: 70000, date: "2024-09-05", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: ["Brown", "Green"], amount: 30, count:1},
-       {name: "Essentials Cargo Pants", src: pant7, bestSelling: true, price: 60000, date: "2024-09-15", size: ["Small", "Medium", "Large"], onSale: false, material: "Polyester", color: ["Black", "Grey"], amount: 40, count:1},
-       {name: "Essentials Drawstring Pants", src: pant8, bestSelling: false, price: 45000, date: "2024-08-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: ["White", "Grey"], amount: 25, count:1},
-       {name: "Essentials Zipper Pants", src: pant9, bestSelling: true, price: 55000, date: "2024-09-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Polyester", color: ["Black", "Navy Blue"], amount: 45, count:1},
-       {name: "Essentials Hiking Pants", src: pant10, bestSelling: false, price: 70000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: ["Brown", "Green"], amount: 30, count:1},
-       {name: "Essentials Snow Pants", src: pant11, bestSelling: true, price: 80000, date: "2024-10-01", size: ["Small", "Medium", "Large"], onSale: false, material: "Polyester", color: ["Black", "White"], amount: 40, count:1},
-       {name: "Essentials Water Pants", src: pant12, bestSelling: false, price: 60000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: ["Blue", "Red"], amount: 25, count:1},
-       {name: "Essentials Yoga Pants", src: pant13, bestSelling: true, price: 50000, date: "2024-09-15", size: ["Small", "Medium", "Large"], onSale: false, material: "Polyester", color: ["Black", "Grey"], amount: 45, count:1},
-       {name: "Essentials Leggings", src: pant14, bestSelling: false, price: 40000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: ["Black", "Grey"], amount: 45, count:1},
-       {name: "Essentials Leggings", src: pant15, bestSelling: false, price: 40000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: ["Black", "Grey"], amount: 45, count:1},
-       {name: "Essentials Leggings", src: pant16, bestSelling: false, price: 40000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: ["Black", "Grey"], amount: 45, count:1},
-       {name: "Essentials Leggings", src: pant17, bestSelling: false, price: 40000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: ["Black", "Grey"], amount: 45, count:1},
-       {name: "Essentials Leggings", src: pant18, bestSelling: false, price: 40000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: ["Black", "Grey"], amount: 45, count:1},
+       {name: "Essentials Plain Jean", src: pant, bestSelling: true, price: 50000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color:  "Black", amount: 50, count:1},
+       {name: "Essentials Plain Jean", src: pant2, bestSelling: false, price: 60000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Black", amount: 30, count:1},
+       {name: "Essentials StarBoy Shorts", src: pant3, bestSelling: true, price: 40000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black", amount: 40, count:1},
+       {name: "Essentials Bottegrri Shorts", src: pant4, bestSelling: false, price: 55000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Black and Grey", amount: 25, count:1},
+       {name: "Essentials Palms Shorts", src: pant5, bestSelling: true, price: 65000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black", amount: 45, count:1},
+       {name: "Essentials Sismus Shorts", src: pant6, bestSelling: false, price: 70000, date: "2024-09-05", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: "Black", amount: 30, count:1},
+       {name: "Essentials Wildin Shorts", src: pant7, bestSelling: true, price: 60000, date: "2024-09-15", size: ["Small", "Medium", "Large"], onSale: false, material: "Polyester", color: "Black", amount: 40, count:1},
+       {name: "Essentials Plain Jean", src: pant8, bestSelling: false, price: 45000, date: "2024-08-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: "Black", amount: 25, count:1},
+       {name: "Essentials Plain Jean", src: pant9, bestSelling: true, price: 55000, date: "2024-09-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Polyester", color: "Black", amount: 45, count:1},
+       {name: "Essentials Plain Blues Jean", src: pant10, bestSelling: false, price: 70000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: "Blue", amount: 30, count:1},
+       {name: "Essentials Skel Jean", src: pant11, bestSelling: true, price: 80000, date: "2024-10-01", size: ["Small", "Medium", "Large"], onSale: false, material: "Polyester", color: "Black", amount: 40, count:1},
+       {name: "Essentials Spade Jean", src: pant12, bestSelling: false, price: 60000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: "Black", amount: 25, count:1},
+       {name: "Essentials SWagged Jean", src: pant13, bestSelling: true, price: 50000, date: "2024-09-15", size: ["Small", "Medium", "Large"], onSale: false, material: "Polyester", color: "Black", amount: 45, count:1},
+       {name: "Essentials Washed Jean", src: pant14, bestSelling: false, price: 40000, date: "2024-08-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: "Washed Blue", amount: 45, count:1},
+       {name: "Essentials Astro Jean", src: pant15, bestSelling: false, price: 40000, date: "2024-06-20", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: "Black", amount: 45, count:1},
+       {name: "Essentials STears", src: pant16, bestSelling: false, price: 40000, date: "2024-10-20", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: "Black", amount: 45, count:1},
+       {name: "Essentials Plain Black Jean", src: pant17, bestSelling: false, price: 40000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: "Black", amount: 45, count:1},
+       {name: "Essentials Plain Ash Jean", src: pant18, bestSelling: false, price: 40000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: "Grey", amount: 45, count:1},
     ]
 
     const slide = [ 
-        {name: "Essentials T-Shirt", src:slides, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-        {name: "Essentials Polo Shirt", src: slides2, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Navy Blue", "Red"], amount: 30, count:1},
-        {name: "Essentials Short Sleeve Shirt", src: slides3, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Grey", "Blue"], amount: 20, count:1},
-        {name: "Essentials Button Down Shirt", src: slides4, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
-        {name: "Essentials Button Down Shirt", src: slides5, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
-        {name: "Essentials Button Down Shirt", src: slides6, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
-        {name: "Essentials T-Shirt", src:slidd, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-        {name: "Essentials Polo Shirt", src: slidd2, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Navy Blue", "Red"], amount: 30, count:1},
-        {name: "Essentials Short Sleeve Shirt", src: slidd3, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Grey", "Blue"], amount: 20, count:1},
-        {name: "Essentials Button Down Shirt", src: slidd4, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
-        {name: "Essentials Button Down Shirt", src: slidd5, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
-        {name: "Essentials Button Down Shirt", src: slidd6, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
-        {name: "Essentials T-Shirt", src:slidd7, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
-        {name: "Essentials Polo Shirt", src: slidd8, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Navy Blue", "Red"], amount: 30, count:1},
-        {name: "Essentials Short Sleeve Shirt", src: slidd9, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: ["Grey", "Blue"], amount: 20, count:1},
-        {name: "Essentials Button Down Shirt", src: slidd10, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
-        {name: "Essentials Button Down Shirt", src: slidd11, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
-        {name: "Essentials Button Down Shirt", src: slidd12, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
+        {name: "Essentials WorldWide Slide", src:slides, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Cream", amount: 50, count:1},
+        {name: "Essentials Yeezy Slide", src: slides2, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Smoke", amount: 30, count:1},
+        {name: "Essentials Yeezy Slide", src: slides3, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Light Green", amount: 20, count:1},
+        {name: "Essentials Yeezy Slide", src: slides4, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black", amount: 45, count:1},
+        {name: "Essentials Yeezy Slide", src: slides5, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Cream", amount: 45, count:1},
+        {name: "Essentials Yeezy Slide", src: slides6, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black", amount: 45, count:1},
+        {name: "Essentials 0 Fucks Slide", src:slidd, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black", amount: 50, count:1},
+        {name: "Essentials Puma Slide", src: slidd2, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Black", amount: 30, count:1},
+        {name: "Essentials Swivle Slide", src: slidd3, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Black", amount: 20, count:1},
+        {name: "Essentials Full Cloth Slide", src: slidd4, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Light Green", amount: 45, count:1},
+        {name: "Essentials Full Cover Birkin", src: slidd5, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Smoke", amount: 45, count:1},
+        {name: "Essentials FTP Slide", src: slidd6, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black", amount: 45, count:1},
+        {name: "Essentials Cat Eyes Slide", src:slidd7, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "White", amount: 50, count:1},
+        {name: "Essentials Belong Slide", src: slidd8, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "White", amount: 30, count:1},
+        {name: "Essentials Comfort Slide", src: slidd9, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Green", amount: 20, count:1},
+        {name: "Essentials PalmSprings Slide", src: slidd10, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black", amount: 45, count:1},
+        {name: "Essentials SeeMe? Slide", src: slidd11, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black with White Patterns", amount: 45, count:1},
+        {name: "Essentials WorldMap", src: slidd12, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Green", amount: 45, count:1},
     ]
     const content = [
         {
@@ -355,6 +354,7 @@ const Homepage = () => {
              text= "white"
              color="bg-transparent"
              iconColor={isStuck ? "#000" : "#fff"}
+             caveatColor={isStuck ? "#000" : "#fff"}
              cartColor={isStuck ? "bg-black" : "bg-white"}
              cartText={isStuck ? "text-white" : "text-black"}
              openNav={openNav}
@@ -393,7 +393,7 @@ const Homepage = () => {
              stop="top-[-180px]"
              width="lg:w-[280px]"
              height="lg:h-[400px]"
-             imgHeight="lg:h-[360px]"
+             imgHeight="lg:h-[330px]"
              imgWidth="w-[95%]"
              swidth="w-[210px]"
              sheight="h-[250px]"
@@ -407,12 +407,13 @@ const Homepage = () => {
             />
 
             <SlideComponent
-             top="top-[-200px]"
+             top="lg:top-[-200px]"
+              stop="top-[-160px]"
              essentials={skims}
              simgHeight="h-[200px]"
              width="lg:w-[280px]"
              height="lg:h-[400px]"
-             imgHeight="lg:h-[350px]"
+             imgHeight="lg:h-[330px]"
              imgWidth="w-full"
              swidth="w-[210px]"
              sheight="h-[250px]"
@@ -420,7 +421,8 @@ const Homepage = () => {
 
             <SlideComponent
              essentials={shirts}
-             top="top-[-230px]"
+             top="lg:top-[-230px]"
+             stop="top-[-170px]"
              simgHeight="h-[200px]"
              width="lg:w-[280px]"
              height="lg:h-[400px]"
@@ -437,11 +439,12 @@ const Homepage = () => {
 
             <SlideComponent
              essentials={jackets}
-             top="top-[-200px]"
+             top="lg:top-[-200px]"
+              stop="top-[-175px]"
              simgHeight="h-[200px]"
              width="lg:w-[280px]"
              height="lg:h-[400px]"
-             imgHeight="lg:h-[330px]"
+             imgHeight="lg:h-[320px]"
              imgWidth="w-[95%]"
              swidth="w-[210px]"
              sheight="h-[250px]"
@@ -453,24 +456,25 @@ const Homepage = () => {
 
             <SlideComponent
              essentials={jorts}
-             top="top-[-200px]"
+             top="lg:top-[-200px]"
+             stop="top-[-100px]"
              simgHeight="h-[200px]"
              width="lg:w-[280px]"
              height="lg:h-[400px]"
-             imgHeight="lg:h-[330px]"
+             imgHeight="lg:h-[310px]"
              imgWidth="w-[95%]"
              swidth="w-[210px]"
              sheight="h-[250px]"
             />
-             <section className="relative top-[-180px] lg:h-[80vh] h-[200vh]">
+             <section className="relative lg:top-[-180px] lg:min-h-[50vh]  h-auto min-h-[100vh]">
               <div className="flex lg:flex-row flex-col w-[95%] mx-auto items-center gap-5">
-              {exhibits.map(item => {
-                return(
-                    <NewLook
-                     src={item}
-                    />
-                )
-              })}
+                    {exhibits.map(item => {
+                        return(
+                            <NewLook
+                            src={item}
+                            />
+                        )
+                    })}
               
               </div>
              
@@ -478,9 +482,9 @@ const Homepage = () => {
 
              <SlideComponent
               essentials={slide}
-              top="lg:top-[-230px]"
+              top="lg:top-[-170px]"
               simgHeight="h-[200px]"
-              stop="top-[-15px]"
+              stop="top-[15px]"
               width="lg:w-[280px]"
               height="lg:h-[400px]"
               imgHeight="lg:h-[330px]"

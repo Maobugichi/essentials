@@ -12,7 +12,7 @@ const Essentials = () => {
     const [isOpen,setOpen] = useState(false); 
     const [page,setPage] = useState(1); 
     const [pages1,setPage1] = useState([]); 
-    const [isStuck, setIsStuck] = useState(false);
+    const [isStuck, setIsStuck] = useState(true);
     const [openNav,setOpenNav] = useState(false);
     const [showCart,setShowCart] =useState(false);
     function open() {
