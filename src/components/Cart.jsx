@@ -49,7 +49,7 @@ const Cart = ({setQuantity,cartItems,setCartItems,showCart,setShowCart}) => {
             } 
         };
             loadWishlist();
-    }, []);
+    }, [cartItems]);
 
     
     const handleRemoveItem = async (e) => {
@@ -89,7 +89,6 @@ const Cart = ({setQuantity,cartItems,setCartItems,showCart,setShowCart}) => {
                                           price={item.price}
                                           quantity={item.quantity}
                                           setQuantity={setQuantity}
-                                          
                                           handleRemoveItem={handleRemoveItem}
                                         />
                                     )

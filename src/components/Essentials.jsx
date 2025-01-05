@@ -20,9 +20,10 @@ const Essentials = () => {
     function open() {
       setOpen(true)
     } 
+    const data = location.state.data
     useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [location,page]);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [data,page]);
   
     function nextPage() {
       if (page < 3) {
@@ -36,9 +37,6 @@ const Essentials = () => {
       }
   
     }
-   
-    const data = location.state.data
-
     useEffect(() => {
       setPage1(data)
     },[data])
