@@ -15,7 +15,7 @@ const ExtraSection = () => {
     const [quantity,setQuantity] = useState(count)
     const [pop , setShowPop] = useState(false)
     const [openNav,setOpenNav] = useState(false);
-   
+    const [cartItems, setCartItems] = useState([])
    
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -33,8 +33,8 @@ const ExtraSection = () => {
           />
 
           <SideNav
-          openNav={openNav}
-          setOpenNav={setOpenNav}
+           openNav={openNav}
+           setOpenNav={setOpenNav}
           />
          <Cart
            showCart={showCart}
@@ -45,6 +45,8 @@ const ExtraSection = () => {
            name={name}
            color={color}
            price={price}
+           cartItems={cartItems}
+           setCartItems={setCartItems}
           />
           <Header
            cartColor="bg-black"
@@ -70,7 +72,8 @@ const ExtraSection = () => {
            pop={pop}
            setShowPop={setShowPop}
            essentials={essentials}
-           
+           cartItems={cartItems}
+           setCartItems={setCartItems}
           />
           
           <SlideComponent

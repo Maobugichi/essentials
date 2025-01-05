@@ -466,7 +466,7 @@ const Homepage = () => {
              swidth="w-[210px]"
              sheight="h-[250px]"
             />
-             <section className="relative lg:top-[-180px] lg:min-h-[50vh]  h-auto min-h-[100vh]">
+             <section className="relative lg:top-[-180px] top-[-70px] lg:min-h-[50vh]  h-auto min-h-[100vh]">
               <div className="flex lg:flex-row flex-col w-[95%] mx-auto items-center gap-5">
                     {exhibits.map(item => {
                         return(

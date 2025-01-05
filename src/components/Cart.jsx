@@ -5,10 +5,9 @@ import QuickShopSection from "./QuickShopSection";
 import localForage from 'localforage';
 import CartItem from "./CartItem";
 
-const Cart = ({setQuantity,src,name,color,price,showCart,setShowCart}) => {
+const Cart = ({setQuantity,cartItems,setCartItems,showCart,setShowCart}) => {
     const [show,setShow] = useState(false)
     const [isRotated, setIsRotated] = useState(false);
-    const [cartItems, setCartItems] = useState([])
     const [animateX,setAnimateX] = useState()
     const handleShow1 = () => {
         setShow(!show);
@@ -40,17 +39,17 @@ const Cart = ({setQuantity,src,name,color,price,showCart,setShowCart}) => {
         } else {
             document.body.classList.remove('overflow-hidden');
         }
-        }, [showCart]);
+    }, [showCart]);
         
     useEffect(() => {
         const loadWishlist = async () => {
             const storedWishlist = await localForage.getItem('cartlist');
             if (storedWishlist) {
-                setCartItems(storedWishlist);
+             //setCartItems(storedWishlist); 
             } 
         };
             loadWishlist();
-    }, [cartItems]);
+    }, []);
 
     
     const handleRemoveItem = async (e) => {

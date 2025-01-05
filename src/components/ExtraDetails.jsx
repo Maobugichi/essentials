@@ -4,12 +4,11 @@ import { motion } from "motion/react";
 import { AnimatePresence } from "motion/react";
 import Quantity from "./Quantity";
 import localForage from 'localforage';
-const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,price,essentials,pop,setShowPop}) => {
+const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,price,essentials,pop,setShowPop,setCartItems,cartItems}) => {
     const [show,setShow] = useState(false)
     const [show2, setShow2] = useState(false);
     const [isRotated, setIsRotated] = useState(false);
     const [isRotated2, setIsRotated2] = useState(false);
-    const [cartItems, setCartItems] = useState([])
     localForage.config({
           driver: localForage.INDEXEDDB,
           name: 'myApp', 
@@ -47,7 +46,7 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
         setCartItems((prevWishItems) => [...prevWishItems, newWishItem]);
         await localForage.setItem('cartlist', cartItems);
         setShowCart(true)
-      };
+    };
       
      
     return(

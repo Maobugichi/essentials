@@ -15,12 +15,13 @@ const Essentials = () => {
     const [isStuck, setIsStuck] = useState(true);
     const [openNav,setOpenNav] = useState(false);
     const [showCart,setShowCart] =useState(false);
+    const location = useLocation();
     function open() {
       setOpen(true)
     } 
     useEffect(() => {
       window.scrollTo(0, 0);
-    }, [page]);
+    }, [location,page]);
   
     function nextPage() {
       if (page < 3) {
@@ -34,7 +35,7 @@ const Essentials = () => {
       }
   
     }
-    const location = useLocation()
+   
     const data = location.state.data
 
     useEffect(() => {

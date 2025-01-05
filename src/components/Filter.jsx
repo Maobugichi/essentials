@@ -251,7 +251,7 @@ const Filter = ({isOpen,setOpen, data, setPage1}) => {
                 animate={{x:-350}}
                 whileInView={{x:0}}
                 exit={{x:-500}}
-                className="lg:h-[95vh] h-[80%] bg-white   lg:w-[36%] w-[95%] mx-auto relative lg:mx-0 lg:left-6 rounded-xl lg:top-[20px] top-[10%] z-50 ">
+                className="lg:h-[95vh] h-full bg-white   lg:w-[36%] w-[95%] mx-auto relative lg:mx-0 lg:left-6 rounded-xl lg:top-[20px] top-[10%] z-50 ">
                     <div className="p-3 h-full flex flex-col gap-3">
                         <div className="flex justify-between w-[90%] mt-5 mx-auto">
                             <p>Filter and sort</p>
