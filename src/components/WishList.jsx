@@ -5,12 +5,15 @@ import Footer from "./Footer";
 import WishItem from "./WishItem";
 import { useLocation } from "react-router-dom";
 import localForage from 'localforage';
-import { useState , useEffect } from "react";
+import { useState , useEffect } from "react"
+import SideNav from "./SideNav";
 
 const WishList = () => {
     const location = useLocation();
     const [updatedWishlist, setUpdatedWishlist] = useState([]);
-    const {user, isAuthenticated} = useAuth0()
+    const {user, isAuthenticated} = useAuth0();
+    const [openNav,setOpenNav] = useState(false);
+    const [showCart,setShowCart] =useState(false);
     localForage.config({
       driver: localForage.INDEXEDDB,
       name: 'myApp',
@@ -38,9 +41,23 @@ const WishList = () => {
 
     };
     return(
-        <div>
-          <Header/>
-           <section>
+        <div >
+          <SideNav
+            openNav={openNav}
+            setOpenNav={setOpenNav}
+           />
+          <Header
+           text= "black"
+           color="bg-[#f7f7f7]"
+           iconColor="#000"
+           cartColor="bg-black"
+           cartText="text-white"
+           openNav={openNav}
+           setOpenNav={setOpenNav}
+           setShowCart={setShowCart}
+           showCart={showCart}
+           />
+           <section className=" relative lg:top-[-60px] top-5">
             <h3 className="text-center text-2xl">WishList</h3>
             <div className=" flex mt-5 h-12 lg:w-1/2 w-[90%] mx-auto justify-between items-center">
                 <h4 className="text-xl ">My Wishlist</h4>
@@ -60,7 +77,7 @@ const WishList = () => {
                 </button>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-8  h-auto min-h-[20vh]  lg:w-[60%]  w-[90%] mx-auto">
+            <div className="flex flex-wrap  justify-center gap-8  h-auto min-h-[20vh]  lg:w-[60%]  w-[90%] mx-auto">
            
               {
                 updatedWishlist.map(item => {
@@ -77,7 +94,9 @@ const WishList = () => {
               }
            </div>
            </section>
-           <NewsLetterComponent/>
+           <NewsLetterComponent
+           
+           />
            <Footer/>
         </div>
     )

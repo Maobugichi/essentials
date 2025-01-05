@@ -3,7 +3,7 @@ import { useEffect,useState } from "react";
 import Radio from "./Radio";
 import cancel from "../assets/cancel.svg"
 import { AnimatePresence, motion } from "framer-motion";
-const Filter = ({isOpen,setOpen, data, setPage1}) => {
+const Filter = ({isOpen,setOpen, data, setPage1,setPage}) => {
     const [minValue, setMinValue] = useState(0);
     const [maxValue, setMaxValue] = useState(1000);
     const [animateX,setAnimateX] = useState()
@@ -236,6 +236,7 @@ const Filter = ({isOpen,setOpen, data, setPage1}) => {
        
       setPage1(newPage)
       setOpen(false)
+      setPage(1)
     }
 
     

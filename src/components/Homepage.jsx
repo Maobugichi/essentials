@@ -375,7 +375,7 @@ const Homepage = () => {
             openNav={openNav}
             setOpenNav={setOpenNav}
            />
-            <section className={`lg:h-[120vh] relative lg:top-[-262px] h-[80vh] top-[-170px] flex w-full items-end`} 
+            <section className={`lg:h-[120vh] relative lg:top-[-262px] h-[80vh] top-[-200px] flex w-full items-end`} 
                 style={{
                     height: "100vh",
                     backgroundImage: `url(${hero})`,

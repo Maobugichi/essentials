@@ -73,7 +73,7 @@ const Cart = ({setQuantity,src,name,color,price,showCart,setShowCart}) => {
                 animate={{x:350}}
                 whileInView={{x:animateX.x}}
                 exit={{x:-500}}
-                className="lg:h-[95vh] h-[65%] bg-white lg:w-[36%] w-[95%] absolute  rounded-xl lg:top-[10px] top-[10%] z-[2500px] ">
+                className="lg:h-[95vh] h-[70%] bg-white lg:w-[36%] w-[95%] absolute  rounded-xl lg:top-[10px] top-[10%] z-[2500px] ">
                     <div className=" h-full flex flex-col relative z-[2000px]  gap-3">
                         <div className="flex justify-between w-[90%] mt-5 mx-auto ">
                             <p className="text-xl">Shopping Cart</p>

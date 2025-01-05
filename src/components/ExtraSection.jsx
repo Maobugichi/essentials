@@ -18,10 +18,10 @@ const ExtraSection = () => {
     const [cartItems, setCartItems] = useState([])
    
     useEffect(() => {
-        window.scrollTo(0, 0);
-      }, [location]);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, [essentials,name,src]);
     return(
-        <div>
+        <div className="h-auto">
          <PopUp
           pop={pop}
           setShowPop={setShowPop}

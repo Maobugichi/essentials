@@ -48,6 +48,7 @@ const Essentials = () => {
            setOpen={setOpen}
            data={data}
            setPage1={setPage1}
+           setPage={setPage}
           />
 
           <Cart
