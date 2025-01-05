@@ -17,7 +17,7 @@ const domain = import.meta.env.VITE_AUTH0_DOMAIN?.trim();
 const clientId = import.meta.env.VITE_AUTH0_CLIENT_ID?.trim();
 const router = createBrowserRouter([
   {
-    path: "/essentials/",
+    path: "/essentials",
     element: <Homepage/>,
   },
   {
@@ -49,7 +49,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       redirect_uri:redirectUri
      }}
     >
-    <RouterProvider router={router} />
+    <RouterProvider router={router} basename="/essentials"/>
     </Auth0Provider>
    
   </React.StrictMode>

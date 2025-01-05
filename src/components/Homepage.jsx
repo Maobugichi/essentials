@@ -156,6 +156,7 @@ const Homepage = () => {
     const [isStuck, setIsStuck] = useState(false);
     const [openNav,setOpenNav] = useState(false);
     const [showCart,setShowCart] =useState(false);
+    const [cartItems, setCartItems] = useState([])
     const mens = [
         {name: "Essentials Button Down Shirt", src: jacket16, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
         {name: "Essentials Button Down Shirt", src: jacket17, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
@@ -365,7 +366,10 @@ const Homepage = () => {
 
           <Cart
            showCart={showCart}
-           setShowCart={setShowCart}/>
+           setShowCart={setShowCart}
+           cartItems={cartItems}
+           setCartItems={setCartItems}
+           />
 
            <SideNav
             openNav={openNav}

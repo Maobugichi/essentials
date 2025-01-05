@@ -15,6 +15,7 @@ const Essentials = () => {
     const [isStuck, setIsStuck] = useState(true);
     const [openNav,setOpenNav] = useState(false);
     const [showCart,setShowCart] =useState(false);
+    const [cartItems, setCartItems] = useState([]);
     const location = useLocation();
     function open() {
       setOpen(true)
@@ -53,7 +54,10 @@ const Essentials = () => {
 
           <Cart
            showCart={showCart}
-           setShowCart={setShowCart}/>
+           setShowCart={setShowCart}
+           cartItems={cartItems}
+           setCartItems={setCartItems}
+           />
 
            <SideNav
             openNav={openNav}

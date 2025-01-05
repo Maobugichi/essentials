@@ -45,7 +45,7 @@ const Cart = ({setQuantity,cartItems,setCartItems,showCart,setShowCart}) => {
         const loadWishlist = async () => {
             const storedWishlist = await localForage.getItem('cartlist');
             if (storedWishlist) {
-             //setCartItems(storedWishlist); 
+             setCartItems(storedWishlist); 
             } 
         };
             loadWishlist();
