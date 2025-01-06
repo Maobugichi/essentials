@@ -41,6 +41,7 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
     }, [cartItems]);
       
     const handleAddToCart = async () => {
+        console.log("hello")
         const newWishItem = { src,name,color,price ,quantity};
         const storedWishlist = await localForage.getItem('cartlist');
         if (storedWishlist) {
@@ -53,6 +54,7 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
     };
 
     const checkWishList = async () => {
+        console.log("hello")
         const newWishItem = { src,name,color,price ,quantity};
         const storedWishList = await localForage.getItem('wishlist');
         if (storedWishList) {
@@ -60,7 +62,6 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
             console.log(heckIt)
             heckIt ? null : setShowPop(true)
         }
-
     }
       
      
