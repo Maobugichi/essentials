@@ -28,9 +28,9 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
    
     useEffect(() => {
         const loadWishlist = async () => {
-            const storedWishlist = await localForage.getItem('cartlist');
-            if (storedWishlist) {
-              setCartItems(storedWishlist);
+            const storedCartlist = await localForage.getItem('cartlist');
+            if (storedCartlist) {
+              setCartItems(storedCartlist);
             } 
           };
           loadWishlist();
@@ -40,8 +40,6 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
     if (cartItems.length > 0) {
         localForage.setItem('cartlist', cartItems);
     }
-
-    console.log(cartItems)
     }, [cartItems]);
 
    
@@ -51,14 +49,11 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
         if (storedCartlist) {
             const heckIt = storedCartlist.some(item => item.src === newCartItem.src);
             console.log(storedCartlist)
-            if (!heckIt) {
-                setCartItems((prevWishItems) => [...prevWishItems, newCartItem]);
-                setShowCart(true) 
-            }
+            heckIt ? null : setCartItems((prevWishItems) => [...prevWishItems, newCartItem]);
+            heckIt ? null :  setShowCart(true) 
+         }
           await localForage.setItem('cartlist', cartItems);
-        } else {
-            console.log("hello")
-        }
+        
     };
 
    /* const checkWishList = async () => {
@@ -75,7 +70,7 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
       
      
     return(
-    <section className="h-auto  min-h-[130vh] bg-red-300 w-[95%] mx-auto">
+    <section className="h-auto  min-h-[130vh] bg-yellow-300 w-[95%] mx-auto">
             <div className="h-full  flex lg:flex-row flex-col w-full gap-4 justify-center">
                 <div className="w-[80px]   h-[30%]  lg:flex lg:flex-col lg:gap-2 hidden">
                     <div className="rounded-md h-1/2 border border-black grid place-content-center">
