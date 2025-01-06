@@ -44,7 +44,6 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
       
       
     const handleAddToCart = async () => {
-        console.log("hello")
         const newWishItem = { src,name,color,price ,quantity};
         const storedWishlist = await localForage.getItem('cartlist');
         if (storedWishlist) {
@@ -54,16 +53,17 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
                 setCartItems((prevWishItems) => [...prevWishItems, newWishItem]);
                 setShowCart(true) 
             }
-        //await localForage.setItem('cartlist', cartItems);
+          await localForage.setItem('cartlist', cartItems);
         }
-        
-       
     };
 
     const checkWishList = async () => {
         console.log("hello")
-        const newWishItem = { src,name,color,price ,quantity};
+        const newWishItem = {src,name,color,price ,quantity};
+        setShowPop(true)
+
         const storedWishList = await localForage.getItem('wishlist');
+        console.log(storedWishList)
         if (storedWishList) {
             const heckIt = storedWishList.some(item => item.src === newWishItem.src);
             console.log(heckIt)
@@ -73,7 +73,7 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
       
      
     return(
-    <section className="h-auto  min-h-[130vh] bg-red-300 w-[95%] mx-auto">
+    <section className="h-auto  min-h-[130vh] bg-purple-300 w-[95%] mx-auto">
             <div className="h-full  flex lg:flex-row flex-col w-full gap-4 justify-center">
                 <div className="w-[80px]   h-[30%]  lg:flex lg:flex-col lg:gap-2 hidden">
                     <div className="rounded-md h-1/2 border border-black grid place-content-center">
