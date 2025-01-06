@@ -10,7 +10,6 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
     const [isRotated, setIsRotated] = useState(false);
     const [isRotated2, setIsRotated2] = useState(false);
     const [cartItems, setCartItems] = useState([])
-    const [isAdded,setIsAdded] = useState(true)
     localForage.config({
           driver: localForage.INDEXEDDB,
           name: 'myApp', 
@@ -41,40 +40,40 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
     }
     }, [cartItems]);
 
-    useEffect(() => {
-        const newWishItem = { src,name,color,price ,quantity};
-        if (!isAdded) {
-            setCartItems((prevWishItems) => [...prevWishItems, newWishItem]);
-            setShowCart(true) 
-        }
-    },[isAdded])
+   
+      
       
     const handleAddToCart = async () => {
         console.log("hello")
         const newWishItem = { src,name,color,price ,quantity};
         const storedWishlist = await localForage.getItem('cartlist');
         if (storedWishlist) {
-            setIsAdded(storedWishlist.some(item => item.src === newWishItem.src))
+            const heckIt = storedWishlist.some(item => item.src === newWishItem.src);
+            console.log(heckIt)
+            if (!heckIt) {
+                setCartItems((prevWishItems) => [...prevWishItems, newWishItem]);
+                setShowCart(true) 
+            }
+        //await localForage.setItem('cartlist', cartItems);
         }
-        await localForage.setItem('cartlist', cartItems);
+        
+       
     };
 
     const checkWishList = async () => {
-        setShowPop(true)
         console.log("hello")
         const newWishItem = { src,name,color,price ,quantity};
         const storedWishList = await localForage.getItem('wishlist');
         if (storedWishList) {
-            //const heckIt = storedWishList.some(item => item.src === newWishItem.src);
-            //console.log(heckIt)
-            //heckIt ? null : 
-           
+            const heckIt = storedWishList.some(item => item.src === newWishItem.src);
+            console.log(heckIt)
+            heckIt ? null : setShowPop(true)
         }
     }
       
      
     return(
-    <section className="h-auto bg-yellow-500 min-h-[130vh] w-[95%] mx-auto">
+    <section className="h-auto  min-h-[130vh] bg-red-300 w-[95%] mx-auto">
             <div className="h-full  flex lg:flex-row flex-col w-full gap-4 justify-center">
                 <div className="w-[80px]   h-[30%]  lg:flex lg:flex-col lg:gap-2 hidden">
                     <div className="rounded-md h-1/2 border border-black grid place-content-center">
