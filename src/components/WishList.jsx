@@ -38,6 +38,16 @@ const WishList = () => {
       setUpdatedWishlist(updatedList);
       await localForage.setItem('wishlist', updatedList);
     };
+
+    const handleAddToCart = async (e) => {
+       const newCartItem = {src: e.target.parentNode.previousElementSibling.childNodes[0].src, name:e.target.parentNode.childNodes[0].innerText,price:e.target.parentNode.childNodes[2].innerText}
+       const storedWishlist = await localForage.getItem('cartlist');
+       if (storedWishlist) {
+        const heckIt = storedWishlist.some(item => item.src == e.target.parentNode.previousElementSibling.childNodes[0].src);
+        heckIt ? null : setCartItems((prevWishItems) => [...prevWishItems, newCartItem]);
+        !heckIt &&  setShowCart(true) 
+    }
+    }
     return(
         <div >
           <SideNav
@@ -86,6 +96,7 @@ const WishList = () => {
                           price={item.price}
                           color={item.color}
                           handleRemoveItem={() => handleRemoveItem(item)}
+                          handleAddToCart={handleAddToCart}
                         />
                     )
                 })

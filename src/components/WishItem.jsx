@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const WishItem = ({src,name,price,color,handleRemoveItem}) => {
+const WishItem = ({src,name,price,color,handleRemoveItem,handleAddToCart}) => {
     
 return(
         <div className="h-auto min-h-[400px] relative grid place-content-center  lg:w-[22%] w-[90%]">
@@ -18,7 +18,7 @@ return(
                 <p className="font-semibold text-md">{name}</p>
                 <p className="text-sm">{color}</p>
                 <p className="font-bold text-lg">₦{price}</p>
-                <button className="lg:h-7 h-10 w-[90%]  rounded-md  bg-black text-white text-sm">ADD TO CART</button>
+                <button onClick={handleAddToCart} className="lg:h-7 h-10 w-[90%]  rounded-md  bg-black text-white text-sm">ADD TO CART</button>
             </div>
            
         </div>
