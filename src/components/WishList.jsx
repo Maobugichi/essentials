@@ -18,7 +18,7 @@ const WishList = () => {
       driver: localForage.INDEXEDDB,
       name: 'myApp',
       version: 1.0,
-      //storeName: 'myStore',
+      storeName: 'wishStore',
     });
     useEffect(() => {
       const loadWishlist = async () => {

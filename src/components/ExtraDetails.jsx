@@ -11,10 +11,12 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
     const [isRotated2, setIsRotated2] = useState(false);
     const [cartItems, setCartItems] = useState([])
     localForage.config({
-          driver: localForage.INDEXEDDB,
+          driver: localForage.LOCALSTORAGE,
           name: 'myApp', 
           version: 1.0, 
+          storeName: 'cartStore',
     });
+
     const handleShow1 = () => {
         setShow(!show);
         setIsRotated(!isRotated);
@@ -38,30 +40,30 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
     if (cartItems.length > 0) {
         localForage.setItem('cartlist', cartItems);
     }
+
+    console.log(cartItems)
     }, [cartItems]);
 
    
-      
-      
     const handleAddToCart = async () => {
-        const newWishItem = { src,name,color,price ,quantity};
-        const storedWishlist = await localForage.getItem('cartlist');
-        if (storedWishlist) {
-            const heckIt = storedWishlist.some(item => item.src === newWishItem.src);
-            console.log(heckIt)
+        const newCartItem = { src,name,color,price ,quantity};
+        const storedCartlist = await localForage.getItem('cartlist');
+        if (storedCartlist) {
+            const heckIt = storedCartlist.some(item => item.src === newCartItem.src);
+            console.log(storedCartlist)
             if (!heckIt) {
-                setCartItems((prevWishItems) => [...prevWishItems, newWishItem]);
+                setCartItems((prevWishItems) => [...prevWishItems, newCartItem]);
                 setShowCart(true) 
             }
           await localForage.setItem('cartlist', cartItems);
+        } else {
+            console.log("hello")
         }
     };
 
-    const checkWishList = async () => {
-        console.log("hello")
+   /* const checkWishList = async () => {
         const newWishItem = {src,name,color,price ,quantity};
-        setShowPop(true)
-
+        //setShowPop(true)
         const storedWishList = await localForage.getItem('wishlist');
         console.log(storedWishList)
         if (storedWishList) {
@@ -69,11 +71,11 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
             console.log(heckIt)
             heckIt ? null : setShowPop(true)
         }
-    }
+    }*/
       
      
     return(
-    <section className="h-auto  min-h-[130vh] bg-purple-300 w-[95%] mx-auto">
+    <section className="h-auto  min-h-[130vh] bg-red-300 w-[95%] mx-auto">
             <div className="h-full  flex lg:flex-row flex-col w-full gap-4 justify-center">
                 <div className="w-[80px]   h-[30%]  lg:flex lg:flex-col lg:gap-2 hidden">
                     <div className="rounded-md h-1/2 border border-black grid place-content-center">
@@ -131,7 +133,7 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
                         </div>
 
                         <div>
-                            <button onClick={checkWishList} className="flex items-center text-sm"><svg className="w-5" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24">
+                            <button  className="flex items-center text-sm"><svg className="w-5" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24">
 	                         <path fill="currentColor" d="M4.24 12.25a4.2 4.2 0 0 1-1.24-3A4.25 4.25 0 0 1 7.25 5c1.58 0 2.96.86 3.69 2.14h1.12A4.24 4.24 0 0 1 15.75 5A4.25 4.25 0 0 1 20 9.25c0 1.17-.5 2.25-1.24 3L11.5 19.5zm15.22.71C20.41 12 21 10.7 21 9.25A5.25 5.25 0 0 0 15.75 4c-1.75 0-3.3.85-4.25 2.17A5.22 5.22 0 0 0 7.25 4A5.25 5.25 0 0 0 2 9.25c0 1.45.59 2.75 1.54 3.71l7.96 7.96z"></path>
                              </svg>
                              Add to wishlist

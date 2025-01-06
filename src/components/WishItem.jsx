@@ -18,7 +18,7 @@ return(
                 <p className="font-semibold text-md">{name}</p>
                 <p className="text-sm">{color}</p>
                 <p className="font-bold text-lg">₦{price}</p>
-                <button onClick={handleAddToCart} className="lg:h-7 h-10 w-[90%]  rounded-md  bg-black text-white text-sm">ADD TO CART</button>
+                <button  className="lg:h-7 h-10 w-[90%]  rounded-md  bg-black text-white text-sm">ADD TO CART</button>
             </div>
            
         </div>
