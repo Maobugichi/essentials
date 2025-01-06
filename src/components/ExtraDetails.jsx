@@ -10,6 +10,7 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
     const [isRotated, setIsRotated] = useState(false);
     const [isRotated2, setIsRotated2] = useState(false);
     const [cartItems, setCartItems] = useState([])
+    const [isAdded,setIsAdded] = useState(true)
     localForage.config({
           driver: localForage.INDEXEDDB,
           name: 'myApp', 
@@ -39,15 +40,21 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
         localForage.setItem('cartlist', cartItems);
     }
     }, [cartItems]);
+
+    useEffect(() => {
+        const newWishItem = { src,name,color,price ,quantity};
+        if (!isAdded) {
+            setCartItems((prevWishItems) => [...prevWishItems, newWishItem]);
+            setShowCart(true) 
+        }
+    },[isAdded])
       
     const handleAddToCart = async () => {
         console.log("hello")
         const newWishItem = { src,name,color,price ,quantity};
         const storedWishlist = await localForage.getItem('cartlist');
         if (storedWishlist) {
-            const heckIt = storedWishlist.some(item => item.src === newWishItem.src);
-            heckIt ? null : setCartItems((prevWishItems) => [...prevWishItems, newWishItem]);
-            !heckIt &&  setShowCart(true) 
+            setIsAdded(storedWishlist.some(item => item.src === newWishItem.src))
         }
         
         await localForage.setItem('cartlist', cartItems);
@@ -58,9 +65,10 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
         const newWishItem = { src,name,color,price ,quantity};
         const storedWishList = await localForage.getItem('wishlist');
         if (storedWishList) {
-            const heckIt = storedWishList.some(item => item.src === newWishItem.src);
-            console.log(heckIt)
-            heckIt ? null : setShowPop(true)
+            //const heckIt = storedWishList.some(item => item.src === newWishItem.src);
+            //console.log(heckIt)
+            //heckIt ? null : 
+            setShowPop(true)
         }
     }
       
