@@ -55,7 +55,7 @@ const handleAddToWish = async () => {
                
                     <div onClick={handleAddToWish} className="flex items-center w-[90%] mx-auto h-full ">
                         <img className="w-20 h-26" src={src} alt={name} />
-                        <h4 className="text-lg">{name} {color} <span className="text-[13px]">has been added to wishlist successfully</span></h4>
+                        <h4 className="text-md">{name} {color} <span className="text-[13px]">has been added to wishlist successfully</span></h4>
                     </div>
              
             </motion.div>

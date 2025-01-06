@@ -36,9 +36,7 @@ const WishList = () => {
         return item.src !== itemToRemove.src
       });
       setUpdatedWishlist(updatedList);
-     await localForage.setItem('wishlist', updatedList);
-
-
+      await localForage.setItem('wishlist', updatedList);
     };
     return(
         <div >
@@ -95,7 +93,6 @@ const WishList = () => {
            </div>
            </section>
            <NewsLetterComponent
-           
            />
            <Footer/>
         </div>

@@ -45,7 +45,6 @@ const Cart = ({setQuantity,src,name,color,price,showCart,setShowCart}) => {
     useEffect(() => {
         const loadWishlist = async () => {
             const storedWishlist = await localForage.getItem('cartlist');
-            console.log(storedWishlist)
             if (storedWishlist) {
                 setCartItems(storedWishlist);
             } 
