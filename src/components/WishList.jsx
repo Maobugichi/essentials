@@ -54,6 +54,23 @@ const WishList = () => {
       setUpdatedWishlist(updatedList);
       setCookie("wishlist", JSON.stringify(updatedList), 30);
     };
+
+    const handleAddToCart = async () => {
+      const newCartItem = { src,name,color,price,quantity,};
+      const storedCartItems = getCookie("cartItems");
+      if (storedCartItems) {
+        const cartItemsList = JSON.parse(storedCartItems);
+        const heckIt = cartItemsList.some((item) => item.src === newCartItem.src);
+        heckIt ? null : setCartItems((prevWishItems) => [...prevWishItems, newCartItem]);
+        heckIt ? null :setShowCart(true);
+      } else {
+        setCartItems([newCartItem]);
+        setShowCart(true);
+        console.log("hello")
+      }
+     
+      setCookie("cartItems", JSON.stringify(cartItems), 30);
+    };
     return(
         <div >
           <SideNav

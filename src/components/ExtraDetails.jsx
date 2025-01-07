@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import Quantity from "./Quantity";
 
-const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,price,essentials,pop,setShowPop,cartItems,setCartItems}) => {
+const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,price,essentials,pop,setShowPop,cartItems,setCartItems,setAlreadyAdded}) => {
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
   const [isRotated, setIsRotated] = useState(false);
@@ -47,7 +47,7 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
       const cartItemsList = JSON.parse(storedCartItems);
       const heckIt = cartItemsList.some((item) => item.src === newCartItem.src);
       heckIt ? null : setCartItems((prevWishItems) => [...prevWishItems, newCartItem]);
-      heckIt ? null :setShowCart(true);
+      heckIt ? setAlreadyAdded(true) :setShowCart(true);
     } else {
       setCartItems([newCartItem]);
       setShowCart(true);

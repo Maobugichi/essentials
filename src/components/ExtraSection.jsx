@@ -8,6 +8,7 @@ import SideNav from "./SideNav"
 import { useLocation } from "react-router-dom"
 import Cart from "./Cart"
 import PopUp from "./WishListPopUp"
+import ItemAlreadyAdded from "./ItemAlreadyAdded"
 const ExtraSection = () => {
     const location = useLocation()
     const {src,name,color,size,price,recommendations,essentials, count} = location.state
@@ -16,12 +17,17 @@ const ExtraSection = () => {
     const [pop , setShowPop] = useState(false)
     const [openNav,setOpenNav] = useState(false);
     const [cartItems, setCartItems] = useState([])
-   
+    const [alreadyAdded,setAlreadyAdded] = useState(false)
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }, [essentials,name,src]);
     return(
         <div className="h-auto">
+         <ItemAlreadyAdded
+          alreadyAdded={alreadyAdded}
+          setAlreadyAdded={setAlreadyAdded}
+         />
+        
          <PopUp
           pop={pop}
           setShowPop={setShowPop}
@@ -30,6 +36,8 @@ const ExtraSection = () => {
           color={color}
           size={size}
           price={price}
+          cartItems={cartItems}
+          setCartItems={setCartItems}
           />
 
           <SideNav
@@ -74,6 +82,7 @@ const ExtraSection = () => {
            essentials={essentials}
            cartItems={cartItems}
            setCartItems={setCartItems}
+           setAlreadyAdded={setAlreadyAdded}
           />
           
           <SlideComponent
