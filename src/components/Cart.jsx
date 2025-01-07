@@ -5,10 +5,10 @@ import QuickShopSection from "./QuickShopSection";
 import localForage from 'localforage';
 import CartItem from "./CartItem";
 
-const Cart = ({setQuantity,src,name,color,price,showCart,setShowCart}) => {
+const Cart = ({setQuantity,src,name,color,price,showCart,setShowCart,cartItems,setCartItems}) => {
     const [show,setShow] = useState(false)
     const [isRotated, setIsRotated] = useState(false);
-    const [cartItems, setCartItems] = useState([])
+  
     const [animateX,setAnimateX] = useState()
     const handleShow1 = () => {
         setShow(!show);
@@ -42,15 +42,30 @@ const Cart = ({setQuantity,src,name,color,price,showCart,setShowCart}) => {
         }
     }, [showCart]);
         
+    const getCookie = (name) => {
+        const cookies = document.cookie.split(";");
+        for (const cookie of cookies) {
+          const [key, value] = cookie.trim().split("=");
+          if (key === name) {
+            return value;
+          }
+        }
+        return null;
+    };
+
+    const setCookie = (name, value, days) => {
+        const expires = new Date(Date.now() + days * 86400 * 1000).toUTCString();
+        document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+    };
+
     useEffect(() => {
-        const loadWishlist = async () => {
-            const storedWishlist = await localForage.getItem('cartlist');
-            if (storedWishlist) {
-                setCartItems(storedWishlist);
-            } 
-        };
-            loadWishlist();
-    }, [cartItems]);
+        const storedCartItems = getCookie("cartItems");
+        if (storedCartItems) {
+            setCartItems(JSON.parse(storedCartItems));
+        } else {
+            setCartItems([]);
+        }
+    }, []);
 
     
     const handleRemoveItem = async (e) => {
@@ -58,7 +73,13 @@ const Cart = ({setQuantity,src,name,color,price,showCart,setShowCart}) => {
             return item.src !== e.target.parentNode.parentNode.parentNode.childNodes[0].id
         });
         setCartItems(updatedList);
-        await localForage.setItem('cartlist', updatedList);
+        if (updatedList.length === 0) {
+            setCookie("cartItems", JSON.stringify([]), 30);
+          } else {
+            setCookie("cartItems", JSON.stringify(updatedList), 30);
+          }
+        
+       
     };
     return(
         <AnimatePresence>

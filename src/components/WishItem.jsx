@@ -29,3 +29,7 @@ return(
 }
 
 export default WishItem
+
+
+
+
