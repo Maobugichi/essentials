@@ -11,26 +11,44 @@ const PopUp = ({pop,setShowPop,src,name,color,price}) => {
     version: 1.0, 
   });
 
-  useEffect(() => {
-    localForage.getItem('wishlist').then((storedWishList) => {
-      if (storedWishList) {
-        setWishItems(storedWishList);
+  const setCookie = (name, value, days) => {
+    const expires = new Date(Date.now() + days * 86400 * 1000).toUTCString();
+    document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+  };
+
+  const getCookie = (name) => {
+    const cookies = document.cookie.split(";");
+    for (const cookie of cookies) {
+      const [key, value] = cookie.trim().split("=");
+      if (key === name) {
+        return value;
       }
-    });
+    }
+    return null;
+  };
+
+  useEffect(() => {
+      const storedWishList = getCookie('wishlist');
+      if (storedWishList) {
+        setWishItems(JSON.parse(storedWishList));
+      }
+   
   }, []);
 
   
   useEffect(() => {
     if (wishItems.length > 0) {
-      localForage.setItem('wishlist', wishItems);
+      setCookie('wishlist', JSON.stringify(wishItems), 30);
     }
   }, [wishItems]);
+
+  
   
 const handleAddToWish = async () => {
     const newWishItem = { src, name, color, price };
     setWishItems((prevWishItems) => [...prevWishItems, newWishItem]);
-    await localForage.setItem('wishlist', wishItems);
-    const storedWishList = await localForage.getItem('wishlist');
+    setCookie("wishlist", JSON.stringify(wishItems), 30);
+    const storedWishList = getCookie('wishlist');
     if (storedWishList) {
       navigate("/wishlists/1");
     }

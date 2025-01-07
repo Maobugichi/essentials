@@ -20,11 +20,27 @@ const WishList = () => {
       version: 1.0,
       storeName: 'wishStore',
     });
+    const setCookie = (name, value, days) => {
+      const expires = new Date(Date.now() + days * 86400 * 1000).toUTCString();
+      document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+    };
+  
+    const getCookie = (name) => {
+      const cookies = document.cookie.split(";");
+      for (const cookie of cookies) {
+        const [key, value] = cookie.trim().split("=");
+        if (key === name) {
+          return value;
+        }
+      }
+      return null;
+    };
     useEffect(() => {
       const loadWishlist = async () => {
-        const storedWishlist = await localForage.getItem('wishlist');
+        const storedWishlist = getCookie('wishlist');
+        const parsedWishlist = JSON.parse(storedWishlist);
         if (storedWishlist) {
-          setUpdatedWishlist(storedWishlist);
+          setUpdatedWishlist(parsedWishlist);
         } 
       };
       loadWishlist();
@@ -36,7 +52,7 @@ const WishList = () => {
         return item.src !== itemToRemove.src
       });
       setUpdatedWishlist(updatedList);
-      await localForage.setItem('wishlist', updatedList);
+      setCookie("wishlist", JSON.stringify(updatedList), 30);
     };
     return(
         <div >
