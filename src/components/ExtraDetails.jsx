@@ -47,12 +47,13 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
       const cartItemsList = JSON.parse(storedCartItems);
       const heckIt = cartItemsList.some((item) => item.src === newCartItem.src);
       heckIt ? null : setCartItems((prevWishItems) => [...prevWishItems, newCartItem]);
-
+      heckIt ? null :setShowCart(true);
     } else {
       setCartItems([newCartItem]);
+      setShowCart(true);
       console.log("hello")
     }
-    setShowCart(true);
+   
     setCookie("cartItems", JSON.stringify(cartItems), 30);
   };
 
