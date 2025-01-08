@@ -3,7 +3,7 @@ import { motion , AnimatePresence, useScroll } from "motion/react"
 import Nav from "./Nav"
 import localForage from 'localforage';
 
-const Header = ({text,isStuck,setIsStuck , color, iconColor , cartColor , cartText, openNav,setOpenNav ,showCart, setShowCart,caveatColor}) => {
+const Header = ({text,isStuck,setIsStuck , color, iconColor , cartColor , cartText, openNav,setOpenNav ,showCart, setShowCart,caveatColor,setShowComponent}) => {
    
     const [slides, setSlides] = useState([
         <motion.div
@@ -106,6 +106,7 @@ const Header = ({text,isStuck,setIsStuck , color, iconColor , cartColor , cartTe
                 showCart={showCart}
                 setShowCart={setShowCart}
                 caveatColor={caveatColor}
+                setShowComponent={setShowComponent}
                 />
             </div>
            

@@ -7,7 +7,7 @@ import SideNav from "./SideNav"
 import Footer from "./Footer"
 import NewsLetterComponent from "./NewsLetterComponent"
 import Filter from "./Filter"
-
+import SearchComponent from "./SearchComponent"
 const Essentials = () => {
     const [isOpen,setOpen] = useState(false); 
     const [page,setPage] = useState(1); 
@@ -16,6 +16,7 @@ const Essentials = () => {
     const [openNav,setOpenNav] = useState(false);
     const [showCart,setShowCart] =useState(false);
     const [cartItems, setCartItems] = useState([]);
+    const [showComponent, setShowComponent] = useState(false);
     const location = useLocation();
     function open() {
       setOpen(true)
@@ -51,6 +52,11 @@ const Essentials = () => {
            setPage={setPage}
           />
 
+          <SearchComponent
+              showComponent={showComponent}
+              setShowComponent={setShowComponent}
+            />
+
           <Cart
            showCart={showCart}
            setShowCart={setShowCart}
@@ -74,6 +80,7 @@ const Essentials = () => {
            setOpenNav={setOpenNav}
            setShowCart={setShowCart}
            showCart={showCart}
+           setShowComponent={setShowComponent}
            />
           <section className="relative top-[-20px]  w-[95%] mx-auto h-auto min-[150vh]  grid gap-5">
             <div onClick={open}  className="flex gap-1  h-12 items-center relative z-[30]">
@@ -88,6 +95,7 @@ const Essentials = () => {
                 pages1.slice(0,6).map(item => {
                   return(
                     <Variety
+                      key={item.src}
                       recommendations={pages1.slice(5,9)}
                       name={item.name}
                       price={item.price}
@@ -123,6 +131,7 @@ const Essentials = () => {
                 pages1.slice(6,12).map(item => {
                   return(
                     <Variety
+                      key={item.src}
                       recommendations={pages1.slice(5,9)}
                       name={item.name}
                       price={item.price}
@@ -157,6 +166,7 @@ const Essentials = () => {
                 pages1.slice(12,data.length).map(item => {
                   return(
                     <Variety
+                      key={item.src}
                       recommendations={pages1.slice(5,9)}
                       src={item.src}
                       name={item.name}

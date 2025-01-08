@@ -7,7 +7,7 @@ const NewsLetter = () => {
             </div>
             <form className="lg:w-1/2 flex lg:flex-row gap-5 flex-col w-[90%] mx-auto">
                 <input  placeholder="email@eample.com" className="lg:w-[70%] w-full h-12 pl-7 border-2 border-[#ccc]" type="email" />
-                <button className="lg:w-[160px] w-full text-white bg-black h-12" type="submit">
+                <button className="lg:w-[160px] w-full text-white bg-black h-12">
                     Subscribe
                 </button>
             </form>

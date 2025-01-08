@@ -32,13 +32,8 @@ import women from "../assets/women.jpeg"
 import SideCard from "./SideCard"
 import olypiad from "../assets/olypiad.jpeg"
 import olypiad2 from "../assets/olypiad2.jpeg"
-import skim from "../assets/skim10.png"
-import skim2 from "../assets/skim11.png"
-import skim3 from "../assets/skim12.png"
-import skim4 from "../assets/skim15.png"
-import skim5 from "../assets/skim13.png"
-import skim6 from "../assets/skim14.png"
-import ski from "../assets/ski.png"
+
+
 import ski2 from "../assets/ski2.png"
 import ski3 from "../assets/ski3.png"
 import ski4 from "../assets/ski4.png"
@@ -49,9 +44,7 @@ import ski8 from "../assets/ski8.png"
 import ski9 from "../assets/ski9.png"
 import ski10 from "../assets/ski10.png"
 import ski11 from "../assets/ski11.png"
-import ski12 from "../assets/ski12.png"
-import ski13 from "../assets/ski13.png"
-import ski14 from "../assets/ski14.png"
+
 import shirt from "../assets/shirt.png"
 import shirt2 from "../assets/shirt2.png"
 import shirt3 from "../assets/shirt3.png"
@@ -70,21 +63,6 @@ import shirt15 from "../assets/shirt15.png"
 import shirt16 from "../assets/shirt16.png"
 import shirt17 from "../assets/rock.png"
 import shirt18 from "../assets/evil.png"
-import jacket from "../assets/jacket1.png"
-import jacket2 from "../assets/jacket2.png"
-import jacket3 from "../assets/jacket3.png"
-import jacket4 from "../assets/jacket4.png"
-import jacket5 from "../assets/jacket5.png"
-import jacket6 from "../assets/jacket11.jpeg"
-import jacket7 from "../assets/jj1.png"
-import jacket8 from "../assets/jj2.png"
-import jacket9 from "../assets/jj3.png"
-import jacket10 from "../assets/jj4.png"
-import jacket11 from "../assets/jj5.png"
-import jacket12 from "../assets/jj6.png"
-import jacket13 from "../assets/jj7.png"
-import jacket14 from "../assets/jj8.png"
-import jacket15 from "../assets/jj9.png"
 import jacket16 from "../assets/jj10.png"
 import jacket17 from "../assets/jj11.png"
 import jacket18 from "../assets/jj12.png"
@@ -170,6 +148,7 @@ import Header from "./Header"
 import NewsLetterComponent from "./NewsLetterComponent"
 import SideNav from "./SideNav"
 import Cart from "./Cart"
+import SearchComponent from "./SearchComponent"
 import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
@@ -178,6 +157,7 @@ const Homepage = () => {
     const [showCart,setShowCart] =useState(false);
     const [cartItems, setCartItems] = useState([])
     const [data,setData] = useState([])
+    const [showComponent, setShowComponent] = useState(false)
     const mens = [
         {name: "Essentials Button Down Shirt", src: jacket16, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
         {name: "Essentials Button Down Shirt", src: jacket17, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
@@ -240,27 +220,7 @@ const Homepage = () => {
               {name: "Essentials Utopia Jersey", src: jerex20, bestSelling: false, price: 130000, date: "2024-10-20", size: ["S", "M", "L"], onSale: true,color: "ash", count:1},
               {name: "Essentials Flux Jersey", src: jerex15, bestSelling: true, price: 160000, date: "2024-11-01", size: ["S", "M", "L", "XL"], onSale: false,color: "white", amount:2, count:1}
     ]
-    const skims = [ 
-        {name: "Essentials pound skim", src: skim, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "dark purple", amount: 30, count:1},
-        {name: "Essentials Lightening skim", src: skim2, bestSelling: true, price: 40000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "light blue", amount: 40, count:1},
-        {name: "Essentials rose skim", src: skim3, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "light pink", amount: 20, count:1},
-        {name: "Essentials saphhire skim", src: skim4, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "dark pink", amount: 45, count:1},
-        {name: "Essentials hue skim", src: skim5, bestSelling: true, price: 35000, date: "2024-10-25", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Light brown", amount: 45, count:1},
-        {name: "Essentials body skim", src: skim6, bestSelling: true, price: 35000, date: "2024-01-23", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "dark brown", amount: 45, count:1},
-        {name: "Essentials red crest", src: ski, bestSelling: true, price: 42000, date: "2024-09-30", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Red", amount: 50, count:1},
-        {name: "Essentials diesel", src: ski2, bestSelling: false, price: 38000, date: "2024-08-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Black", amount: 30, count:1},
-        {name: "Essentials snow skim", src: ski3, bestSelling: true, price: 32000, date: "2024-09-15", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Grey", amount: 40, count:1},
-        {name: "Essentials bloods", src: ski4, bestSelling: false, price: 30000, date: "2024-08-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Dark Red", amount: 25, count:1},
-        {name: "Essentials shadows skim", src: ski5, bestSelling: true, price: 28000, date: "2024-09-08", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Smoke Black", amount: 45, count:1},
-        {name: "Essentials Crop Lily", src: ski6, bestSelling: true, price: 28000, date: "2024-10-05", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "vios", amount: 45, count:1},
-        {name: "Essentials Green Skim", src: ski11, bestSelling: true, price: 32000, date: "2024-06-15", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color:"Green", amount: 40, count:1},
-        {name: "Essentials crop Lily", src: ski8, bestSelling: false, price: 30000, date: "2024-08-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Pink", amount: 25, count:1},
-        {name: "Essentials peia crop", src: ski14, bestSelling: true, price: 28000, date: "2024-09-05", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Blue", amount: 45, count:1},
-        {name: "Essentials light skim", src: ski10, bestSelling: true, price: 28000, date: "2024-09-15", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "White", amount: 45, count:1},
-        {name: "Essentials birth", src: ski12, bestSelling: false, price: 30000, date: "2024-08-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Light Pink", amount: 25, count:1},
-        {name: "Essentials rebirth", src: ski13, bestSelling: true, price: 28000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Pink", amount: 45, count:1},
-        
-    ]
+   
    
    const shirts = [
         {name: "Essentials Fearless Tee", src: shirt16, bestSelling: false, price: 42000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Black", amount: 30, count:1},
@@ -282,26 +242,7 @@ const Homepage = () => {
         {name: "Essentials Fleece Tee", src: shirt15,bestSelling: false, price: 42000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Orange and Black", amount: 30, count:1},
         {name: "Essentials Maddness Tee", src: shirt18, bestSelling: false, price: 42000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Cream", amount: 30, count:1},
    ]
-    const jackets = [ 
-        {name: "Essentials Blackard", src:jacket, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Brown and Cream", amount: 50, count:1},
-        {name: "Essentials Skel", src: jacket2, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Black and Red", amount: 30, count:1},
-        {name: "Essentials V half", src: jacket3, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Brown and Cream", amount: 20, count:1},
-        {name: "Essentials PRC", src: jacket4, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Brown", amount: 45, count:1},
-        {name: "Essentials Pattern", src: jacket5, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Grey and White", amount: 45, count:1},
-        {name: "Essentials Escape", src: jacket6, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black", amount: 45, count:1},
-        {name: "Essentials Bowine", src:jacket7, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color:"Black", amount: 50, count:1},
-        {name: "Essentials AMRT", src: jacket8, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Green and Black", amount: 30, count:1},
-        {name: "Essentials WorldWide", src: jacket9, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Black", amount: 20, count:1},
-        {name: "Essentials Starsigns", src: jacket10, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black and Light Blue", amount: 45, count:1},
-        {name: "Essentials Spiderverse", src: jacket11, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black and Red", amount: 45, count:1},
-        {name: "Essentials Wutang", src: jacket12, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black and Pink", amount: 45, count:1},
-        {name: "Essentials Supremes", src:jacket13, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Blue", amount: 50, count:1},
-        {name: "Essentials PlainJs", src: jacket14, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Blue", amount: 30, count:1},
-        {name: "Essentials MeToYou", src: jacket15, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Light Blue with black paterns", amount: 20, count:1},
-        {name: "Camoflague Jacket", src: jacket16, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Camo", amount: 45, count:1},
-        {name: "Essentials Northface Jacket", src: jacket17, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Red and black with white patterns", amount: 45, count:1},
-       
-    ]
+   
 
    const jorts = [
        {name: "Essentials Plain Jean", src: pant, bestSelling: true, price: 50000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color:  "Black", amount: 50, count:1},
@@ -409,9 +350,7 @@ const Homepage = () => {
         {name: "Essentials 99Sleeves", src: mor16, bestSelling: false, price: 110000, date: "2024-08-10", size: ["M", "L"], onSale: true,color: "Black",amount:5,  count:1},
         {name: "Essentials Emotion Tee", src: mor17, bestSelling: false, price: 130000, date: "2024-10-20", size: ["S", "M", "L"], onSale: true,color: "Black", count:1},
         {name: "Essentials BD Tee", src: mor18, bestSelling: true, price: 160000, date: "2024-11-01", size: ["S", "M", "L", "XL"], onSale: false,color: "Black", amount:2, count:1}
-]
-
-    
+    ]
     const exhibits = [exhibit,exhibit2,exhibit3,exhibit4]
     const navigate = useNavigate()
     const handleNavigate = (e) => {
@@ -438,6 +377,12 @@ const Homepage = () => {
              setOpenNav={setOpenNav}
              setShowCart={setShowCart}
              showCart={showCart}
+             setShowComponent={setShowComponent}
+           />
+            
+           <SearchComponent
+            showComponent={showComponent}
+            setShowComponent={setShowComponent}
            />
 
           <Cart
@@ -486,18 +431,7 @@ const Homepage = () => {
               essential2={womens}
             />
 
-            <SlideComponent
-             top="lg:top-[-200px]"
-              stop="top-[-160px]"
-             essentials={skims}
-             simgHeight="h-[200px]"
-             width="lg:w-[280px]"
-             height="lg:h-[400px]"
-             imgHeight="lg:h-[330px]"
-             imgWidth="w-full"
-             swidth="w-[210px]"
-             sheight="h-[250px]"
-            />
+            
 
             <SlideComponent
              essentials={shirts}
@@ -512,20 +446,6 @@ const Homepage = () => {
              sheight="h-[250px]"
             />
 
-        
-
-            <SlideComponent
-             essentials={jackets}
-             top="lg:top-[-200px]"
-              stop="top-[-175px]"
-             simgHeight="h-[200px]"
-             width="lg:w-[280px]"
-             height="lg:h-[400px]"
-             imgHeight="lg:h-[320px]"
-             imgWidth="w-[95%]"
-             swidth="w-[210px]"
-             sheight="h-[250px]"
-            />
 
             <section className=" h-[75vh] relative top-[-200px]">
                 <Legends/>

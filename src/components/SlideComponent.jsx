@@ -1,4 +1,4 @@
-import { motion , useScroll, useTransform } from "motion/react"
+import { motion , useScroll, useTransform ,useAnimation} from "motion/react"
 import Variety from "./Variety"
 import { useState,useEffect, useRef } from "react"
 import { useNavigate } from "react-router-dom";
@@ -9,6 +9,20 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
     const sliderRef = useRef(null)
     const maxScrollLeft = -780
     const smMax = -1100
+    const containerRef = useRef(null)
+    
+    const { scrollXProgress } = useScroll(
+     {
+        container: sliderRef,
+        layoutEffect: false,
+     }
+    )
+    const scaleX = useTransform(scrollXProgress, [0, 1], [0, 1]); 
+    const navigate = useNavigate()
+    const handleNavigate = (e) => {
+        setData(essentials);
+    }
+  
     const handleButtonClick = () => {
         const screenWidth = window.innerWidth;
         if (screenWidth < 500) {
@@ -28,14 +42,8 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
         }
        
       };
-    const { scrollXProgress } = useScroll(
-     {
-        container: sliderRef,
-        layoutEffect: false,
-     }
-    )
-    const scaleX = useTransform(scrollXProgress, [0, 1], [0, 1]);
-    const handleButtonClickRight = () => {  
+  
+      const handleButtonClickRight = () => {  
         const newScrollLeft = scrollLeft + 200;
         if (newScrollLeft >= 100) {
             setScrollLeft(0);
@@ -43,20 +51,16 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
             setScrollLeft(newScrollLeft)
         }
     };
-    const navigate = useNavigate()
-    const handleNavigate = (e) => {
-        setData(essentials);
-    }
-
-    useEffect(() => {
+   
+     useEffect(() => {
         if (data.length !== 0) {
         navigate("/essentials/essentialSection/1",{state:{data:data}})
         }
-    },[data])
+     },[data])
         
     return(
         <section className={`w-full lg:mt-9 h-auto min-h-[35vh] mb-10 lg:min-h-[80vh] flex flex-col lg:gap-4 gap-3 justify-center relative ${top}  ${stop}`}>
-            <div onClick={handleButtonClickRight} className="bg-white w-[40px] h-[40px] rounded-full shadow-xl absolute left-2 lg:left-8 z-10  top-[45%] grid  place-items-center">
+            <div onClick={handleButtonClickRight} className="bg-white w-[40px] h-[40px] rounded-full shadow-xl absolute left-2 lg:left-8 z-30  top-[45%] grid  place-items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 40 40">
                     <path fill="#000" d="M24.96 32.601L12.371 19.997l.088-.088l12.507-12.52a.66.66 0 0 0-.01-.921a.65.65 0 0 0-.458-.182a.65.65 0 0 0-.465.186l-13.004 13.02a.63.63 0 0 0-.176.49a.66.66 0 0 0 .18.523l13.014 13.031c.244.23.659.233.921-.02a.66.66 0 0 0-.008-.915"></path>
                 </svg>
@@ -64,19 +68,18 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
             <div  className={` w-[90%]  mx-auto  flex flex-col gap-4  h-[95%] no-scrollbar no-scrollbar::webkit-scrollbar`} style={{ overflowX: "scroll"}}>
                 
                 <motion.div 
-                    ref={sliderRef}
                     id="slide"
                     transition={{ duration: 0.3, type:"tween", ease: "linear" }}
-                    className="no-scrollbar no-scrollbar::webkit-scrollbar flex"
-                    style={{
-                        overflowX: "scroll",
-                        overflowY: "hidden"
-                      }}
-                      
-                    >  <motion.div 
+                    className=" no-scrollbar  w-auto no-scrollbar::webkit-scrollbar flex"
+                    //onScroll={() => console.log(sliderRef.current.scrollLeft)}
+                    style={{overflowX:"hidden"}}
+                    >  
+                    <motion.div
                         initial={{ x: 0 }}
-                        animate={{ x: scrollLeft }}
-                        className=" flex gap-4 w-auto  justify-center no-scrollbar">
+                        ref={sliderRef}
+                        animate={{x:scrollLeft}}
+                        className="overflow-x  flex gap-4 w-auto   justify-center"
+                        >
                         {recommendations && 
                             recommendations.map((item, index) => (
                                         <Variety
@@ -99,6 +102,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
                                         sheight={sheight}
                                         essentials={essentials}
                                         simgHeight={simgHeight}
+                                        scrollLeft={scrollLeft}
                                         />
                             ))}
 
@@ -124,10 +128,10 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
                                     essentials={essentials}
                                     bottom="bottom-0"
                                     simgHeight={simgHeight}
+                                    scrollLeft={scrollLeft}
                                 />
                             ))}
-                        </motion.div>
-                        
+                    </motion.div>
                 </motion.div>
               
             </div>

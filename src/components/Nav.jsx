@@ -20,7 +20,24 @@ import jerex from "../assets/check1.png"
 import jerex2 from "../assets/jerexRe.png"
 import jerex3 from "../assets/removed3.png"
 import jerex4 from "../assets/jerex4Re.png"
-import jerex5 from "../assets/jerex5.jpeg"
+import skim from "../assets/skim10.png"
+import skim2 from "../assets/skim11.png"
+import skim3 from "../assets/skim12.png"
+import skim4 from "../assets/skim15.png"
+import skim5 from "../assets/skim13.png"
+import skim6 from "../assets/skim14.png"
+import ski from "../assets/ski.png"
+import ski2 from "../assets/ski2.png"
+import ski3 from "../assets/ski3.png"
+import ski4 from "../assets/ski4.png"
+import ski5 from "../assets/ski5.png"
+import ski6 from "../assets/ski6.png"
+import ski11 from "../assets/ski11.png"
+import ski8 from "../assets/ski8.png"
+import ski10 from "../assets/ski10.png"
+import ski12 from "../assets/ski12.png"
+import ski13 from "../assets/ski13.png"
+import ski14 from "../assets/ski14.png"
 import jerex6 from "../assets/jerexRe8.png"
 import jerex7 from "../assets/jerexRe9.png"
 import jerex11 from "../assets/jerex11Re.png"
@@ -152,8 +169,23 @@ import skirt16 from "../assets/wsk9.png"
 import skirt17 from "../assets/wsk10.png"
 import skirt18 from "../assets/wsk11.png"
 import skirt19 from "../assets/wsk12.png"
+import jacket from "../assets/jacket1.png"
+import jacket2 from "../assets/jacket2.png"
+import jacket3 from "../assets/jacket3.png"
+import jacket6 from "../assets/jacket11.jpeg"
+import jacket8 from "../assets/jj2.png"
+import jacket7 from "../assets/jj1.png"
+import jacket9 from "../assets/jj3.png"
+import jacket16 from "../assets/jj10.png"
+import jacket17 from "../assets/jj11.png"
+import jacket10 from "../assets/jj4.png"
+import jacket11 from "../assets/jj5.png"
+import jacket12 from "../assets/jj6.png"
+import jacket13 from "../assets/jj7.png"
+import jacket14 from "../assets/jj8.png"
+import jacket15 from "../assets/jj9.png"
 import localForage from 'localforage';
-const Nav = ({ text,isStuck,setIsStuck , amount , color, iconColor , cartColor,cartText , openNav, setOpenNav , showCart, setShowCart , caveatColor}) => {
+const Nav = ({ text,isStuck,setIsStuck , amount , color, iconColor , cartColor,cartText , openNav, setOpenNav , showCart, setShowCart , caveatColor,setShowComponent}) => {
   const [data,setData] = useState([]) 
   const collections = {
   "All":[
@@ -332,6 +364,26 @@ const Nav = ({ text,isStuck,setIsStuck , amount , color, iconColor , cartColor,c
         {name: "Essentials T-Shirt", src: skirt18, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
         {name: "Essentials T-Shirt", src: skirt19, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
     ],
+    "New Arrivals": [ 
+            {name: "Essentials Blackard", src:jacket, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Brown and Cream", amount: 50, count:1},
+            {name: "Essentials Skel", src: jacket2, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Black and Red", amount: 30, count:1},
+            {name: "Essentials V half", src: jacket3, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Brown and Cream", amount: 20, count:1},
+            {name: "Essentials PRC", src: jacket4, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Brown", amount: 45, count:1},
+            {name: "Essentials Pattern", src: jacket5, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Grey and White", amount: 45, count:1},
+            {name: "Essentials light skim", src: ski10, bestSelling: true, price: 28000, date: "2024-09-15", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "White", amount: 45, count:1},
+            {name: "Essentials birth", src: ski12, bestSelling: false, price: 30000, date: "2024-08-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Light Pink", amount: 25, count:1},
+            {name: "Essentials rebirth", src: ski13, bestSelling: true, price: 28000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Pink", amount: 45, count:1},
+            {name: "Essentials WorldWide", src: jacket9, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Black", amount: 20, count:1},
+            {name: "Essentials Starsigns", src: jacket10, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black and Light Blue", amount: 45, count:1},
+            {name: "Essentials Spiderverse", src: jacket11, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black and Red", amount: 45, count:1},
+            {name: "Essentials pound skim", src: skim, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "dark purple", amount: 30, count:1},
+            {name: "Essentials Lightening skim", src: skim2, bestSelling: true, price: 40000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "light blue", amount: 40, count:1},
+            {name: "Essentials rose skim", src: skim3, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "light pink", amount: 20, count:1},
+            {name: "Essentials saphhire skim", src: skim4, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "dark pink", amount: 45, count:1},
+            {name: "Essentials hue skim", src: skim5, bestSelling: true, price: 35000, date: "2024-10-25", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Light brown", amount: 45, count:1},       
+            {name: "Essentials snow skim", src: ski3, bestSelling: true, price: 32000, date: "2024-09-15", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Grey", amount: 40, count:1},
+            {name: "Essentials bloods", src: ski4, bestSelling: false, price: 30000, date: "2024-08-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Dark Red", amount: 25, count:1},        
+        ],
     "Angels Speaks": [essential3, beanie4, beanie, jacket4],
     "Chrome": [jacket4, essential2, bag2, cap2]
   };
@@ -389,7 +441,6 @@ const Nav = ({ text,isStuck,setIsStuck , amount , color, iconColor , cartColor,c
     const loadWishlist = async () => {
       const storedCartlist = getCookie("cartItems");
       const parsedWishlist = JSON.parse(storedCartlist);
-      console.log(parsedWishlist.length)
       if (storedCartlist) {
        setCartCount(parsedWishlist.length) 
       } 
@@ -454,7 +505,7 @@ const Nav = ({ text,isStuck,setIsStuck , amount , color, iconColor , cartColor,c
                   <path fill="none" stroke={iconColor} strokeLinecap="round" strokeWidth={1.5} d="M20.224 12.526c-.586-3.121-.878-4.682-1.99-5.604C17.125 6 15.537 6 12.362 6h-.722c-3.175 0-4.763 0-5.874.922s-1.403 2.483-1.989 5.604c-.822 4.389-1.234 6.583-.034 8.029S7.174 22 11.639 22h.722c4.465 0 6.698 0 7.897-1.445c.696-.84.85-1.93.696-3.555M9 6V5a3 3 0 1 1 6 0v1"></path>
                 </svg>
               </li>
-              <li>
+              <li onClick={() => setShowComponent(true)}>
               <svg xmlns="http://www.w3.org/2000/svg" width={30} height={30} viewBox="0 0 24 24">
                 <path fill={iconColor} d="m19.485 20.154l-6.262-6.262q-.75.639-1.725.989t-1.96.35q-2.402 0-4.066-1.663T3.808 9.503T5.47 5.436t4.064-1.667t4.068 1.664T15.268 9.5q0 1.042-.369 2.017t-.97 1.668l6.262 6.261zM9.539 14.23q1.99 0 3.36-1.37t1.37-3.361t-1.37-3.36t-3.36-1.37t-3.361 1.37t-1.37 3.36t1.37 3.36t3.36 1.37"></path>
               </svg>
@@ -467,7 +518,7 @@ const Nav = ({ text,isStuck,setIsStuck , amount , color, iconColor , cartColor,c
             }`}
           >
             <div>
-              <p>New Arrivals</p>
+              <p onClick={handleNavigate}>New Arrivals</p>
             </div>
             <div className="group relative ">
               <div className="flex gap-2 pointer items-center hover:underline">

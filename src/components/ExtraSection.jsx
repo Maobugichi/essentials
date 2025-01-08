@@ -9,6 +9,7 @@ import { useLocation } from "react-router-dom"
 import Cart from "./Cart"
 import PopUp from "./WishListPopUp"
 import ItemAlreadyAdded from "./ItemAlreadyAdded"
+import SearchComponent from "./SearchComponent"
 const ExtraSection = () => {
     const location = useLocation()
     const {src,name,color,size,price,essentials, count} = location.state
@@ -18,6 +19,9 @@ const ExtraSection = () => {
     const [openNav,setOpenNav] = useState(false);
     const [cartItems, setCartItems] = useState([])
     const [alreadyAdded,setAlreadyAdded] = useState({add:false,item:""})
+    const [showComponent, setShowComponent] = useState(false)
+  
+ 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }, [essentials,name,src]);
@@ -27,6 +31,11 @@ const ExtraSection = () => {
           alreadyAdded={alreadyAdded}
           setAlreadyAdded={setAlreadyAdded}
          />
+
+        <SearchComponent
+            showComponent={showComponent}
+            setShowComponent={setShowComponent}
+            />
         
          <PopUp
           pop={pop}
@@ -65,6 +74,7 @@ const ExtraSection = () => {
            setOpenNav={setOpenNav}
            setShowCart={setShowCart}
            showCart={showCart}
+           setShowComponent={setShowComponent}
           />
          
           <ExtraDetails

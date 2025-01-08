@@ -20,6 +20,7 @@ const Cart = ({setQuantity,src,name,color,price,showCart,setShowCart,cartItems,s
         version: 1.0, 
       });
     const screenWidth = window.innerWidth;
+    
     useEffect(() => {
         if (screenWidth < 500) { 
             setAnimateX({

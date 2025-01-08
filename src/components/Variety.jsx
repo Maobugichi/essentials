@@ -3,8 +3,9 @@ import {useNavigate} from "react-router-dom"
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { useState, useEffect } from "react"
+import { motion } from "motion/react"
 
-const Variety = ({src,width,imgWidth,height,name,price,onSale,color,size,count,imgHeight,recommendations,swidth,sheight ,essentials, cartIconWidth="w-6", cartIconHeight="h-6", cartIcon="w-3" , bottom="bottom-[40px]",span="w-[40%]",margin, simgHeight}) => {
+const Variety = ({scrollLeft,src,width,imgWidth,height,name,price,onSale,color,size,count,imgHeight,recommendations,swidth,sheight ,essentials, cartIconWidth="w-6", cartIconHeight="h-6", cartIcon="w-3" , bottom="bottom-[40px]",span="w-[40%]",margin, simgHeight}) => {
     const navigate = useNavigate()
     const handleNavigate = (e) => {
         navigate("/essentials/extraDetails/1",{state:{src:src,name:name,color:color,size:size,price:price,recommendations:recommendations,essentials:essentials,count:count}})
@@ -17,7 +18,8 @@ const Variety = ({src,width,imgWidth,height,name,price,onSale,color,size,count,i
       }, [src]);
       
     return(
-            <div className={`flex flex-col lg:gap-7   ${width} ${height} ${swidth} ${sheight} relative z-10 ${margin}`} >
+       
+         <div className={`flex flex-col lg:gap-7   ${width} ${height} ${swidth} ${sheight} relative z-10 ${margin}`} >
                {onSale ? <span className="bg-red-400 lg:text-sm text-[12px] p-2 w-auto  lg:min-w-[25%]  absolute z-30 text-white">On Sale</span> : null}
                 <div className="relative top-2   h-[70%] grid place-items-center lg:w-full w-[95%] mx-auto">
                     <div  className={`${imgHeight} ${simgHeight}  lg:${imgWidth} flex items-center w-[90%]`}> 
@@ -35,6 +37,9 @@ const Variety = ({src,width,imgWidth,height,name,price,onSale,color,size,count,i
                     <p className="text-[12px] text-red-500 lg:text-sm">₦{price} {onSale ? <span className="text-black line-through">₦240,000</span> : null}</p>
                 </div>
             </div>
+  
+           
+            
     )
 }
 

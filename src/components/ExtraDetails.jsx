@@ -109,7 +109,7 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
                         <div className="border-b pb-4">
                             <span>Kalakuta</span>
                             <h3 className="text-3xl">{name}</h3>
-                            <p>{price}</p>
+                            <p>₦{price}</p>
                             <span className="text-[10px]">Tax included Shipping calculated at checkout</span>
                         </div>
                         
