@@ -462,14 +462,14 @@ const Nav = ({ text,isStuck,setIsStuck , amount , color, iconColor , cartColor,c
             </ul>
           </div>
           <div
-            className={`transition-all lg:flex w-[53%] pb-2 justify-between text-sm hidden ${
+            className={`transition-all lg:flex w-[40%] pb-2 justify-between text-sm hidden ${
               isStuck ? "text-black" : `text-${text}`
             }`}
           >
             <div>
               <p>New Arrivals</p>
             </div>
-            <div className="group relative">
+            <div className="group relative ">
               <div className="flex gap-2 pointer items-center hover:underline">
                 <p className={`text-[${text}]`}>Men</p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 1024 1024">
@@ -588,70 +588,7 @@ const Nav = ({ text,isStuck,setIsStuck , amount , color, iconColor , cartColor,c
                 </motion.li>
               </motion.ul>
             </div>
-            <div className="group pointer  relative">
-              <div className="flex gap-2 items-center hover:underline">
-                <p className="">Collections</p>
-                <svg  xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 1024 1024">
-                  <path fill={caveatColor} d="M8.2 275.4c0-8.6 3.4-17.401 10-24.001c13.2-13.2 34.8-13.2 48 0l451.8 451.8l445.2-445.2c13.2-13.2 34.8-13.2 48 0s13.2 34.8 0 48L542 775.399c-13.2 13.2-34.8 13.2-48 0l-475.8-475.8c-6.8-6.8-10-15.4-10-24.199"></path>
-                </svg>
-              </div>
-              <motion.ul
-                initial="hidden"
-                whileInView="visible"
-                variants={list}
-                className="hidden text-[#A9A9A9] group-hover:flex group-hover:absolute bg-white transition-all  duration-150 ease-out w-[150px] h-auto p-5 justify-around flex-col rounded-md gap-2"
-              >
-                <motion.li
-                  className="text-[13px] rounded-sm p-1"
-                  whileHover={{ backgroundColor: "#ccc", color: "#000" }}
-                  variants={item}
-                >
-                  essential 2.0
-                </motion.li>
-                <motion.li
-                  className="text-[13px] rounded-sm p-1"
-                  whileHover={{ backgroundColor: "#ccc", color: "#000" }}
-                  variants={item}
-                >
-                  Surfer republic
-                </motion.li>
-                <motion.li
-                  className="text-[13px] rounded-sm p-1"
-                  whileHover={{ backgroundColor: "#ccc", color: "#000" }}
-                  variants={item}
-                >
-                  Essentials
-                </motion.li>
-                <motion.li
-                  className="text-[13px] rounded-sm p-1"
-                  whileHover={{ backgroundColor: "#ccc", color: "#000" }}
-                  variants={item}
-                >
-                  Summer Sets
-                </motion.li>
-                <motion.li
-                  className="text-[13px] rounded-sm p-1"
-                  whileHover={{ backgroundColor: "#ccc", color: "#000" }}
-                  variants={item}
-                >
-                  Legends
-                </motion.li>
-                <motion.li
-                  className="text-[13px] rounded-sm p-1"
-                  whileHover={{ backgroundColor: "#ccc", color: "#000" }}
-                  variants={item}
-                >
-                  Angels Speaks
-                </motion.li>
-                <motion.li
-                  className="text-[13px] rounded-sm p-1"
-                  whileHover={{ backgroundColor: "#ccc", color: "#000" }}
-                  variants={item}
-                >
-                  Chrome
-                </motion.li>
-              </motion.ul>
-            </div>
+            
           </div>
         </div>
       </div>

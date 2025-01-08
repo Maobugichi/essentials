@@ -195,14 +195,7 @@ const SideNav = ({ openNav, setOpenNav }) => {
                     >
                       Women
                     </motion.li>
-                    <motion.li
-                    onClick={handleNavigate}
-                    className="text-[13px] rounded-sm p-1"
-                    whileHover={{ backgroundColor: "#ccc", color: "#000" }}
-                    variants={item}
-                    >
-                      Collections
-                    </motion.li>
+                    
                   </ul>
 
                   <div className="grid gap-1">

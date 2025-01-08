@@ -32,7 +32,7 @@ const Variety = ({src,width,imgWidth,height,name,price,onSale,color,size,count,i
                 </div>
                 <div className="w-[85%] mx-auto h-[200px] flex  flex-col justify-center ">
                     <p className="text-[12px] w-[80%] lg:text-sm truncate">{name}</p>
-                    <p className="text-[12px] text-red-500 lg:text-sm">{price} <span className="text-black line-through">₦240,000</span></p>
+                    <p className="text-[12px] text-red-500 lg:text-sm">₦{price} {onSale ? <span className="text-black line-through">₦240,000</span> : null}</p>
                 </div>
             </div>
     )

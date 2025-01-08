@@ -62,7 +62,7 @@ const handleAddToWish = async () => {
                 animate={{x:-50}}
                 whileInView={{x:0}}
                 exit={{x:-500}}
-                className="w-[300px]  fixed top-16 bg-white shadow-md rounded-md h-[130px] z-40"
+                className="w-[300px]  fixed top-16 bg-white shadow-md rounded-md h-[130px] z-40 p-4"
             >
                
                 <button className="absolute z-50 right-5 top-2" onClick={() => setShowPop(!pop)}>
@@ -73,7 +73,7 @@ const handleAddToWish = async () => {
                
                     <div onClick={handleAddToWish} className="flex items-center w-[90%] mx-auto h-full ">
                         <img className="w-20 h-26" src={src} alt={name} />
-                        <h4 className="text-md">{name} {color} <span className="text-[13px]">has been added to wishlist successfully</span></h4>
+                        <h4 className="lg:text-md text-sm">{name} {color} <span className="lg:text-[12px] text-sm">has been added to wishlist successfully</span></h4>
                     </div>
              
             </motion.div>

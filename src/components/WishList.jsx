@@ -9,7 +9,7 @@ import { useState , useEffect } from "react"
 import SideNav from "./SideNav";
 
 const WishList = () => {
-    const location = useLocation();
+  const location = useLocation()
     const [updatedWishlist, setUpdatedWishlist] = useState([]);
     const {user, isAuthenticated} = useAuth0();
     const [openNav,setOpenNav] = useState(false);
@@ -20,6 +20,9 @@ const WishList = () => {
       version: 1.0,
       storeName: 'wishStore',
     });
+    useEffect(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [location]);
     const setCookie = (name, value, days) => {
       const expires = new Date(Date.now() + days * 86400 * 1000).toUTCString();
       document.cookie = `${name}=${value}; expires=${expires}; path=/`;
@@ -55,22 +58,7 @@ const WishList = () => {
       setCookie("wishlist", JSON.stringify(updatedList), 30);
     };
 
-    const handleAddToCart = async () => {
-      const newCartItem = { src,name,color,price,quantity,};
-      const storedCartItems = getCookie("cartItems");
-      if (storedCartItems) {
-        const cartItemsList = JSON.parse(storedCartItems);
-        const heckIt = cartItemsList.some((item) => item.src === newCartItem.src);
-        heckIt ? null : setCartItems((prevWishItems) => [...prevWishItems, newCartItem]);
-        heckIt ? null :setShowCart(true);
-      } else {
-        setCartItems([newCartItem]);
-        setShowCart(true);
-        console.log("hello")
-      }
-     
-      setCookie("cartItems", JSON.stringify(cartItems), 30);
-    };
+  
     return(
         <div >
           <SideNav
@@ -92,8 +80,10 @@ const WishList = () => {
             <h3 className="text-center text-2xl">WishList</h3>
             <div className=" flex mt-5 h-12 lg:w-1/2 w-[90%] mx-auto justify-between items-center">
                 <h4 className="text-xl ">My Wishlist</h4>
-                <p><i className="fa-solid fa-user fa-lg" style={{color: "#161718"}}></i>  {isAuthenticated ? user?.email : "guest"}</p>
-
+                <div className="bg-red-300 w-1/2 break-words flex justify-end">
+                  <p><i className="fa-solid fa-user fa-lg" style={{color: "#161718"}}></i>  {isAuthenticated ? user?.email : "guest"}</p>
+                </div>
+                
             </div>
             <div className="border-b-2 border-t border-black  lg:w-1/2 w-[90%] mx-auto h-20 flex items-center justify-end">
                 <button className=" h-11 border border-black w-11 grid place-content-center">
