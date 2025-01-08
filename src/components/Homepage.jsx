@@ -1,6 +1,6 @@
 import { useState,useEffect, useRef } from "react"
 import Legends from "./Legends"
-import hero from "../assets/gimp.jpg"
+import hero from "../assets/mmd.jpg"
 import SlideComponent from "./SlideComponent"
 import Footer from "./Footer"
 import Feature from "./Feature"

@@ -1,22 +1,29 @@
-
 import Option from "./Option";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import Quantity from "./Quantity";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,price,essentials,pop,setShowPop,cartItems,setCartItems,setAlreadyAdded}) => {
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
   const [isRotated, setIsRotated] = useState(false);
   const [isRotated2, setIsRotated2] = useState(false);
-  //const [cartItems, setCartItems] = useState([]);
+  const [imageLoaded, setImageLoaded] = useState(false)
+  
   useEffect(() => {
     const storedCartItems = getCookie("cartItems");
     if (storedCartItems) {
       setCartItems(JSON.parse(storedCartItems));
     }
   }, []);
+  useEffect(() => {
+    const img = new Image();
+    img.src = src;
+    img.onload = () => setImageLoaded(true);
+  }, [src]);
 
   useEffect(() => {
     if (cartItems.length > 0) {
@@ -94,7 +101,8 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
                     </div>
                     
                     <div className="lg:w-[40%] w-full flex items-center lg:items-start justify-center h-1/2 lg:mt-5">   
-                      <img className="w-[90%] lg:h-[550px]"  src={src} alt={name} />
+                     {imageLoaded ? ( <img className="w-[90%] lg:h-[550px]"  src={src} alt={name} />) : (
+                                            <Skeleton height={200} width={200} />)}
                     </div>
                    
                     <div className="lg:w-[35%] w-[95%] mx-auto grid gap-4">
