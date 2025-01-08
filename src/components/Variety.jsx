@@ -2,6 +2,7 @@ import addToCartIcon from "../assets/addTocart.svg"
 import {useNavigate} from "react-router-dom"
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import { useState } from "react"
 
 const Variety = ({src,width,imgWidth,height,name,price,onSale,color,size,count,imgHeight,recommendations,swidth,sheight ,essentials, cartIconWidth="w-6", cartIconHeight="h-6", cartIcon="w-3" , bottom="bottom-[40px]",span="w-[40%]",margin, simgHeight}) => {
     const navigate = useNavigate()
