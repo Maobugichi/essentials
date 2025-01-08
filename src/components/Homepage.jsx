@@ -505,7 +505,7 @@ const Homepage = () => {
             </section>
 
             <NewsLetterComponent
-             top="lg:top-[-160px]"
+             top="lg:top-[-100px]"
              sTop="top-[100px]"
             />
 

@@ -240,6 +240,35 @@ const Filter = ({isOpen,setOpen, data, setPage1,setPage}) => {
     }
 
     
+    
+    function trackChange(e) {
+        setMinValue(e.target.value);
+      }
+      
+      useEffect(() => {
+        const newPage = data.filter(item => item.price == minValue);
+        if (newPage.length !== 0) {
+          setPage1(newPage);
+          setOpen(false);
+          setPage(1);
+        }
+      }, [minValue]);
+      
+
+      function trackChange2(e) {
+        setMinValue(e.target.value);
+      }
+      
+      useEffect(() => {
+        const newPage = data.filter(item => item.price == maxValue);
+        if (newPage.length !== 0) {
+          setPage1(newPage);
+          setOpen(false);
+          setPage(1);
+        }
+      }, [minValue]);
+      
+    
     return(
         <AnimatePresence>
            {isOpen ? <motion.div
@@ -282,7 +311,7 @@ const Filter = ({isOpen,setOpen, data, setPage1,setPage}) => {
                                     <div className="flex h-[40px]  w-full justify-between ">
                                         <div className="h-full w-[45%] relative border">
                                         <span className="absolute left-2 top-[5px]">₦</span>
-                                        <input className="h-full w-full pl-7" value={minValue} type="text" />
+                                        <input onChange={trackChange} className="h-full w-full pl-7" value={minValue} type="text" />
                                         </div>
                                         <span className="mt-2">
                                             -
@@ -290,7 +319,7 @@ const Filter = ({isOpen,setOpen, data, setPage1,setPage}) => {
                                     
                                         <div className="h-full w-[45%] relative border">
                                         <span className="absolute left-2 top-[5px]">₦</span>
-                                        <input className="h-full w-full pl-7" value={maxValue} type="text" />
+                                        <input onChange={trackChange2} className="h-full w-full pl-7" value={maxValue} type="text" />
                                         </div>
                                     </div>
                                     <RangeSlider
