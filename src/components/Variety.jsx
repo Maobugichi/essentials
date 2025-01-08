@@ -2,7 +2,7 @@ import addToCartIcon from "../assets/addTocart.svg"
 import {useNavigate} from "react-router-dom"
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const Variety = ({src,width,imgWidth,height,name,price,onSale,color,size,count,imgHeight,recommendations,swidth,sheight ,essentials, cartIconWidth="w-6", cartIconHeight="h-6", cartIcon="w-3" , bottom="bottom-[40px]",span="w-[40%]",margin, simgHeight}) => {
     const navigate = useNavigate()
@@ -10,13 +10,19 @@ const Variety = ({src,width,imgWidth,height,name,price,onSale,color,size,count,i
         navigate("/essentials/extraDetails/1",{state:{src:src,name:name,color:color,size:size,price:price,recommendations:recommendations,essentials:essentials,count:count}})
     }
     const [imageLoaded, setImageLoaded] = useState(false)
-
+    useEffect(() => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => setImageLoaded(true);
+      }, [src]);
+      
     return(
-            <div className={`flex flex-col lg:gap-7   ${width} ${height} ${swidth} ${sheight} relative z-10 ${margin}`}>
+            <div className={`flex flex-col lg:gap-7   ${width} ${height} ${swidth} ${sheight} relative z-10 ${margin}`} >
                {onSale ? <span className="bg-red-400 lg:text-sm text-[12px] p-2 w-auto  lg:min-w-[25%]  absolute z-30 text-white">On Sale</span> : null}
                 <div className="relative top-2   h-[70%] grid place-items-center lg:w-full w-[95%] mx-auto">
                     <div  className={`${imgHeight} ${simgHeight}  lg:${imgWidth} flex items-center w-[90%]`}> 
-                    {imageLoaded ? (<img onClick={handleNavigate} className="lg:w-[95%] h-full" src={src} alt={name} onLoad={() => setImageLoaded(true)} />) : (
+                     {imageLoaded ? ( <img onClick={handleNavigate} className="lg:w-[95%] h-full" src={src} alt={name}
+                    />) : (
                         <Skeleton height={200} width={200} />)}
 
                     </div>
