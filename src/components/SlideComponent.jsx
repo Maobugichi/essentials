@@ -43,7 +43,6 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
             setScrollLeft(newScrollLeft)
         }
     };
-
     const navigate = useNavigate()
     const handleNavigate = (e) => {
         setData(essentials);

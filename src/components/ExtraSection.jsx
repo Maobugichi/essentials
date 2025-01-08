@@ -11,13 +11,13 @@ import PopUp from "./WishListPopUp"
 import ItemAlreadyAdded from "./ItemAlreadyAdded"
 const ExtraSection = () => {
     const location = useLocation()
-    const {src,name,color,size,price,recommendations,essentials, count} = location.state
+    const {src,name,color,size,price,essentials, count} = location.state
     const [showCart,setShowCart] =useState(false)
     const [quantity,setQuantity] = useState(count)
     const [pop , setShowPop] = useState(false)
     const [openNav,setOpenNav] = useState(false);
     const [cartItems, setCartItems] = useState([])
-    const [alreadyAdded,setAlreadyAdded] = useState(false)
+    const [alreadyAdded,setAlreadyAdded] = useState({add:false,item:""})
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }, [essentials,name,src]);

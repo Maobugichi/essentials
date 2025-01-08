@@ -147,16 +147,37 @@ import wbag14 from "../assets/wbag14.png"
 import skirt7 from "../assets/wskr3.png"
 import skirt9 from "../assets/wskr2.png"
 import skirt10 from "../assets/wskr4.png"
+import mor from "../assets/mor1.png"
+import mor2 from "../assets/mor2.png"
+import mor3 from "../assets/mor3.png"
+import mor4 from "../assets/mor4.png"
+import mor5 from "../assets/mor5.png"
+import mor6 from "../assets/mor6.png"
+import mor7 from "../assets/mor7.png"
+import mor8 from "../assets/mor8.png"
+import mor9 from "../assets/mor9.png"
+import mor10 from "../assets/mor10.png"
+import mor11 from "../assets/mor11.png"
+import mor12 from "../assets/mor12.png"
+import mor13 from "../assets/mor13.png"
+import mor14 from "../assets/mor14.png"
+import mor15 from "../assets/mor15.png"
+import mor16 from "../assets/mor16.png"
+import mor17 from "../assets/mor17.png"
+import mor18 from "../assets/mor18.png"
+import mor19 from "../assets/mor19.png"
 import Header from "./Header"
 import NewsLetterComponent from "./NewsLetterComponent"
 import SideNav from "./SideNav"
 import Cart from "./Cart"
+import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
     const [isStuck, setIsStuck] = useState(false);
     const [openNav,setOpenNav] = useState(false);
     const [showCart,setShowCart] =useState(false);
     const [cartItems, setCartItems] = useState([])
+    const [data,setData] = useState([])
     const mens = [
         {name: "Essentials Button Down Shirt", src: jacket16, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
         {name: "Essentials Button Down Shirt", src: jacket17, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Light Blue"], amount: 45, count:1},
@@ -301,7 +322,31 @@ const Homepage = () => {
        {name: "Essentials STears", src: pant16, bestSelling: false, price: 40000, date: "2024-10-20", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: "Black", amount: 45, count:1},
        {name: "Essentials Plain Black Jean", src: pant17, bestSelling: false, price: 40000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: "Black", amount: 45, count:1},
        {name: "Essentials Plain Ash Jean", src: pant18, bestSelling: false, price: 40000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: "Grey", amount: 45, count:1},
-    ]
+   ]
+
+   const browse = [
+        {name: "Essentials Velocity Jersey", src: jerex3, bestSelling: false, price: 140000, date: "2024-10-25", size: ["S", "M", "L"], onSale: false,color: "white,yellow and black", amount: 1 , count:1},
+        {name: "Essentials Thunder Jersey", src: jerex4, bestSelling: false, price: 110000, date: "2024-08-15", size: ["M", "L"], onSale: true,color: "red and black", amount: 1 , count:1},
+        {name: "Essentials Lightning Jersey", src: jerex16, bestSelling: true, price: 160000, date: "2024-11-01", size: ["S", "M", "L", "XL"], onSale: false,color:"red and black",amount:1 , count:1},
+        {name: "Essentials Blaze Jersey", src: jerex17, bestSelling: false, price: 130000, date: "2024-10-20", size: ["S", "M", "L"], onSale: true,color: "white and blue",amount: 9,amount: 1, count:1},
+        {name: "Essentials Astro Jean", src: pant15, bestSelling: false, price: 40000, date: "2024-06-20", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: "Black", amount: 45, count:1},
+        {name: "Essentials STears", src: pant16, bestSelling: false, price: 40000, date: "2024-10-20", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: "Black", amount: 45, count:1},
+        {name: "Essentials Plain Black Jean", src: pant17, bestSelling: false, price: 40000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: "Black", amount: 45, count:1},
+        {name: "Essentials Plain Ash Jean", src: pant18, bestSelling: false, price: 40000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: true, material: "Cotton", color: "Grey", amount: 45, count:1},
+        {name: "Essentials bloods", src: ski4, bestSelling: false, price: 30000, date: "2024-08-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Dark Red", amount: 25, count:1},
+        {name: "Essentials shadows skim", src: ski5, bestSelling: true, price: 28000, date: "2024-09-08", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Smoke Black", amount: 45, count:1},
+        {name: "Essentials Crop Lily", src: ski6, bestSelling: true, price: 28000, date: "2024-10-05", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "vios", amount: 45, count:1},
+        {name: "Essentials Green Skim", src: ski11, bestSelling: true, price: 32000, date: "2024-06-15", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color:"Green", amount: 40, count:1},
+        {name: "Essentials Full Cloth Slide", src: slidd4, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Light Green", amount: 45, count:1},
+        {name: "Essentials Full Cover Birkin", src: slidd5, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Smoke", amount: 45, count:1},
+        {name: "Essentials FTP Slide", src: slidd6, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black", amount: 45, count:1},
+        {name: "Essentials Cat Eyes Slide", src:slidd7, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "White", amount: 50, count:1},
+        {name: "Essentials Messenger Bag", src: bag8, bestSelling: false, price: 70000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, capacity: "20L", material: "Polyester", color: ["Brown", "Tan"], amount: 35, count:1},
+        {name: "Essentials Travel Bag", src: bag7, bestSelling: true, price: 100000, date: "2024-10-01", size: ["One Size"], onSale: false, capacity: "40L", material: "Nylon", color: ["Black", "Grey"], amount: 45, count:1},
+        {name: "Essentials Laptop Bag", src: bag6, bestSelling: false, price: 80000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: true, capacity: "10L", material: "Polyester", color: ["Grey", "Blue"], amount: 25, count:1},
+        {name: "Essentials Shoulder Bag", src: bag9, bestSelling: true, price: 90000, date: "2024-09-25", size: ["One Size"], onSale: false, capacity: "20L", material: "Nylon", color: ["Black", "Brown"], amount: 50},
+        {name: "Essentials T-Shirt", src: wbag12, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
+   ]
 
     const slide = [ 
         {name: "Essentials WorldWide Slide", src:slides, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Cream", amount: 50, count:1},
@@ -345,8 +390,39 @@ const Homepage = () => {
         text:"Easy checkout – complete your order in seconds!"
        }
     ]
-    const exhibits = [exhibit,exhibit2,exhibit3,exhibit4]
+    const olypiadCollection = [
+        {name: "Essentials Ryhopm Tee", src: mor, bestSelling: false, price: 120000, date: "2024-08-15", size: ["S", "M", "L"], onSale: false,color:"blue and red", amount:1, count:1},
+        {name: "Essentials ChainedUp Sweatshirt", src: mor2, bestSelling: true, price: 180000, date: "2024-12-05", size: ["S", "M", "L", "XL"], onSale: false, color: "white",amount: 1 , count:1},
+        {name: "Essentials BoyDevil Tee", src: mor3, bestSelling: false, price: 90000, date: "2024-07-20", size: ["M", "L"], onSale: true,color: "green", amount: 1 , count:1},
+        {name: "Essentials NO f*cks Tee", src:mor4, bestSelling: true, price: 150000, date: "2024-07-05", size: ["S", "M", "L"], onSale: false,color: "brown and pink",amount:1 , count:1},
+        {name: "Essentials Love eye Tee", src: mor5, bestSelling: false, price: 100000, date: "2024-09-10", size: ["M", "L", "XL"], onSale: true,color: "red",amount: 3 , count:1},
+        {name: "Essentials Jeff Tee", src: mor6, bestSelling: false, price: 140000, date: "2024-10-25", size: ["S", "M", "L"], onSale: false,color: "Black", amount: 1 , count:1},
+        {name: "Essentials Trust Tee", src: mor19, bestSelling: false, price: 110000, date: "2024-08-15", size: ["M", "L"], onSale: true,color: "Black", amount: 1 , count:1},
+        {name: "Essentials Jeff Tee", src:mor8, bestSelling: true, price: 160000, date: "2024-11-01", size: ["S", "M", "L", "XL"], onSale: false,color:"Cream",amount:1 , count:1},
+        {name: "Essentials Risk Tee", src: mor9, bestSelling: false, price: 130000, date: "2024-10-20", size: ["S", "M", "L"], onSale: true,color: "light yellow",amount: 9,amount: 1, count:1},
+        {name: "Essentials Nas Tee", src: mor10, bestSelling: false, price: 120000, date: "2024-08-10", size: ["M", "L", "XL"], onSale: false,color: "white",amount: 2, count:1},
+        {name: "Essentials HomeSurge Jersey", src: mor11, bestSelling: true, price: 190000, date: "2024-12-05", size: ["S", "M", "L", "XL"], onSale: false,color: "Red",amount: 1, count:1},
+        {name: "Essentials FlameSkull Longsleeve", src: mor12, bestSelling: false, price: 100000, date: "2024-07-15", size: ["M", "L"], onSale: true,color: "brown",amount: 11 , count:1},
+        {name: "Essentials Side Pocket Cargo", src: mor13, bestSelling: false, price: 140000, date: "2024-09-25", size: ["S", "M", "L"], onSale: false,color: "Black",amount: 1,count:1},
+        {name: "Essentials Covered up Pants", src: mor14, bestSelling: true, price: 170000, date: "2024-11-01", size: ["S", "M", "L", "XL"], onSale: false,color: "Grey", amount:10,  count:1},
+        {name: "Essentials Flame Pants", src: mor15, bestSelling: false, price: 110000, date: "2024-08-10", size: ["M", "L"], onSale: true,color: "Blue",amount:5,  count:1},
+        {name: "Essentials 99Sleeves", src: mor16, bestSelling: false, price: 110000, date: "2024-08-10", size: ["M", "L"], onSale: true,color: "Black",amount:5,  count:1},
+        {name: "Essentials Emotion Tee", src: mor17, bestSelling: false, price: 130000, date: "2024-10-20", size: ["S", "M", "L"], onSale: true,color: "Black", count:1},
+        {name: "Essentials BD Tee", src: mor18, bestSelling: true, price: 160000, date: "2024-11-01", size: ["S", "M", "L", "XL"], onSale: false,color: "Black", amount:2, count:1}
+]
+
     
+    const exhibits = [exhibit,exhibit2,exhibit3,exhibit4]
+    const navigate = useNavigate()
+    const handleNavigate = (e) => {
+        setData(browse);
+    }
+
+    useEffect(() => {
+        if (data.length !== 0) {
+        navigate("/essentials/essentialSection/1",{state:{data:data}})
+        }
+    },[data])
     return(
         <div className="h-auto">
            <Header
@@ -386,7 +462,7 @@ const Homepage = () => {
             >
                 <div className="lg:h-[40%] ml-10 flex flex-col lg:gap-5 gap-7 h-[25%]">
                     <h2 className="lg:text-3xl text-2xl text-white lg:w-[60%] w-[90%]">Essentials, style like no other. Swag like no other</h2>
-                    <button className="border bg-black text-white h-[50px] w-[110px]">Browse Now</button>
+                    <button onClick={handleNavigate} className="border bg-black text-white h-[50px] w-[110px]">Browse Now</button>
                 </div>
             </section>
             
@@ -406,7 +482,7 @@ const Homepage = () => {
             <SideCard
               men={men}
               women={women}
-              essential={mens}
+              essential={olypiadCollection}
               essential2={womens}
             />
 
@@ -436,10 +512,7 @@ const Homepage = () => {
              sheight="h-[250px]"
             />
 
-            <SideCard
-               men={olypiad}
-               women={olypiad2}
-            />
+        
 
             <SlideComponent
              essentials={jackets}

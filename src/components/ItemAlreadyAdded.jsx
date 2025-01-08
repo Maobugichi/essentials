@@ -7,7 +7,7 @@ const ItemAlreadyAdded = ({alreadyAdded,setAlreadyAdded}) => {
 
         if (alreadyAdded) {
             timeoutId = setTimeout(() => {
-                setAlreadyAdded(false)
+                setAlreadyAdded({add:false,item:""})
             },2000)
         }
         return () => {
@@ -17,13 +17,13 @@ const ItemAlreadyAdded = ({alreadyAdded,setAlreadyAdded}) => {
     },[alreadyAdded])
     return(
         <AnimatePresence>
-           { alreadyAdded ? <motion.div
+           { alreadyAdded.add ? <motion.div
              initial={{x:0}}
              animate={{x:-1200}}
              whileInView={{x:0}}
              exit={{x:-1500}}
              className="bg-red-200 grid place-content-center text-white h-10 top-[40px] w-full z-50 fixed">
-            <span>item has already been added to cart</span>
+            <span>item has already been added to {alreadyAdded.item}</span>
          </motion.div> : null}
         </AnimatePresence>
          

@@ -47,11 +47,10 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
       const cartItemsList = JSON.parse(storedCartItems);
       const heckIt = cartItemsList.some((item) => item.src === newCartItem.src);
       heckIt ? null : setCartItems((prevWishItems) => [...prevWishItems, newCartItem]);
-      heckIt ? setAlreadyAdded(true) :setShowCart(true);
+      heckIt ? setAlreadyAdded({add:true,item:"cart"}) :setShowCart(true);
     } else {
       setCartItems([newCartItem]);
       setShowCart(true);
-      console.log("hello")
     }
    
     setCookie("cartItems", JSON.stringify(cartItems), 30);
@@ -63,7 +62,7 @@ const ExtraDetails = ({quantity,setQuantity,src,setShowCart,name,color,size,pric
     if (storedWishItems) {
       const wishItemsList = JSON.parse(storedWishItems);
       const heckIt = wishItemsList.some((item) => item.src === newWishItem.src);
-      heckIt ? null :setShowPop(!pop)
+      heckIt ? setAlreadyAdded({add:true,item:"wishlist"}) :setShowPop(!pop)
     } else {
       setShowPop(!pop)
     }
