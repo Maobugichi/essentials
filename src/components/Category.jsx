@@ -5,7 +5,8 @@ const Category = ({gender,men,essential,essential2}) => {
     const [data,setData] = useState([])
     const navigate = useNavigate()
         const handleNavigate = (e) => {
-            if (e.target.childNodes[0].querySelector("h3").innerText == "Men") {
+           
+            if (e.target.parentNode.childNodes[0].innerText == "Men") {
                 setData(essential);
             } else {
                 setData(essential2)

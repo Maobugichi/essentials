@@ -1,5 +1,7 @@
 import addToCartIcon from "../assets/addTocart.svg"
 import {useNavigate} from "react-router-dom"
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const Variety = ({src,width,imgWidth,height,name,price,onSale,color,size,count,imgHeight,recommendations,swidth,sheight ,essentials, cartIconWidth="w-6", cartIconHeight="h-6", cartIcon="w-3" , bottom="bottom-[40px]",span="w-[40%]",margin, simgHeight}) => {
     const navigate = useNavigate()
@@ -10,8 +12,8 @@ const Variety = ({src,width,imgWidth,height,name,price,onSale,color,size,count,i
             <div className={`flex flex-col lg:gap-7   ${width} ${height} ${swidth} ${sheight} relative z-10 ${margin}`}>
                {onSale ? <span className="bg-red-400 lg:text-sm text-[12px] p-2 w-auto  lg:min-w-[25%]  absolute z-30 text-white">On Sale</span> : null}
                 <div className="relative top-2   h-[70%] grid place-items-center lg:w-full w-[95%] mx-auto">
-                    <div  className={`${imgHeight} ${simgHeight}  lg:${imgWidth} flex items-center w-[90%]`}>
-                     <img onClick={handleNavigate} className=" lg:w-[95%]  h-full"   src={src} alt={name} />
+                    <div  className={`${imgHeight} ${simgHeight}  lg:${imgWidth} flex items-center w-[90%]`}> 
+                     { <img onClick={handleNavigate} className=" lg:w-[95%]  h-full"   src={src} alt={name} /> || <Skeleton count={10} /> }
                     </div>
                     <div className={`absolute lg:bottom-[-10px] ${bottom} right-2 lg:right-0 bg-white rounded-full lg:w-9 lg:h-9 ${cartIconWidth} ${cartIconHeight} grid place-items-center shadow-md`}>
                       <img className={`lg:w-4 ${cartIcon}`} src={addToCartIcon} alt="add to cart icon" />
