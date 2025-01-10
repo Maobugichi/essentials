@@ -33,7 +33,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
       }, 100);
     
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const handleScroll = () => {
             debouncedHandleScroll();
           };
@@ -51,7 +51,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
     })
     }, [scrollPosition]);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const handleScroll = () => {
             const containerWidth = containerRef.current.offsetWidth;
             const scrollLeft = containerRef.current.scrollLeft;
@@ -60,13 +60,11 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
             setScrollProgress(progressPercentage);
           };
           containerRef.current.addEventListener('scroll', handleScroll);
-          if (containerRef) {
+        
             return () => {
-                containerRef.current.removeEventListener('scroll', handleScroll);
+              
+                    containerRef.current.removeEventListener('scroll', handleScroll);
               };
-          }
-         
-      
     },[])
       
      useEffect(() => {
