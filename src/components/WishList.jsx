@@ -80,7 +80,7 @@ const WishList = () => {
             <h3 className="text-center text-2xl">WishList</h3>
             <div className=" flex mt-5 h-12 lg:w-1/2 w-[90%] mx-auto justify-between items-center">
                 <h4 className="text-xl ">My Wishlist</h4>
-                <div className="bg-red-300 w-1/2 break-words flex justify-end">
+                <div className="overflow-clip w-1/2 break-words flex justify-end">
                   <p><i className="fa-solid fa-user fa-lg" style={{color: "#161718"}}></i>  {isAuthenticated ? user?.email : "guest"}</p>
                 </div>
                 

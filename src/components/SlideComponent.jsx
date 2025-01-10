@@ -2,13 +2,13 @@ import { motion , useScroll, useTransform ,useAnimation} from "motion/react"
 import Variety from "./Variety"
 import { useState,useEffect, useLayoutEffect, useRef } from "react"
 import { useNavigate } from "react-router-dom";
+import _ from "lodash";
+
 
 const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="lg:w-[380px]",height,imgHeight,imgWidth,swidth,sheight}) => {
     const [scrollLeft, setScrollLeft] = useState(0);
     const [data,setData] = useState([])
     const sliderRef = useRef(null)
-    const maxScrollLeft = -780
-    const smMax = -1100
     const [scrollPosition, setScrollPosition] = useState(0);
     const containerRef = useRef(null);
     const [scrollProgress, setScrollProgress] = useState(0);
@@ -28,24 +28,30 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
       
     };
 
-    useLayoutEffect(() => {
+    const debouncedHandleScroll = _.debounce(() => {
+        setScrollPosition(containerRef.current.scrollLeft);
+      }, 100);
+    
+
+    useEffect(() => {
         const handleScroll = () => {
-          setScrollPosition(containerRef.current.scrollLeft);
-        };
+            debouncedHandleScroll();
+          };
+          
         containerRef.current.addEventListener('scroll', handleScroll);
         return () => {
           containerRef.current.removeEventListener('scroll', handleScroll);
         };
       }, []);
     
-    useLayoutEffect(() => {
+    useEffect(() => {
     containerRef.current.scrollTo({
         left:scrollPosition,
         behaviour:"smooth"
     })
     }, [scrollPosition]);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const handleScroll = () => {
             const containerWidth = containerRef.current.offsetWidth;
             const scrollLeft = containerRef.current.scrollLeft;
@@ -54,9 +60,12 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
             setScrollProgress(progressPercentage);
           };
           containerRef.current.addEventListener('scroll', handleScroll);
-          return () => {
-            containerRef.current.removeEventListener('scroll', handleScroll);
-          };
+          if (containerRef) {
+            return () => {
+                containerRef.current.removeEventListener('scroll', handleScroll);
+              };
+          }
+         
       
     },[])
       
