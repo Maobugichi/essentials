@@ -85,7 +85,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
                     >  
                     <motion.div
                         ref={sliderRef}
-                        className="overflow-x  flex gap-4 w-auto   justify-center"
+                        className="overflow-y-hidden flex gap-4 no-scrollbar w-auto no-scrollbar::webkit-scrollbar  justify-center"
                         >
                         {recommendations && 
                             recommendations.map((item, index) => (
