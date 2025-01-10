@@ -32,8 +32,6 @@ import women from "../assets/women.jpeg"
 import SideCard from "./SideCard"
 import olypiad from "../assets/olypiad.jpeg"
 import olypiad2 from "../assets/olypiad2.jpeg"
-
-
 import ski2 from "../assets/ski2.png"
 import ski3 from "../assets/ski3.png"
 import ski4 from "../assets/ski4.png"
@@ -221,7 +219,6 @@ const Homepage = () => {
               {name: "Essentials Flux Jersey", src: jerex15, bestSelling: true, price: 160000, date: "2024-11-01", size: ["S", "M", "L", "XL"], onSale: false,color: "white", amount:2, count:1}
     ]
    
-   
    const shirts = [
         {name: "Essentials Fearless Tee", src: shirt16, bestSelling: false, price: 42000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Black", amount: 30, count:1},
         {name: "Essentials Grid", src: shirt17,bestSelling: false, price: 42000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Black", amount: 30, count:1},
@@ -243,7 +240,6 @@ const Homepage = () => {
         {name: "Essentials Maddness Tee", src: shirt18, bestSelling: false, price: 42000, date: "2024-09-25", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Cream", amount: 30, count:1},
    ]
    
-
    const jorts = [
        {name: "Essentials Plain Jean", src: pant, bestSelling: true, price: 50000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color:  "Black", amount: 50, count:1},
        {name: "Essentials Plain Jean", src: pant2, bestSelling: false, price: 60000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Black", amount: 30, count:1},
@@ -289,7 +285,7 @@ const Homepage = () => {
         {name: "Essentials T-Shirt", src: wbag12, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: ["White", "Black"], amount: 50, count:1},
    ]
 
-    const slide = [ 
+   const slide = [ 
         {name: "Essentials WorldWide Slide", src:slides, bestSelling: true, price: 20000, date: "2024-09-10", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Cream", amount: 50, count:1},
         {name: "Essentials Yeezy Slide", src: slides2, bestSelling: false, price: 30000, date: "2024-08-15", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Smoke", amount: 30, count:1},
         {name: "Essentials Yeezy Slide", src: slides3, bestSelling: false, price: 25000, date: "2024-07-10", size: ["Small", "Medium", "Large"], onSale: true, material: "Polyester", color: "Light Green", amount: 20, count:1},
@@ -308,30 +304,30 @@ const Homepage = () => {
         {name: "Essentials PalmSprings Slide", src: slidd10, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black", amount: 45, count:1},
         {name: "Essentials SeeMe? Slide", src: slidd11, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Black with White Patterns", amount: 45, count:1},
         {name: "Essentials WorldMap", src: slidd12, bestSelling: true, price: 35000, date: "2024-08-20", size: ["Small", "Medium", "Large"], onSale: false, material: "Cotton", color: "Green", amount: 45, count:1},
-    ]
-    const content = [
+   ]
+   const content = [
         {
         src:check, 
         header: "Secured payment",
         text: "Enjoy peace of mind with our secured payment options!"
-       },
-       {
+        },
+        {
         src:gift,
         header:"Shipping",
         text:"Get your order fast with our speedy shipping options!"
-       },
-       {
+        },
+        {
         src:chat,
         header: "Live chat",
         text: "Need help? Our live chat is here for instant support!"
-       },
-       {
+        },
+        {
         src:cart,
         header:"Checkout",
         text:"Easy checkout – complete your order in seconds!"
-       }
-    ]
-    const olypiadCollection = [
+        }
+   ]
+   const olypiadCollection = [
         {name: "Essentials Ryhopm Tee", src: mor, bestSelling: false, price: 120000, date: "2024-08-15", size: ["S", "M", "L"], onSale: false,color:"blue and red", amount:1, count:1},
         {name: "Essentials ChainedUp Sweatshirt", src: mor2, bestSelling: true, price: 180000, date: "2024-12-05", size: ["S", "M", "L", "XL"], onSale: false, color: "white",amount: 1 , count:1},
         {name: "Essentials BoyDevil Tee", src: mor3, bestSelling: false, price: 90000, date: "2024-07-20", size: ["M", "L"], onSale: true,color: "green", amount: 1 , count:1},
@@ -350,12 +346,12 @@ const Homepage = () => {
         {name: "Essentials 99Sleeves", src: mor16, bestSelling: false, price: 110000, date: "2024-08-10", size: ["M", "L"], onSale: true,color: "Black",amount:5,  count:1},
         {name: "Essentials Emotion Tee", src: mor17, bestSelling: false, price: 130000, date: "2024-10-20", size: ["S", "M", "L"], onSale: true,color: "Black", count:1},
         {name: "Essentials BD Tee", src: mor18, bestSelling: true, price: 160000, date: "2024-11-01", size: ["S", "M", "L", "XL"], onSale: false,color: "Black", amount:2, count:1}
-    ]
-    const exhibits = [exhibit,exhibit2,exhibit3,exhibit4]
-    const navigate = useNavigate()
-    const handleNavigate = (e) => {
+   ]
+   const exhibits = [exhibit,exhibit2,exhibit3,exhibit4]
+   const navigate = useNavigate()
+   const handleNavigate = (e) => {
         setData(browse);
-    }
+   }
 
     useEffect(() => {
         if (data.length !== 0) {
@@ -363,7 +359,7 @@ const Homepage = () => {
         }
     },[data])
     return(
-        <div className="h-auto">
+        <main className="h-auto">
            <Header
              isStuck={isStuck}
              setIsStuck={setIsStuck}
@@ -407,7 +403,7 @@ const Homepage = () => {
             >
                 <div className="lg:h-[40%] ml-10 flex flex-col lg:gap-5 gap-7 h-[25%]">
                     <h2 className="lg:text-3xl text-2xl text-white lg:w-[60%] w-[90%]">Essentials, style like no other. Swag like no other</h2>
-                    <button onClick={handleNavigate} className="border bg-black text-white h-[50px] w-[110px]">Browse Now</button>
+                    <button onClick={handleNavigate} className="border bg-black text-white h-[50px] w-[130px]">Browse Now</button>
                 </div>
             </section>
             
@@ -468,7 +464,8 @@ const Homepage = () => {
                     {exhibits.map(item => {
                         return(
                             <NewLook
-                            src={item}
+                             key={item}
+                             src={item}
                             />
                         )
                     })}
@@ -495,6 +492,7 @@ const Homepage = () => {
                     {content.map(item => {
                         return(
                             <Feature
+                                key={item.src}
                                 src={item.src}
                                 header={item.header}
                                 text={item.text}
@@ -510,7 +508,7 @@ const Homepage = () => {
             />
 
             <Footer/>
-        </div>
+        </main>
         
     )
 }

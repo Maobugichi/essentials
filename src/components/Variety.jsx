@@ -19,7 +19,11 @@ const Variety = ({scrollLeft,src,width,imgWidth,height,name,price,onSale,color,s
       
     return(
        
-         <div className={`flex flex-col lg:gap-7   ${width} ${height} ${swidth} ${sheight} relative z-10 ${margin}`} >
+         <motion.div 
+         initial={{opacity:0,y:-10}}
+         whileInView={{opacity:1,y:0}}
+         transition={{type:"tween",duration:0.5}}
+         className={`flex flex-col lg:gap-7   ${width} ${height} ${swidth} ${sheight} relative z-10 ${margin}`} >
                {onSale ? <span className="bg-red-400 lg:text-sm text-[12px] p-2 w-auto  lg:min-w-[25%]  absolute z-30 text-white">On Sale</span> : null}
                 <div className="relative top-2   h-[70%] grid place-items-center lg:w-full w-[95%] mx-auto">
                     <div  className={`${imgHeight} ${simgHeight}  lg:${imgWidth} flex items-center w-[90%]`}> 
@@ -36,7 +40,7 @@ const Variety = ({scrollLeft,src,width,imgWidth,height,name,price,onSale,color,s
                     <p className="text-[12px] w-[80%] lg:text-sm truncate">{name}</p>
                     <p className="text-[12px] text-red-500 lg:text-sm">₦{price} {onSale ? <span className="text-black line-through">₦240,000</span> : null}</p>
                 </div>
-            </div>
+            </motion.div>
   
            
             

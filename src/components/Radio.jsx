@@ -2,9 +2,7 @@ import { useRef } from "react"
 
 const Radio = ({name,value,number,data,setPage1,setOpen,isOpen}) => {
     const refSpan = useRef(null)
-    //console.log(data)
     function filterColors(e) { 
-     
      const newData = data.filter(item => {
             if (item.color.toLowerCase().includes(e.target.innerText.toLowerCase())) {
                 refSpan.current.classList.add("bg-black")

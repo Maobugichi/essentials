@@ -1,7 +1,6 @@
 import RangeSlider from "./RangeSliders"
 import { useEffect,useState } from "react";
 import Radio from "./Radio";
-import cancel from "../assets/cancel.svg"
 import { AnimatePresence, motion } from "framer-motion";
 const Filter = ({isOpen,setOpen, data, setPage1,setPage}) => {
     const [minValue, setMinValue] = useState(0);
@@ -203,7 +202,7 @@ const Filter = ({isOpen,setOpen, data, setPage1,setPage}) => {
         
        
     function filter(e) {
-     let newPage;
+      let newPage;
       if (e.target.value == "bestSelling") {
          newPage = data.filter(item => {
              return item.bestSelling == true
@@ -239,60 +238,112 @@ const Filter = ({isOpen,setOpen, data, setPage1,setPage}) => {
       setPage(1)
     }
 
-    
-    
     function trackChange(e) {
         setMinValue(e.target.value);
-      }
+    }
       
-      useEffect(() => {
-        const newPage = data.filter(item => item.price == minValue);
-        if (newPage.length !== 0) {
-          setPage1(newPage);
-          setOpen(false);
-          setPage(1);
-        }
-      }, [minValue]);
+    useEffect(() => {
+    const newPage = data.filter(item => item.price == minValue);
+    if (newPage.length !== 0) {
+        setPage1(newPage);
+        setOpen(false);
+        setPage(1);
+    }
+    }, [minValue]);
       
-
-      function trackChange2(e) {
-        setMinValue(e.target.value);
-      }
+    function trackChange2(e) {
+      setMinValue(e.target.value);
+    }
       
-      useEffect(() => {
+    useEffect(() => {
         const newPage = data.filter(item => item.price == maxValue);
         if (newPage.length !== 0) {
-          setPage1(newPage);
-          setOpen(false);
-          setPage(1);
+            setPage1(newPage);
+            setOpen(false);
+            setPage(1);
         }
-      }, [minValue]);
+    }, [minValue]);
       
+    function execute() {
+        setShow(prev => {
+            return {
+                ...prev,
+                show1:!prev.show1
+            }
+        })
+
+        setIsRotated(prev => {
+            return {
+                ...prev,
+                isRotated1:!prev.isRotated1
+            }
+        })
+    }
+
+    function execute2() {
+        setShow(prev => {
+            return {
+                ...prev,
+                show2:!prev.show2
+            }
+        })
+        setIsRotated(prev => {
+            return {
+                ...prev,
+                isRotated2:!prev.isRotated2
+            }
+        })
+    }
+
+    function execute3() {
+        setShow(prev => {
+            return {
+                ...prev,
+                show4:!prev.show4
+            }
+        })
+
+        setIsRotated(prev => {
+            return {
+                ...prev,
+                isRotated4:!prev.isRotated4
+            }
+        })
+    }
     
     return(
         <AnimatePresence>
-           {isOpen ? <motion.div
+           {isOpen ? 
+           <motion.div
             initial={{opacity:0}}
             whileInView={{opacity:1}}
             exit={{opacity:0}}
+            role="dialog"
+            aria-label="Filter"
+            aria-labelledby="filter-title"
+            aria-modal="true"
+            id="filter-popup-modal"
             className={`${isOpen ? "block" : "hidden"}  bg-opacity-50 fixed bg-gray-500 h-full z-50 w-full overlay-div`}>
                 <motion.div 
                 initial={{x:animateX.x}}
                 animate={{x:-350}}
                 whileInView={{x:0}}
                 exit={{x:-500}}
+                aria-live="polite"
+                aria-atomic="true"
+                aria-relevant="additions removals"
                 className="lg:h-[95vh] h-full bg-white   lg:w-[36%] w-[95%] mx-auto relative lg:mx-0 lg:left-6 rounded-xl lg:top-[20px] top-[10%] z-50 ">
                     <div className="p-3 h-full flex flex-col gap-3">
                         <div className="flex justify-between w-[90%] mt-5 mx-auto">
-                            <p>Filter and sort</p>
-                            <svg onClick={() => setOpen(false)} xmlns="http://www.w3.org/2000/svg" width="1.5em" height="2em" viewBox="0 0 2048 2048"><path fill="currentColor" d="m1115 1024l690 691l-90 90l-691-690l-691 690l-90-90l690-691l-690-691l90-90l691 690l691-690l90 90z"></path></svg>
+                            <h3 id="filter-title">Filter and sort</h3>
+                            <svg  aria-label="Close filter Popup" aria-labelledby="filter-title" onClick={() => setOpen(false)} xmlns="http://www.w3.org/2000/svg" width="1.5em" height="2em" viewBox="0 0 2048 2048"><path fill="currentColor" d="m1115 1024l690 691l-90 90l-691-690l-691 690l-90-90l690-691l-690-691l90-90l691 690l691-690l90 90z"></path></svg>
                         </div>
                         <div>
                             <form className=" h-[400px] overflow-y-scroll w-full flex flex-col gap-7 scrollable-element" action="">
                                 <fieldset className="mx-auto w-[85%] p-3 border">
                                     <legend className="bg-white">Sort by</legend>
-                                    <select onChange={filter} className="w-full" name="cars" id="cars">
-                                        <option value="volvo">Feaured</option>
+                                    <select onChange={filter} className="w-full" name="items" id="items">
+                                        <option value="Feaured">Feaured</option>
                                         <option  value="bestSelling">Best selling</option>
                                         <option value="alphabetically">Alphabetically A - Z</option>
                                         <option value="reverse">Alphabetically Z - A</option>
@@ -310,42 +361,28 @@ const Filter = ({isOpen,setOpen, data, setPage1,setPage}) => {
                                     </div>
                                     <div className="flex h-[40px]  w-full justify-between ">
                                         <div className="h-full w-[45%] relative border">
-                                        <span className="absolute left-2 top-[5px]">₦</span>
-                                        <input onChange={trackChange} className="h-full w-full pl-7" value={minValue} type="text" />
+                                            <span className="absolute left-2 top-[5px]">₦</span>
+                                            <input onChange={trackChange} className="h-full w-full pl-7" value={minValue} type="number" />
                                         </div>
                                         <span className="mt-2">
                                             -
                                         </span>
                                     
                                         <div className="h-full w-[45%] relative border">
-                                        <span className="absolute left-2 top-[5px]">₦</span>
-                                        <input onChange={trackChange2} className="h-full w-full pl-7" value={maxValue} type="text" />
+                                            <span className="absolute left-2 top-[5px]">₦</span>
+                                            <input onChange={trackChange2} className="h-full w-full pl-7" value={maxValue} type="number" />
                                         </div>
                                     </div>
                                     <RangeSlider
-                                        setMinValue={setMinValue}
-                                        setMaxValue={setMaxValue}
-                                        minValue={minValue}
-                                        maxValue={maxValue}
+                                      setMinValue={setMinValue}
+                                      setMaxValue={setMaxValue}
+                                      minValue={minValue}
+                                      maxValue={maxValue}
                                     />
                                 </div>
 
                                 <div className="w-[85%]  mx-auto flex flex-col gap-3">
-                                    <div  onClick={() => {
-                                        setShow(prev => {
-                                            return {
-                                                ...prev,
-                                                show1:!prev.show1
-                                            }
-                                        })
-
-                                        setIsRotated(prev => {
-                                            return {
-                                                ...prev,
-                                                isRotated1:!prev.isRotated1
-                                            }
-                                        })
-                                    }} className="flex w-full ml-2 mx-auto justify-between">
+                                    <div  onClick={execute} className="flex w-full ml-2 mx-auto justify-between">
                                         <span className="text-[13px] ">Availability</span>
                                         <motion.svg
                                             initial={{ rotate: 0 }}
@@ -376,20 +413,7 @@ const Filter = ({isOpen,setOpen, data, setPage1,setPage}) => {
                                     </motion.div>
                                 </div>
                                 <div className="w-[85%]  mx-auto flex flex-col gap-3">
-                                    <div  onClick={() => {
-                                        setShow(prev => {
-                                            return {
-                                                ...prev,
-                                                show2:!prev.show2
-                                            }
-                                        })
-                                        setIsRotated(prev => {
-                                            return {
-                                                ...prev,
-                                                isRotated2:!prev.isRotated2
-                                            }
-                                        })
-                                    }}  className="flex w-full ml-2 mx-auto justify-between">
+                                    <div  onClick={execute2}  className="flex w-full ml-2 mx-auto justify-between">
                                         <span className="text-[13px]">Colors</span>
                                             <motion.svg
                                                 initial={{ rotate: 0 }}
@@ -406,9 +430,10 @@ const Filter = ({isOpen,setOpen, data, setPage1,setPage}) => {
                                        exit={{opacity:0}}
                                        className={show.show2 ? "text-[12px] block" : "text-0 hidden"}
                                     >
-                                        {data.map(item => {
+                                        {data.map((item,i) => {
                                             return(
                                                 <Radio
+                                                 key={i}
                                                  name="colors"
                                                  value={item.color}
                                                  number={item.amount}
@@ -422,25 +447,8 @@ const Filter = ({isOpen,setOpen, data, setPage1,setPage}) => {
                                     </motion.div>
                                 
                                 </div>
-
-                               
-
                                 <div className="w-[85%]  mx-auto grid gap-3">
-                                    <div onClick={() => {
-                                        setShow(prev => {
-                                            return {
-                                                ...prev,
-                                                show4:!prev.show4
-                                            }
-                                        })
-
-                                        setIsRotated(prev => {
-                                            return {
-                                                ...prev,
-                                                isRotated4:!prev.isRotated4
-                                            }
-                                        })
-                                    }} className="flex w-full ml-2 mx-auto justify-between">
+                                    <div onClick={execute3} className="flex w-full ml-2 mx-auto justify-between">
                                         <span className="text-[13px]">Size</span>
                                         <motion.svg
                                                 initial={{ rotate: 0 }}
@@ -450,26 +458,25 @@ const Filter = ({isOpen,setOpen, data, setPage1,setPage}) => {
                                                     <path fill="currentColor" d="M12 5.5a.5.5 0 0 1 .5.5v5.5H18a.5.5 0 0 1 0 1h-5.5V18a.5.5 0 0 1-1 0v-5.5H6a.5.5 0 0 1 0-1h5.5V6a.5.5 0 0 1 .5-.5"></path>
                                         </motion.svg>
                                     </div>
-                                <motion.div
-                                   initial={{opacity:0}}
-                                   whileInView={{opacity:1}}
-                                   exit={{opacity:0}}
-                                   className={show.show4 ? "text-[12px] block" : "text-0 hidden"}
-                                >
-                                    {
-                                    size.map(size => {
-                                        return(
-                                            <Radio
-                                            name="Product"
-                                            value={size.item}
-                                            number={size.amount}
-                                            />
-                                        )
-                                    })
-                                    }
-                                </motion.div>
+                                    <motion.div
+                                    initial={{opacity:0}}
+                                    whileInView={{opacity:1}}
+                                    exit={{opacity:0}}
+                                    className={show.show4 ? "text-[12px] block" : "text-0 hidden"}
+                                    >
+                                        {
+                                            size.map(size => {
+                                                return(
+                                                    <Radio
+                                                    name="Product"
+                                                    value={size.item}
+                                                    number={size.amount}
+                                                    />
+                                                )
+                                            })
+                                        }
+                                    </motion.div>
                                 </div>
-
                             </form>
                         </div>
                         <div className="flex justify-between w-[85%] mx-auto">

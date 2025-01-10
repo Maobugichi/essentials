@@ -1,11 +1,9 @@
-
 import { useEffect,useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import QuickShopSection from "./QuickShopSection";
-import localForage from 'localforage';
 import CartItem from "./CartItem";
 
-const Cart = ({setQuantity,src,name,color,price,showCart,setShowCart,cartItems,setCartItems}) => {
+const Cart = ({setQuantity,showCart,setShowCart,cartItems,setCartItems}) => {
     const [show,setShow] = useState(false)
     const [isRotated, setIsRotated] = useState(false);
   
@@ -14,11 +12,7 @@ const Cart = ({setQuantity,src,name,color,price,showCart,setShowCart,cartItems,s
         setShow(!show);
         setIsRotated(!isRotated);
     };
-    localForage.config({
-        driver: localForage.INDEXEDDB,
-        name: 'myApp', 
-        version: 1.0, 
-      });
+   
     const screenWidth = window.innerWidth;
     
     useEffect(() => {
@@ -88,6 +82,13 @@ const Cart = ({setQuantity,src,name,color,price,showCart,setShowCart,cartItems,s
             initial={{opacity:0}}
             whileInView={{opacity:1}}
             exit={{opacity:0}}
+            role="dialog"
+            aria-label="Shopping Cart"
+            aria-labelledby="cart-title"
+            aria-modal="true"
+            aria-live="polite"
+            aria-atomic="true"
+            aria-relevant="additions removals"
             className={`${showCart ? "block" : "hidden"}  bg-opacity-50 fixed bg-gray-500 h-full z-50 w-full overlay-div top-0`}>
                 <motion.div 
                 initial={{x:animateX.x}}
@@ -97,15 +98,15 @@ const Cart = ({setQuantity,src,name,color,price,showCart,setShowCart,cartItems,s
                 className="lg:h-[95vh] h-[80%] bg-white lg:w-[36%] w-[95%] absolute  rounded-xl lg:top-[10px] top-[10%] z-[2500px] ">
                     <div className=" h-full flex flex-col relative z-[2000px]  gap-3">
                         <div className="flex justify-between w-[90%] mt-5 mx-auto ">
-                            <p className="text-xl">Shopping Cart</p>
-                            <svg onClick={() => setShowCart(false)} className="w-5" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 2048 2048"><path fill="currentColor" d="m1115 1024l690 691l-90 90l-691-690l-691 690l-90-90l690-691l-690-691l90-90l691 690l691-690l90 90z"></path></svg>
+                            <h3 id="cart-title" className="text-xl">Shopping Cart</h3>
+                            <svg  aria-label="Close Cart Popup" aria-labelledby="cart-title" onClick={() => setShowCart(false)} className="w-5" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 2048 2048"><path fill="currentColor" d="m1115 1024l690 691l-90 90l-691-690l-691 690l-90-90l690-691l-690-691l90-90l691 690l691-690l90 90z"></path></svg>
                         </div>
                         <div className="h-[450px] overflow-y-scroll w-full  flex flex-col gap-7 ">
                              {
                                 cartItems.map((item,i) => {
-                                    
                                     return(
                                         <CartItem
+                                          key={item.src}
                                           id={i}
                                           src={item.src}
                                           name={item.name}
@@ -172,10 +173,9 @@ const Cart = ({setQuantity,src,name,color,price,showCart,setShowCart,cartItems,s
                             </div>
                            
                         </div>
-                      
                     </div>
                 </motion.div>
-            </motion.div> : "hello" }
+            </motion.div> : null }
         </AnimatePresence>
      
     )

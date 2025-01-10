@@ -1,4 +1,3 @@
-import { useState } from "react";
 
 const WishItem = ({src,name,price,color,handleRemoveItem,handleAddToCart}) => {
     

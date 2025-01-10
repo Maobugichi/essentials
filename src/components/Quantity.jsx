@@ -2,11 +2,9 @@ import localForage from 'localforage';
 import { useEffect , useState } from 'react';
 const Quantity = ({quantity,setQuantity,increases,decreases}) => {
     const [cartQuantity, setCartQuantity] = useState([])
-
     function increase() {
         setQuantity(quantity + 1)
     }
-
 
     localForage.config({
         driver: localForage.INDEXEDDB,
@@ -14,15 +12,15 @@ const Quantity = ({quantity,setQuantity,increases,decreases}) => {
         version: 1.0, 
     });
 
-      useEffect(() => {
-        const loadWishlist = async () => {
-            const storedWishlist = await localForage.getItem('cartlist');
-            if (storedWishlist) {
-              setCartQuantity(storedWishlist);
-            } 
-          };
-          loadWishlist();
-      }, []);
+    useEffect(() => {
+    const loadWishlist = async () => {
+        const storedWishlist = await localForage.getItem('cartlist');
+        if (storedWishlist) {
+            setCartQuantity(storedWishlist);
+        } 
+        };
+        loadWishlist();
+    }, []);
     
     function decrease() {
         if (quantity == 1) {

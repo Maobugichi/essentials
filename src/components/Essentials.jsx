@@ -43,7 +43,7 @@ const Essentials = () => {
     },[data])
     
     return(
-        <div className="h-auto min-h-[250vh]  lg:min-h-[355vh]  flex flex-col gap-10 ">
+        <main className="h-auto min-h-[250vh]  lg:min-h-[355vh]  flex flex-col gap-10 ">
           <Filter
            isOpen={isOpen}
            setOpen={setOpen}
@@ -53,8 +53,8 @@ const Essentials = () => {
           />
 
           <SearchComponent
-              showComponent={showComponent}
-              setShowComponent={setShowComponent}
+            showComponent={showComponent}
+            setShowComponent={setShowComponent}
             />
 
           <Cart
@@ -90,44 +90,43 @@ const Essentials = () => {
               <p className="text-[13px]">Filter and sort</p>
             </div>
             <div className="flex  flex-wrap w-full mx-auto lg:justify-between  justify-center h-auto">
-            {
-              page === 1 && (
-                pages1.slice(0,6).map(item => {
-                  return(
-                    <Variety
-                      key={item.src}
-                      recommendations={pages1.slice(5,9)}
-                      name={item.name}
-                      price={item.price}
-                      bestSelling={item.bestselling}
-                      onSale={item.onSale}
-                      date={item.date}
-                      src={item.src}
-                      color={item.color}
-                      count={item.count}
-                      size={item.size}
-                      width="lg:w-[400px]"
-                      height="lg:h-[450px]"
-                      imgHeight="lg:h-[350px]"
-                      imgWidth="w-[95%]"
-                      essentials={data}
-                      swidth="w-1/2"
-                      sheight="h-[250px]"
-                      cartIconWidth="w-8"
-                      cartIconHeight="h-8"
-                      cartIcon="w-4"
-                      bottom="bottom-0"
-                      margin="mt-4"
-                      simgHeight="h-[200px]"
-                    />
-                  )
-                })
-              )
-              
-            }
+              {
+                page === 1 && (
+                  pages1.slice(0,6).map(item => {
+                    return(
+                      <Variety
+                        key={item.src}
+                        recommendations={pages1.slice(5,9)}
+                        name={item.name}
+                        price={item.price}
+                        bestSelling={item.bestselling}
+                        onSale={item.onSale}
+                        date={item.date}
+                        src={item.src}
+                        color={item.color}
+                        count={item.count}
+                        size={item.size}
+                        width="lg:w-[400px]"
+                        height="lg:h-[450px]"
+                        imgHeight="lg:h-[350px]"
+                        imgWidth="w-[95%]"
+                        essentials={data}
+                        swidth="w-1/2"
+                        sheight="h-[250px]"
+                        cartIconWidth="w-8"
+                        cartIconHeight="h-8"
+                        cartIcon="w-4"
+                        bottom="bottom-0"
+                        margin="mt-4"
+                        simgHeight="h-[200px]"
+                      />
+                    )
+                  })
+                )
+              }
 
-          {
-              page === 2 && (
+             {
+               page === 2 && (
                 pages1.slice(6,12).map(item => {
                   return(
                     <Variety
@@ -157,12 +156,11 @@ const Essentials = () => {
                     />
                   )
                 })
-              )
-              
-            }
+               )
+             }
 
-            {
-              page === 3 && (
+             {
+               page === 3 && (
                 pages1.slice(12,data.length).map(item => {
                   return(
                     <Variety
@@ -192,25 +190,19 @@ const Essentials = () => {
                     />
                   )
                 })
-              )
-              
-            }
+               )
+             }
             </div>
-
-              <div className="flex gap-4  h-10">
-                <button className="w-[100px] h-full bg-black text-white" onClick={previousPage}>prev</button>
-                <button className="w-[100px] h-full bg-black text-white" onClick={nextPage}>next</button>
-              </div>
+            <div className="flex gap-4  h-10">
+              <button className="w-[100px] h-full bg-black text-white" onClick={previousPage}>prev</button>
+              <button className="w-[100px] h-full bg-black text-white" onClick={nextPage}>next</button>
+            </div>
           </section>
-           <NewsLetterComponent
-            top="lg:top-[50px]"
-            
-           />
+          <NewsLetterComponent top="lg:top-[50px]"/>
           <section className="relative lg:top-[90px]">
             <Footer/>
           </section>
-        </div>
-       
+        </main>
     )
 }
 

@@ -1,6 +1,6 @@
 import { motion , useScroll, useTransform ,useAnimation} from "motion/react"
 import Variety from "./Variety"
-import { useState,useEffect, useRef } from "react"
+import { useState,useEffect, useLayoutEffect, useRef } from "react"
 import { useNavigate } from "react-router-dom";
 
 const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="lg:w-[380px]",height,imgHeight,imgWidth,swidth,sheight}) => {
@@ -9,8 +9,10 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
     const sliderRef = useRef(null)
     const maxScrollLeft = -780
     const smMax = -1100
-    const containerRef = useRef(null)
-    
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const containerRef = useRef(null);
+    const [scrollProgress, setScrollProgress] = useState(0);
+    const progressTrackerRef = useRef(null);
     const { scrollXProgress } = useScroll(
      {
         container: sliderRef,
@@ -22,8 +24,50 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
     const handleNavigate = (e) => {
         setData(essentials);
     }
-  
-    const handleButtonClick = () => {
+    const handleScrollLeft = () => {
+        setScrollPosition((prevPosition) => prevPosition - 300);
+
+    };
+
+    const handleScrollRight = () => {
+      setScrollPosition((prevPosition) => prevPosition + 300);
+      //containerRef.current.scrollLeft = scrollPosition;
+    };
+
+    useLayoutEffect(() => {
+        const handleScroll = () => {
+          setScrollPosition(containerRef.current.scrollLeft);
+        };
+        containerRef.current.addEventListener('scroll', handleScroll);
+        return () => {
+          containerRef.current.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
+    
+    useLayoutEffect(() => {
+    containerRef.current.scrollTo({
+        left:scrollPosition,
+        behaviour:"smooth"
+    })
+    }, [scrollPosition]);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const containerWidth = containerRef.current.offsetWidth;
+            const scrollLeft = containerRef.current.scrollLeft;
+            const totalScrollableWidth = containerRef.current.scrollWidth - containerWidth;
+            const progressPercentage = (scrollLeft / totalScrollableWidth) * 100;
+            setScrollProgress(progressPercentage);
+          };
+          containerRef.current.addEventListener('scroll', handleScroll);
+          return () => {
+            containerRef.current.removeEventListener('scroll', handleScroll);
+          };
+      
+    },[])
+      
+    
+    /*const handleButtonClick = () => {
         const screenWidth = window.innerWidth;
         if (screenWidth < 500) {
             const newScrollLeft = scrollLeft - (screenWidth * 0.5); ;
@@ -50,7 +94,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
         }  else {
             setScrollLeft(newScrollLeft)
         }
-    };
+    };*/
    
      useEffect(() => {
         if (data.length !== 0) {
@@ -60,7 +104,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
         
     return(
         <section className={`w-full lg:mt-9 h-auto min-h-[35vh] mb-10 lg:min-h-[80vh] flex flex-col lg:gap-4 gap-3 justify-center relative ${top}  ${stop}`}>
-            <div onClick={handleButtonClickRight} className="bg-white w-[40px] h-[40px] rounded-full shadow-xl absolute left-2 lg:left-8 z-30  top-[45%] grid  place-items-center">
+            <div onClick={handleScrollLeft} className="bg-white w-[40px] h-[40px] rounded-full shadow-xl absolute left-2 lg:left-8 z-30  top-[45%] grid  place-items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 40 40">
                     <path fill="#000" d="M24.96 32.601L12.371 19.997l.088-.088l12.507-12.52a.66.66 0 0 0-.01-.921a.65.65 0 0 0-.458-.182a.65.65 0 0 0-.465.186l-13.004 13.02a.63.63 0 0 0-.176.49a.66.66 0 0 0 .18.523l13.014 13.031c.244.23.659.233.921-.02a.66.66 0 0 0-.008-.915"></path>
                 </svg>
@@ -69,41 +113,40 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
                 
                 <motion.div 
                     id="slide"
+                    ref={containerRef}
                     transition={{ duration: 0.3, type:"tween", ease: "linear" }}
                     className=" no-scrollbar  w-auto no-scrollbar::webkit-scrollbar flex"
-                    //onScroll={() => console.log(sliderRef.current.scrollLeft)}
-                    style={{overflowX:"hidden"}}
+                    style={{overflowX:"scroll",overflowY:"hidden"}}
+                    
                     >  
                     <motion.div
-                        initial={{ x: 0 }}
                         ref={sliderRef}
-                        animate={{x:scrollLeft}}
                         className="overflow-x  flex gap-4 w-auto   justify-center"
                         >
                         {recommendations && 
                             recommendations.map((item, index) => (
-                                        <Variety
-                                        key={index}
-                                        recommendations={recommendations}
-                                        name={item.name}
-                                        price={item.price}
-                                        bestSelling={item.bestselling}
-                                        onSale={item.onSale}
-                                        date={item.date}
-                                        src={item.src}
-                                        color={item.color}
-                                        size={item.size}
-                                        count={item.count}
-                                        width={width}
-                                        height={height}
-                                        imgHeight={imgHeight}
-                                        imgWidth={imgWidth}
-                                        swidth={swidth}
-                                        sheight={sheight}
-                                        essentials={essentials}
-                                        simgHeight={simgHeight}
-                                        scrollLeft={scrollLeft}
-                                        />
+                                <Variety
+                                    key={index}
+                                    recommendations={recommendations}
+                                    name={item.name}
+                                    price={item.price}
+                                    bestSelling={item.bestselling}
+                                    onSale={item.onSale}
+                                    date={item.date}
+                                    src={item.src}
+                                    color={item.color}
+                                    size={item.size}
+                                    count={item.count}
+                                    width={width}
+                                    height={height}
+                                    imgHeight={imgHeight}
+                                    imgWidth={imgWidth}
+                                    swidth={swidth}
+                                    sheight={sheight}
+                                    essentials={essentials}
+                                    simgHeight={simgHeight}
+                                    scrollLeft={scrollLeft}
+                                />
                             ))}
 
                             {!recommendations && essentials.slice(0, 6).map((item, index) => (
@@ -135,7 +178,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
                 </motion.div>
               
             </div>
-            <div onClick={handleButtonClick} className=" bg-white w-[40px] h-[40px] rounded-full shadow-md absolute right-2 lg:right-8 z-10  top-[45%] grid  place-items-center">
+            <div onClick={handleScrollRight} className=" bg-white w-[40px] h-[40px] rounded-full shadow-md absolute right-2 lg:right-8 z-10  top-[45%] grid  place-items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 20 20">
                     <g fill="#000">
                         <path d="M7.116 4.32a.5.5 0 1 1 .768-.64l5 6a.5.5 0 0 1-.768.64z"></path>
@@ -143,13 +186,12 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
                     </g>
                 </svg>
             </div>
-            <div className="flex flex-col  h-auto">
+            <div className="flex flex-col gap-3  h-auto">
                 <div class=" bg-gray-200 grid gap-1  h-1 rounded-full w-1/2 mx-auto">
                     <motion.div 
-                        className="bg-blue-500 h-1 rounded"
-                        style={{scaleX, originX: 0 }}
-                        class="bg-[#333] h-1 rounded ">
-
+                        className="bg-[#333] h-1 rounded "
+                        style={{ width: `${scrollProgress}%` }}
+                        >
                     </motion.div>
                 
                 </div>

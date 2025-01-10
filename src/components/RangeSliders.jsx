@@ -1,8 +1,5 @@
-import { Icon } from "@iconify/react";
-import { useEffect, useState } from "react";
 
 function RangeSlider({setMaxValue,setMinValue, minValue, maxValue }) {
-
   const handleMinChange = (e) => {
     const value = parseInt(e.target.value);
     if (value < max) {

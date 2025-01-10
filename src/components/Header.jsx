@@ -4,7 +4,6 @@ import Nav from "./Nav"
 import localForage from 'localforage';
 
 const Header = ({text,isStuck,setIsStuck , color, iconColor , cartColor , cartText, openNav,setOpenNav ,showCart, setShowCart,caveatColor,setShowComponent}) => {
-   
     const [slides, setSlides] = useState([
         <motion.div
           initial={{ opacity: 0, x: 100 }}
@@ -45,10 +44,8 @@ const Header = ({text,isStuck,setIsStuck , color, iconColor , cartColor , cartTe
             setCurrentIndex(prev => (prev + 1) % slides.length )
         },3000)
         return () => clearInterval(intervalId);
-    
-        },[slides])
+    },[slides])
        
-      
     const handlePreviousSlide = () => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
     };
@@ -60,9 +57,9 @@ const Header = ({text,isStuck,setIsStuck , color, iconColor , cartColor , cartTe
     useEffect(() => {
         const loadWishlist = async () => {
             const storedWishlist = await localForage.getItem('cartlist');
-            if (storedWishlist) {
-                setAmount(storedWishlist);
-            } 
+                if (storedWishlist) {
+                    setAmount(storedWishlist);
+                } 
             };
             loadWishlist();
         }, []);
@@ -71,7 +68,6 @@ const Header = ({text,isStuck,setIsStuck , color, iconColor , cartColor , cartTe
             <AnimatePresence>
                 <div className=" border-b bg-black  h-11 text-white grid place-items-center ">
                     <div className=" flex justify-between items-center w-[90%] lg:w-1/2 mx-auto ">
-                       
                         <svg onClick={handlePreviousSlide} xmlns="http://www.w3.org/2000/svg" width={23} height={30} viewBox="0 0 20 20">
                             <g fill="#f2f2f3">
                                 <path d="m12.384 15.68l-5-6l-.768.64l5 6z"></path>
@@ -93,20 +89,20 @@ const Header = ({text,isStuck,setIsStuck , color, iconColor , cartColor , cartTe
             </AnimatePresence>
             <div className="h-[80%] relative">
                 <Nav
-                text={text}
-                isStuck={isStuck}
-                setIsStuck={setIsStuck}
-                amount={amount}
-                color={color}
-                iconColor={iconColor}
-                cartColor={cartColor}
-                cartText={cartText}
-                openNav={openNav}
-                setOpenNav={setOpenNav}
-                showCart={showCart}
-                setShowCart={setShowCart}
-                caveatColor={caveatColor}
-                setShowComponent={setShowComponent}
+                 text={text}
+                 isStuck={isStuck}
+                 setIsStuck={setIsStuck}
+                 amount={amount}
+                 color={color}
+                 iconColor={iconColor}
+                 cartColor={cartColor}
+                 cartText={cartText}
+                 openNav={openNav}
+                 setOpenNav={setOpenNav}
+                 showCart={showCart}
+                 setShowCart={setShowCart}
+                 caveatColor={caveatColor}
+                 setShowComponent={setShowComponent}
                 />
             </div>
            

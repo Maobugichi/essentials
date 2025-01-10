@@ -7,7 +7,6 @@ const AuthProfile = () => {
         <>
          <div className="grid place-content-center h-[100vh]">
            { isAuthenticated ? <LogOut/> : <LogIn/>}
-
             {isAuthenticated ? <article>
             {user?.picture && <img src={user.picture} alt={user?.name}/>}
             <h2>{user?.name && user.name}</h2>

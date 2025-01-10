@@ -1,4 +1,4 @@
-const Footer = (top) => {
+const Footer = ({top}) => {
     return(
         <footer className={`lg:h-[70vh] h-[80vh]  bg-black text-white flex flex-col justify-center items-center lg:gap-10 relative ${top}`}>
             <div className="w-full lg:h-[70%]  h-full p-4 border-b border-[#ccc]  ">

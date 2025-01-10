@@ -4,25 +4,21 @@ import { useEffect ,useState } from "react";
 const Category = ({gender,men,essential,essential2}) => {
     const [data,setData] = useState([])
     const navigate = useNavigate()
-        const handleNavigate = (e) => {
-           
-            if (e.target.parentNode.childNodes[0].innerText == "Men") {
-                setData(essential);
-            } else {
-                setData(essential2)
-            }
-          
+    const handleNavigate = (e) => {
+        if (e.target.parentNode.childNodes[0].innerText == "Men") {
+            setData(essential);
+        } else {
+            setData(essential2)
         }
-    
-        useEffect(() => {
-            if (data.length !== 0) {
-              navigate("/essentials/essentialSection/1",{state:{data:data}})
-            }
-        },[data])
+    }
+    useEffect(() => {
+        if (data.length !== 0) {
+            navigate("/essentials/essentialSection/1",{state:{data:data}})
+        }
+    },[data])
     
     return(
         <motion.div 
-        
          className="group text-white h-full lg:w-1/2  grid place-items-center rounded-md w-[90%] mx-auto lg:mx-0"
          initial={{ backgroundSize: '100% 100%' }}
          whileHover={{ backgroundSize: '110% 110%' }}
@@ -35,7 +31,8 @@ const Category = ({gender,men,essential,essential2}) => {
                  whileInView={{opacity:1, y:20}}
                  transition={{duration:0.5,ease:"linear",type:"spring",stiffness:100}}
                  onClick={handleNavigate}
-                 className=" hidden group-hover:block w-[200px] border-white border-2 h-16">View Collection
+                 className=" hidden group-hover:block w-[200px] border-white border-2 h-16">
+                    View Collection
                  </motion.button>
             </div>
         </motion.div>

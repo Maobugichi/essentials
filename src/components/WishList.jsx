@@ -104,6 +104,7 @@ const WishList = () => {
                 updatedWishlist.map(item => {
                     return(
                         <WishItem
+                          key={item.src}
                           src={item.src}
                           name={item.name}
                           price={item.price}

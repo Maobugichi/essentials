@@ -4,7 +4,6 @@ const ItemAlreadyAdded = ({alreadyAdded,setAlreadyAdded}) => {
 
     useEffect(() => {
         let timeoutId;
-
         if (alreadyAdded) {
             timeoutId = setTimeout(() => {
                 setAlreadyAdded({add:false,item:""})
