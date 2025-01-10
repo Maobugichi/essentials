@@ -13,13 +13,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
     const containerRef = useRef(null);
     const [scrollProgress, setScrollProgress] = useState(0);
     const progressTrackerRef = useRef(null);
-    const { scrollXProgress } = useScroll(
-     {
-        container: sliderRef,
-        layoutEffect: false,
-     }
-    )
-    const scaleX = useTransform(scrollXProgress, [0, 1], [0, 1]); 
+    
     const navigate = useNavigate()
     const handleNavigate = (e) => {
         setData(essentials);
@@ -31,7 +25,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
 
     const handleScrollRight = () => {
       setScrollPosition((prevPosition) => prevPosition + 300);
-      //containerRef.current.scrollLeft = scrollPosition;
+      
     };
 
     useLayoutEffect(() => {
@@ -51,7 +45,7 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
     })
     }, [scrollPosition]);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const handleScroll = () => {
             const containerWidth = containerRef.current.offsetWidth;
             const scrollLeft = containerRef.current.scrollLeft;
@@ -66,36 +60,6 @@ const SlideComponent = ({essentials,top,recommendations,simgHeight,stop,width="l
       
     },[])
       
-    
-    /*const handleButtonClick = () => {
-        const screenWidth = window.innerWidth;
-        if (screenWidth < 500) {
-            const newScrollLeft = scrollLeft - (screenWidth * 0.5); ;
-            if (newScrollLeft <= smMax ) {
-                setScrollLeft(0);
-              }  else {
-                  setScrollLeft(newScrollLeft)
-              }
-        } else if (screenWidth > 500) {
-            const newScrollLeft = scrollLeft - (screenWidth * 0.3); 
-            if (newScrollLeft <= maxScrollLeft ) {
-                setScrollLeft(0);
-              }  else {
-                  setScrollLeft(newScrollLeft)
-            }
-        }
-       
-      };
-  
-      const handleButtonClickRight = () => {  
-        const newScrollLeft = scrollLeft + 200;
-        if (newScrollLeft >= 100) {
-            setScrollLeft(0);
-        }  else {
-            setScrollLeft(newScrollLeft)
-        }
-    };*/
-   
      useEffect(() => {
         if (data.length !== 0) {
         navigate("/essentials/essentialSection/1",{state:{data:data}})

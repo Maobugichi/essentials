@@ -21,9 +21,9 @@ const ExtraSection = () => {
   const [alreadyAdded,setAlreadyAdded] = useState({add:false,item:""})
   const [showComponent, setShowComponent] = useState(false)
   
-    useEffect(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }, [essentials,name,src]);
+  useEffect(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [essentials,name,src]);
     return(
         <div className="h-auto">
             <ItemAlreadyAdded
@@ -37,15 +37,15 @@ const ExtraSection = () => {
             />
             
             <PopUp
-            pop={pop}
-            setShowPop={setShowPop}
-            src={src}
-            name={name}
-            color={color}
-            size={size}
-            price={price}
-            cartItems={cartItems}
-            setCartItems={setCartItems}
+             pop={pop}
+             setShowPop={setShowPop}
+             src={src}
+             name={name}
+             color={color}
+             size={size}
+             price={price}
+             cartItems={cartItems}
+             setCartItems={setCartItems}
             />
 
             <SideNav
